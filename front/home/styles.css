@@ -1,0 +1,17 @@
+.menu{
+    background-color: #00477B;
+    font-weight: 1440px;
+    height: 160px;
+    flex-shrink: 0;
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+    align-items: center;
+}
+.desplegable{
+    font-weight: 58px;
+    height: 49px;
+    margin: 20px;
+    padding: 22x;
+}
