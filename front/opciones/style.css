@@ -1,0 +1,26 @@
+#titulo {
+    background-color: cadetblue;
+    
+}
+#calendario {
+    margin-top: 200px;
+    margin-left: 100px;
+    width: 150px;
+    height: 150px;
+}
+#icono_calendario {
+    width: 75px;
+    height: 75px;
+}
+  
+#historial {
+    margin-top: 200px;
+    margin-left: 150px;
+    width: 150px;
+    height: 150px;
+}
+#icono_historial {
+    width: 75px;
+    height: 75px;
+}
+  
