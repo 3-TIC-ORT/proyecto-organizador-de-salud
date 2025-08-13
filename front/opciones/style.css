@@ -23,4 +23,24 @@
     width: 75px;
     height: 75px;
 }
-  
+
+#familia {
+    margin-top: 200px;
+    margin-left: 100px;
+    width: 150px;
+    height: 150px;
+}
+#icono_familia {
+    width: 75px;
+    height: 75px;
+}
+#mapa {
+    margin-top: 200px;
+    margin-left: 150px;
+    width: 150px;
+    height: 150px;
+}
+#icono_mapa {
+    width: 75px;
+    height: 75px;
+}
