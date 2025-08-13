@@ -1,9 +1,11 @@
 #titulo {
-    background-color: cadetblue;
-    
+    background-color: #00487b;
+    width: 1440px;
+    height: 160px;  
 }
+
 #calendario {
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 100px;
     width: 150px;
     height: 150px;
@@ -12,9 +14,9 @@
     width: 75px;
     height: 75px;
 }
-  
+
 #historial {
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 150px;
     width: 150px;
     height: 150px;
