@@ -2,4 +2,10 @@ input {
     margin-bottom: 15px; 
     width: 1031px;
     height: 100px;
+    border-radius: 25px;
   }
+.forms{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

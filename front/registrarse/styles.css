@@ -1,0 +1,20 @@
+.forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 1031px;
+    height: 100px;
+    border-radius: 25px;
+    
+}
+#flecha1{
+    width: 102.01960911413546px;
+    margin-top: 919px;
+    margin-left: 1186px;
+
+}
+html{
+margin: 1440px 1024px;
+}
