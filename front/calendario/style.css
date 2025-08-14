@@ -1,0 +1,51 @@
+#cabeza{
+    background-color: #00487b;
+    width: 1440px;
+    height: 161px;
+}
+#googlecalendar{
+    width: 325px;
+    height: 146px;
+    background-color: #18ac9c;
+    border-radius: 16%;
+    margin-top: 183px;
+    margin-left: 1065px;
+    padding: 10px;
+    gap: 10px;
+}
+#calendar{
+    color: white;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: inherit;
+    border: 1px;
+    margin-left: 25px;
+    margin-top: 29px;
+    width: 275px;
+    height: 88px;
+}
+#turno{
+    background-color: #0B6FA4;
+    width: 382px;
+    height: 103px;
+    margin-top: 847px;
+    margin-left: 529px;
+    border-radius: 30px;
+}
+#ingresarturno{
+    width: 265px;
+    height: 48px;
+    margin-top: 27.5px;
+     margin-left: 58.5px;
+     font-size: 40px;
+     color: white;
+     font-weight: 400;
+}
+#calendario{
+    width: 946px;
+    height: 77px;
+    font-size: 64px;
+    font-weight: 400;
+    margin-top: 344px;
+    margin-left: 348px;
+}
