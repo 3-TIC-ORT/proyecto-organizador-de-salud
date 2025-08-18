@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .forms{
     display: flex;
     justify-content: center;
@@ -11,10 +15,12 @@ input{
 }
 #flecha1{
     width: 102.01960911413546px;
-    margin-top: 919px;
-    margin-left: 1186px;
-
+    margin-top: 83px;
+    margin-left: 1198px;
+   
 }
-html{
-margin: 1440px 1024px;
+#REGISTRARSE{
+    font-family: 'Inter', sans-serif;
+    font-size: 58px;
+    color: #000000;
 }
