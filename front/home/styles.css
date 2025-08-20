@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
 header{
     width: 100%;
     height: 160px;
@@ -10,7 +16,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     
 }
@@ -20,26 +26,60 @@ header{
     height: 93px;  
     border-radius: 30px;
     background-color: #18AC9C;
+
+    .regis{
+        color: #FFFFFF;
+    }
 }
-
-
-.desplegable{
-    font-weight: 58px;
-    height: 49px;
-    margin: 20px;
-    padding: 22x;
-}
-
 .iniciar{
     background-color: #0964A1;
     width: 285px;
     height: 93px;   
     border-radius: 30px;
+
+    .sesion{
+        color: #FFFFFF;
+        }
+ }
+
+ main{
+    width: 100%;
+    height: calc( 100% - 160px );
+ }
+.izq{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
 }
-.sesion{
-color: #FFFFFF;
+.probar{
+    width: 285px;
+    height: 93px;
+    background-color: #0964A1;
+    color: #FFFFFF;
+    border-radius: 30px;
+}
+.vermas{
+    width: 285px;
+    height: 93px;
+    border-radius: 30px;
+    border-color: #18AC9C;
+    border-width: 3px;
+    color: #18AC9C;
+}
+.lt{
+   font-size: 36px;
+   font-weight: 400px;
+   font-style: regular;
+   font-family: 'Inter',sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
-.regis{
-    color: #FFFFFF;
-}
+
+
