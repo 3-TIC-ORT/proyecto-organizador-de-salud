@@ -1,9 +1,14 @@
-#cabeza{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
     background-color: #00487b;
     width: 1440px;
     height: 161px;
 }
-#googlecalendar{
+.googlecalendar{
     width: 325px;
     height: 146px;
     background-color: #18ac9c;
@@ -13,7 +18,7 @@
     padding: 10px;
     gap: 10px;
 }
-#calendar{
+.calendar{
     color: white;
     font-size: 36px;
     font-weight: 400;
@@ -24,7 +29,7 @@
     width: 275px;
     height: 88px;
 }
-#turno{
+.turno{
     background-color: #0B6FA4;
     width: 382px;
     height: 103px;
@@ -32,7 +37,7 @@
     margin-left: 529px;
     border-radius: 30px;
 }
-#ingresarturno{
+.ingresarturno{
     width: 265px;
     height: 48px;
     margin-top: 27.5px;
@@ -41,7 +46,7 @@
      color: white;
      font-weight: 400;
 }
-#calendario{
+.calendario{
     width: 946px;
     height: 77px;
     font-size: 64px;
