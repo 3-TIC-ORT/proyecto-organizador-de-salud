@@ -7,15 +7,22 @@ header{
     width: 100%;
     height: 160px;
     background-color: #00477B;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+    
 }
 
-.botones{
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 1000px;
+.registrarse{
+    width: 285px;
+    height: 93px;  
+    border-radius: 30px;
+    background-color: #18AC9C;
 }
+
+
 .desplegable{
     font-weight: 58px;
     height: 49px;
@@ -27,15 +34,12 @@ header{
     background-color: #0964A1;
     width: 285px;
     height: 93px;   
-    top: 33px;
-    left: 813px;
+    border-radius: 30px;
 }
 #sesion{
 color: #FFFFFF;
 }
-.registrarse{
-    background-color: #18AC9C;
-}
-#regis{
+
+.regis{
     color: #FFFFFF;
 }
