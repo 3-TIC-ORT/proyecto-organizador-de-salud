@@ -1,6 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 161px;
+    width: 100%;
+    background-color: #00467B;
 }
 .forms{
     display: flex;
@@ -13,13 +19,13 @@ input{
     border-radius: 25px;
     
 }
-#flecha1{
+.flecha1{
     width: 102.01960911413546px;
     margin-top: 83px;
     margin-left: 1198px;
    
 }
-#REGISTRARSE{
+.REGISTRARSE{
     font-family: 'Inter', sans-serif;
     font-size: 58px;
     color: #000000;

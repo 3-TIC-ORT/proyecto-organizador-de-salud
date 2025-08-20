@@ -26,21 +26,22 @@ header{
     height: 93px;  
     border-radius: 30px;
     background-color: #18AC9C;
+      }
 
-    .regis{
+.regis{
         color: #FFFFFF;
     }
-}
+
 .iniciar{
     background-color: #0964A1;
     width: 285px;
     height: 93px;   
     border-radius: 30px;
-
+  }
     .sesion{
         color: #FFFFFF;
         }
- }
+ 
 
  main{
     width: 100%;
