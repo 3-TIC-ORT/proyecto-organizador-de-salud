@@ -1,3 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  width: 100%;
+    height: 160px;
+    background-color: #00477B;
+}
+body{
+  height: 100vh;
+  width: 100vw;
+}
+.titulo{
+  width: 50%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.tit{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400px;
+  font-size: 58px;
+}
+
 input {
     margin-bottom: 15px; 
     width: 1031px;
@@ -5,7 +34,18 @@ input {
     border-radius: 25px;
   }
 .forms{
+  width: 100%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.enviar{
+  width: 285px;
+  height: 93px;
+  border-radius: 30px;
+  background-color: #0964A1;
+  color: #FFFFFF;
+  font-family: 'inter', sans-serif;
+  font-size: 36px;
 }
