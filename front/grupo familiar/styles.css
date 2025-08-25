@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 161px;
+    width: 100%;
+    background-color: #00487B;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.agregar{
+    width: 913px;
+    height: 103px;
+    border-radius: 30px;
+    background-color: #0B6FA4;
+}

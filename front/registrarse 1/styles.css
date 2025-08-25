@@ -19,11 +19,11 @@ input{
     border-radius: 25px;
     
 }
-.flecha1{
-    width: 102.01960911413546px;
-    margin-top: 83px;
-    margin-left: 1198px;
-   
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 .REGISTRARSE{
     font-family: 'Inter', sans-serif;
