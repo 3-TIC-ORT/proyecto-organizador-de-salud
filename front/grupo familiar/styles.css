@@ -19,6 +19,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 .grupo{
     font-family: 'Inter', sans-serif;
@@ -31,6 +32,9 @@ main{
     height: 103px;
     border-radius: 30px;
     background-color: #0B6FA4;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 40px;
 }
 footer{
     width: 100%;
@@ -38,4 +42,14 @@ footer{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+.guardar{
+    width: 382px;
+    height: 103px;
+    border-radius: 30px;
+    background-color: #18AC9C;
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    color: white;
+
 }
