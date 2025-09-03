@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuVacuna — Calendario de vacunas</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root{
+      --azul:#0b4a6d;          /* primario (del escudo del logo) */
+      --azul-900:#08344b;
+      --azul-100:#e8f1f6;
+      --verde:#16b3a1;         /* check del logo */
+      --verde-700:#109080;
+      --teal:#20c4b3;
+      --gris:#6b7280;
+      --bg:#ffffff;
+      --text:#0d1321;
+      --shadow:0 6px 20px rgba(13,19,33,.08);
+      --radius:14px;
+      --radius-sm:9px;
+      --focus:0 0 0 3px color-mix(in oklab, var(--verde) 35%, transparent);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0d1117;
+        --text:#e6edf3;
+        --azul:#0f5a85;
+        --azul-100:#0c1b27;
+        --shadow:0 6px 20px rgba(0,0,0,.35);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.35;
+    }
+    a{color:var(--azul)}
+    .container{max-width:1100px;margin:auto;padding:20px}
+    /* Header */
+    header{
+      background:var(--azul);
+      color:#fff;
+      padding:10px 0;
+      box-shadow:var(--shadow);
+    }
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:700;
+      letter-spacing:.2px;
+    }
+    .brand img{
+      height:44px;width:auto;display:block;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+    }
+    .brand span{font-size:1.15rem}
+    .pill{
+      background:linear-gradient(135deg,var(--verde),var(--teal));
+      color:#fff;border:none;border-radius:999px;padding:10px 16px;
+      font-weight:600;cursor:pointer;
+      box-shadow:var(--shadow);
+      transition:transform .06s ease,opacity .15s ease;
+    }
+    .pill.small{padding:8px 12px;font-size:.92rem}
+    .pill:active{transform:translateY(1px)}
+    .pill.alt{background:#fff;color:var(--azul)}
+    .pill[disabled]{opacity:.65;cursor:not-allowed}
+    /* Hero */
+    .hero{
+      display:grid;gap:18px;align-items:center;
+      grid-template-columns: 1.2fr .8fr;
+      padding-block:20px 6px;
+    }
+    .hero h1{margin:0;font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;text-align:center}
+    .cta-row{display:flex;justify-content:center}
+    /* Grid 3 */
+    .grid{
+      display:grid;gap:16px;margin-top:8px;
+      grid-template-columns: 1.1fr 1fr;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      background:linear-gradient(0deg,rgba(255,255,255,.8),rgba(255,255,255,.8)), var(--azul-100);
+      border:1px solid color-mix(in oklab, var(--azul) 12%, transparent);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .card h2{margin:0 0 10px;font-size:1.05rem}
+    /* Next appointment card */
+    .next{
+      display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+    }
+    .badge{
+      background:color-mix(in oklab, var(--verde) 20%, transparent);
+      color:var(--verde-700);font-weight:700;border-radius:999px;padding:6px 10px;font-size:.82rem;
+    }
+    .muted{color:var(--gris)}
+    .progress{
+      height:10px;background:#e8eef3;border-radius:999px;overflow:hidden;
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)
+    }
+    .progress>span{
+      display:block;height:100%;background:linear-gradient(90deg,var(--verde),var(--teal));
+      width:0%
+    }
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .kpi{flex:1;min-width:120px;background:#fff;border-radius:12px;padding:10px;border:1px solid #e7eaef}
+    .kpi b{font-size:1.15rem}
+    /* Calendar */
+    .calendar{
+      --cell:42px;
+      background:#fff;border-radius:var(--radius);border:1px solid #e7eaef;padding:10px;
+    }
+    .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:8px}
+    .cal-title{font-weight:700}
+    .cal-actions{display:flex;gap:6px}
+    .iconbtn{
+      border:1px solid #dbe3ea;background:#fff;border-radius:10px;padding:8px;cursor:pointer
+    }
+    .iconbtn:focus{outline:none;box-shadow:var(--focus)}
+    .weekday{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;color:var(--gris);font-size:.85rem}
+    .grid-days{
+      margin-top:6px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px
+    }
+    .day{
+      height:var(--cell);border-radius:10px;display:flex;align-items:center;justify-content:center;
+      position:relative;border:1px solid #edf1f5;background:linear-gradient(180deg, #fff, #f9fbfd)
+    }
+    .day.out{opacity:.4}
+    .day.today{border-color:var(--verde);box-shadow:0 0 0 2px color-mix(in oklab, var(--verde) 30%, transparent) inset}
+    .dot{width:7px;height:7px;background:var(--verde);border-radius:999px;position:absolute;bottom:6px;left:50%;transform:translateX(-50%)}
+    .day[tabindex]:focus{outline:none;box-shadow:var(--focus)}
+    /* List */
+    .list{background:#fff;border:1px solid #e7eaef;border-radius:var(--radius);padding:12px}
+    .list-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+    .field{display:flex;align-items:center;background:#f3f6f9;border:1px solid #e7eaef;border-radius:10px;padding:8px 10px;gap:8px}
+    .field input{border:none;outline:none;background:transparent;min-width:200px}
+    table{width:100%;border-collapse:separate;border-spacing:0 8px}
+    th{font-size:.85rem;color:var(--gris);text-align:left;padding:0 8px}
+    td{background:#fff;border:1px solid #e7eaef;padding:10px;border-radius:10px}
+    .tag{padding:4px 8px;border-radius:999px;font-size:.8rem;font-weight:700;background:#e8f7f5;color:#0f7c6f}
+    /* Modal */
+    dialog{
+      width:min(620px,94vw);border:none;border-radius:16px;padding:0;overflow:hidden;
+      box-shadow:var(--shadow);background:var(--bg);color:var(--text)
+    }
+    dialog::backdrop{background:rgba(0,0,0,.35)}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--azul);color:#fff}
+    .modal-body{padding:16px}
+    .form-grid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    .form-grid .full{grid-column:1/-1}
+    label{font-size:.9rem;font-weight:600}
+    input,select,textarea{
+      width:100%;padding:10px;border-radius:10px;border:1px solid #dfe6ee;background:#fff;color:inherit
+    }
+    .modal-actions{display:flex;justify-content:flex-end;gap:8px;padding:12px 16px}
+    /* Footer CTA sticky on mobile */
+    .sticky{
+      position:sticky;bottom:0;background:linear-gradient(180deg, transparent, rgba(255,255,255,.9) 40%, rgba(255,255,255,1));
+      padding-top:16px;margin-top:8px
+    }
+    @media (max-width:560px){
+      .weekday{display:none}
+      .calendar{--cell:46px}
+      .kpi{min-width:46%}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container topbar" role="banner">
+      <div class="brand">
+        <!-- Cambiá la ruta si tu logo está en otra carpeta -->
+        <img src="LOGO COMPLETO.png" alt="Logo TuVacuna" onerror="this.style.display='none'">
+        <span>TuVacuna</span>
+      </div>
+      <div class="top-actions">
+        <button id="btnSync" class="pill small" aria-label="Conectar con Google Calendar">conectar con google calendar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="app">
+    <!-- HERO / TÍTULO -->
+    <section class="hero" aria-labelledby="titulo">
+      <div></div>
+      <h1 id="titulo">calendario de vacunas</h1>
+    </section>
+
+    <!-- RESUMEN + CALENDARIO -->
+    <section class="grid" aria-label="Resumen y calendario">
+      <article class="card">
+        <h2>Próxima vacuna</h2>
+        <div class="next">
+          <div class="badge" id="nextLabel">—</div>
+          <div>
+            <div><b id="nextName">Sin turnos</b></div>
+            <div class="muted" id="nextDate">Agregá tu primer turno 👇</div>
+            <div class="progress" aria-label="Progreso hacia la próxima vacuna"><span id="progressBar"></span></div>
+          </div>
+          <div class="kpis">
+            <div class="kpi"><div class="muted">Totales</div><b id="kTotal">0</b></div>
+            <div class="kpi"><div class="muted">Completadas</div><b id="kDone">0</b></div>
+            <div class="kpi"><div class="muted">Atrasadas</div><b id="kLate">0</b></div>
+          </div>
+        </div>
+        <div class="sticky">
+          <div class="cta-row"><button class="pill" id="btnNuevo">ingresar turno</button></div>
+        </div>
+      </article>
+
+      <article class="calendar" aria-label="Calendario mensual de vacunación">
+        <div class="cal-head">
+          <div class="cal-title" id="calTitle" aria-live="polite"></div>
+          <div class="cal-actions">
+            <button class="iconbtn" id="prev" aria-label="Mes anterior">◀</button>
+            <button class="iconbtn" id="today" aria-label="Ir a hoy">hoy</button>
+            <button class="iconbtn" id="next" aria-label="Mes siguiente">▶</button>
+          </div>
+        </div>
+        <div class="weekday" aria-hidden="true">
+          <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+        </div>
+        <div class="grid-days" id="gridDays" role="grid" aria-labelledby="calTitle"></div>
+      </article>
+    </section>
+
+    <!-- LISTA -->
+    <section class="list" style="margin-top:16px" aria-label="Lista de turnos">
+      <div class="list-tools">
+        <div class="field"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M10 4a6 6 0 104.472 10.027l4.25 4.25 1.414-1.414-4.25-4.25A6 6 0 0010 4z" stroke="#6b7280" stroke-width="2"/></svg>
+          <input id="search" type="search" placeholder="Buscar vacuna o centro…" aria-label="Buscar">
+        </div>
+        <select id="filterState" class="field" aria-label="Filtrar por estado">
+          <option value="all">Todas</option>
+          <option value="pending">Pendientes</option>
+          <option value="done">Completadas</option>
+          <option value="late">Atrasadas</option>
+        </select>
+        <button class="pill small" id="btnExport">exportar .ics</button>
+      </div>
+      <table aria-describedby="tablaHelp">
+        <thead>
+          <tr><th>Fecha</th><th>Vacuna</th><th>Centro</th><th>Dosis</th><th>Estado</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="tablaHelp" class="muted" style="font-size:.85rem;margin-top:6px">Consejo: marcá como completada para llevar control.</div>
+    </section>
+  </main>
+
+  <!-- MODAL NUEVO TURNO -->
+  <dialog id="dlg">
+    <form method="dialog" id="formTurno">
+      <div class="modal-head">
+        <strong>Ingresar turno</strong>
+        <button class="iconbtn" value="close" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-grid">
+          <div>
+            <label>Vacuna</label>
+            <input name="name" type="text" placeholder="Ej: Hepatitis B" required />
+          </div>
+          <div>
+            <label>Dosis</label>
+            <select name="dose" required>
+              <option value="1ra">1ra</option>
+              <option value="2da">2da</option>
+              <option value="Refuerzo">Refuerzo</option>
+            </select>
+          </div>
+          <div>
+            <label>Fecha</label>
+            <input name="date" type="date" required />
+          </div>
+          <div>
+            <label>Hora</label>
+            <input name="time" type="time" value="09:00" required />
+          </div>
+          <div class="full">
+            <label>Centro</label>
+            <input name="place" type="text" placeholder="Hospital / Vacunatorio" />
+          </div>
+          <div class="full">
+            <label>Notas</label>
+            <textarea name="notes" rows="3" placeholder="Requisitos, recordatorios, etc."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="pill alt" value="cancel">Cancelar</button>
+        <button class="pill" id="btnGuardar" value="save">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    // ---------- Utilidades ----------
+    const $ = s=>document.querySelector(s);
+    const $$ = s=>document.querySelectorAll(s);
+    const fmt = (d)=> new Intl.DateTimeFormat('es-AR',{dateStyle:'long'}).format(d);
+    const pad = n=> String(n).padStart(2,'0');
+    const todayISO = ()=> new Date().toISOString().slice(0,10);
+
+    function uid(){ return crypto.getRandomValues(new Uint32Array(1))[0].toString(36); }
+
+    function save(data){ localStorage.setItem('tuvacuna', JSON.stringify(data)); }
+    function load(){ try{ return JSON.parse(localStorage.getItem('tuvacuna')) ?? seed(); }catch{ return seed(); } }
+
+    function seed(){
+      const now = new Date();
+      const next = new Date(now); next.setDate(now.getDate()+5);
+      return {
+        events: [
+          {id:uid(), name:'Triple Viral', dose:'Refuerzo', date:next.toISOString().slice(0,10), time:'10:00', place:'Centro de Salud Norte', notes:'Llevar DNI', done:false},
+          {id:uid(), name:'Hepatitis B', dose:'1ra', date: new Date(now.getFullYear(), now.getMonth(), 2).toISOString().slice(0,10), time:'11:30', place:'Hospital Central', notes:'', done:true},
+        ]
+      };
+    }
+
+    // ICS file (RFC5545) for all future & pending events
+    function toICS(events){
+      const lines = [
+        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//TuVacuna//ES',
+      ];
+      for(const e of events){
+        const dt = e.date.replaceAll('-','') + 'T' + e.time.replace(':','') + '00';
+        lines.push(
+          'BEGIN:VEVENT',
+          'UID:'+e.id+'@tuvacuna',
+          'DTSTAMP:'+dt+'Z',
+          'DTSTART:'+dt,
+          'SUMMARY:'+escapeICS(`${e.name} ${e.dose?`(${e.dose})`:''}`.trim()),
+          'LOCATION:'+escapeICS(e.place||''),
+          'DESCRIPTION:'+escapeICS(e.notes||''),
+          'END:VEVENT'
+        );
+      }
+      lines.push('END:VCALENDAR');
+      return new Blob([lines.join('\r\n')], {type:'text/calendar'});
+    }
+    function escapeICS(t){ return (t||'').replace(/[,;\\]/g, m=> '\\'+m).replace(/\n/g,'\\n'); }
+
+    // Google Calendar link (rápido, sin API OAuth)
+    function gcalUrl(e){
+      const start = e.date.replaceAll('-','') + 'T' + e.time.replace(':','') + '00';
+      const end   = e.date.replaceAll('-','') + 'T' + (e.time.replace(':','') ) + '59';
+      const text = encodeURIComponent(`${e.name} ${e.dose?`(${e.dose})`:''}`.trim());
+      const details = encodeURIComponent(e.notes||'');
+      const location = encodeURIComponent(e.place||'');
+      return `https://calendar.google.com/calendar/u/0/r/eventedit?text=${text}&dates=${start}/${end}&details=${details}&location=${location}`;
+    }
+
+    // ---------- Estado ----------
+    let state = load();
+    let current = new Date(); // mes visible
+
+    // ---------- Render principal ----------
+    function render(){
+      renderKPIs();
+      renderNext();
+      renderTable();
+      renderCalendar();
+      save(state);
+    }
+
+    function renderKPIs(){
+      const total = state.events.length;
+      const done = state.events.filter(e=>e.done).length;
+      const late = state.events.filter(e=>!e.done && new Date(e.date) < stripTime(new Date())).length;
+      $('#kTotal').textContent = total;
+      $('#kDone').textContent = done;
+      $('#kLate').textContent = late;
+    }
+
+    function renderNext(){
+      const upcoming = state.events
+        .filter(e=>!e.done && new Date(e.date) >= stripTime(new Date()))
+        .sort((a,b)=> a.date.localeCompare(b.date))[0];
+
+      const bar = $('#progressBar');
+      if(upcoming){
+        $('#nextName').textContent = `${upcoming.name} — ${upcoming.dose}`;
+        $('#nextDate').textContent = `${fmt(new Date(upcoming.date))} a las ${upcoming.time}`;
+        $('#nextLabel').textContent = 'pendiente';
+        // progreso hacia la fecha
+        const now = stripTime(new Date());
+        const start = new Date(now);
+        const end = new Date(upcoming.date);
+        const total = (end - start) / (1000*60*60*24);
+        const passed = 0;
+        bar.style.width = Math.max(5, Math.min(100, (passed/Math.max(1,total))*100)) + '%';
+      }else{
+        $('#nextName').textContent = 'Sin turnos próximos';
+        $('#nextDate').textContent = 'Agregá tu primer turno 👇';
+        $('#nextLabel').textContent = '—';
+        bar.style.width = '0%';
+      }
+    }
+
+    function renderTable(){
+      const q = $('#search').value.toLowerCase();
+      const filter = $('#filterState').value;
+      const tbody = $('#tbody');
+      tbody.innerHTML = '';
+
+      const rows = state.events
+        .slice()
+        .sort((a,b)=> a.date.localeCompare(b.date))
+        .filter(e=>{
+          const matchQ = !q || [e.name,e.place,e.dose].join(' ').toLowerCase().includes(q);
+          const isLate = !e.done && new Date(e.date) < stripTime(new Date());
+          const matchF = filter==='all' || (filter==='pending' && !e.done && !isLate) || (filter==='done' && e.done) || (filter==='late' && isLate);
+          return matchQ && matchF;
+        });
+
+      for(const e of rows){
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${fmt(new Date(e.date))} ${e.time}</td>
+          <td><b>${e.name}</b></td>
+          <td>${e.place||'—'}</td>
+          <td>${e.dose||'—'}</td>
+          <td>${statusTag(e)}</td>
+          <td>
+            <button class="pill small alt" data-act="done" data-id="${e.id}">${e.done?'desmarcar':'completada'}</button>
+            <a class="pill small" href="${gcalUrl(e)}" target="_blank" rel="noopener">agregar a google</a>
+            <button class="iconbtn" data-act="del" data-id="${e.id}" title="Eliminar">🗑</button>
+          </td>`;
+        tbody.appendChild(tr);
+      }
+    }
+    function statusTag(e){
+      const isLate = !e.done && new Date(e.date) < stripTime(new Date());
+      if(e.done) return `<span class="tag">Completada</span>`;
+      if(isLate) return `<span class="tag" style="background:#ffebeb;color:#9b1c1c">Atrasada</span>`;
+      return `<span class="tag">Pendiente</span>`;
+    }
+
+    function renderCalendar(){
+      const title = $('#calTitle');
+      title.textContent = new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(current);
+
+      const grid = $('#gridDays');
+      grid.innerHTML = '';
+
+      const first = new Date(current.getFullYear(), current.getMonth(), 1);
+      const startIdx = (first.getDay()+6)%7; // Lunes=0
+      const daysInMonth = new Date(current.getFullYear(), current.getMonth()+1, 0).getDate();
+      const cells = 42; // 6 filas
+
+      const monthISO = (d)=> `${d.getFullYear()}-${pad(d.getMonth()+1)}`;
+      const eventsByDay = {};
+      for(const e of state.events){
+        const key = e.date;
+        (eventsByDay[key] ||= []).push(e);
+      }
+
+      for(let i=0;i<cells;i++){
+        const dayNum = i - startIdx + 1;
+        const date = new Date(current.getFullYear(), current.getMonth(), dayNum);
+        const inMonth = dayNum>=1 && dayNum<=daysInMonth;
+        const div = document.createElement('div');
+        div.className = 'day'+(inMonth?'':' out');
+        div.setAttribute('role','gridcell');
+
+        const iso = date.toISOString().slice(0,10);
+        div.textContent = date.getDate();
+        if(iso === todayISO()) div.classList.add('today');
+
+        if(eventsByDay[iso]){
+          const dot = document.createElement('span'); dot.className='dot'; div.appendChild(dot);
+          div.title = eventsByDay[iso].map(e=>`${e.time} • ${e.name} (${e.dose})`).join('\n');
+        }
+
+        if(inMonth){
+          div.tabIndex = 0;
+          div.addEventListener('dblclick', ()=>{
+            // precargar fecha al crear
+            $('#dlg').showModal();
+            $('#formTurno').date.value = iso;
+          });
+        }
+        grid.appendChild(div);
+      }
+    }
+
+    // ---------- Helpers ----------
+    function stripTime(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+
+    // ---------- Eventos UI ----------
+    $('#btnNuevo').addEventListener('click', ()=> $('#dlg').showModal());
+
+    $('#formTurno').addEventListener('submit', (ev)=>{
+      ev.preventDefault();
+      const f = ev.target;
+      const e = {
+        id:uid(), name:f.name.value.trim(), dose:f.dose.value,
+        date:f.date.value, time:f.time.value, place:f.place.value.trim(), notes:f.notes.value.trim(),
+        done:false
+      };
+      if(!e.name || !e.date || !e.time){ return; }
+      state.events.push(e);
+      $('#dlg').close();
+      render();
+      // Ofrecer descargar ICS del evento recién creado
+      const blob = toICS([e]);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `tuvacuna-${e.date}-${e.name.replace(/\s+/g,'-')}.ics`;
+      a.click(); URL.revokeObjectURL(a.href);
+    });
+
+    $('#tbody').addEventListener('click', (e)=>{
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      const id = btn.dataset.id;
+      const item = state.events.find(x=>x.id===id);
+      if(!item) return;
+      if(btn.dataset.act==='done'){ item.done = !item.done; render(); }
+      if(btn.dataset.act==='del'){ state.events = state.events.filter(x=>x.id!==id); render(); }
+    });
+
+    $('#search').addEventListener('input', renderTable);
+    $('#filterState').addEventListener('change', renderTable);
+
+    $('#btnExport').addEventListener('click', ()=>{
+      const future = state.events.filter(e=>!e.done);
+      const blob = toICS(future);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'tuvacuna-turnos.ics';
+      a.click(); URL.revokeObjectURL(a.href);
+    });
+
+    // Navegación calendario
+    $('#prev').addEventListener('click', ()=>{ current.setMonth(current.getMonth()-1); renderCalendar(); });
+    $('#next').addEventListener('click', ()=>{ current.setMonth(current.getMonth()+1); renderCalendar(); });
+    $('#today').addEventListener('click', ()=>{ current = new Date(); renderCalendar(); });
+
+    // “Conectar” (atajo a Google Calendar; si luego querés OAuth real, se cambia aquí)
+    $('#btnSync').addEventListener('click', ()=>{
+      window.open('https://calendar.google.com/calendar/u/0/r', '_blank','noopener');
+    });
+
+    // Inicializar
+    render();
+  </script>
+</body>
+</html>
