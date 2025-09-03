@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+  }
+  
+  .app-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  /* === Sidebar más grande === */
+  .sidebar {
+    width: 100px;
+    background-color: #009688;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  .icon span {
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .icon span:hover {
+    color: #cfcfcf;
+  }
+  
+  /* === Main Content === */
+  .content {
+    flex: 1;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+  }
+  
+  .greeting {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Título más grande y centrado */
+  .subtitle {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* === Botones más grandes y amplios === */
+  .buttons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  
+  .service-button {
+    flex: 1;
+    max-width: 200px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px solid #009688;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #009688;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+  }
+  
+  .service-button .material-icons {
+    font-size: 36px;
+  }
+  
+  .service-button:hover {
+    background-color: #009688;
+    color: white;
+  }
+  
+  /* === Sección de Fecha === */
+  .date-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #009688;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  
+  .date-section .material-icons {
+    font-size: 24px;
+  }
+  
+  /* === Caja gris inferior === */
+  .gray-box {
+    width: 100%;
+    flex: 1;
+    background-color: #cccccc;
+    border-radius: 10px;
+  }
+  
