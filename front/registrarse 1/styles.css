@@ -30,3 +30,6 @@ footer{
     font-size: 58px;
     color: #000000;
 }
+.flechaizq{
+    transform: rotate(180deg);
+}
