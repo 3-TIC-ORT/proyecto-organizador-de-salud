@@ -1,0 +1,139 @@
+:root {
+    --color-principal: #004b7c; /* Azul del logo */
+    --color-secundario: #3fc4b5; /* Verde aguamarina logo */
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f7;
+  }
+  
+  .header {
+    background-color: var(--color-principal);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .map-container {
+    display: flex;
+    height: calc(100vh - 80px);
+  }
+  
+  .sidebar {
+    width: 300px;
+    background-color: #fff;
+    padding: 25px;
+    border-right: 3px solid var(--color-secundario);
+    overflow-y: auto;
+  }
+  
+  .sidebar h3 {
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  #location-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #location-list li {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #location-list li:hover {
+    background-color: var(--color-secundario);
+    color: #fff;
+  }
+  
+  #map {
+    flex: 1;
+    height: 100%;
+    border-left: 3px solid var(--color-principal);
+  }
+  
+  .leaflet-popup-content {
+    font-size: 14px;
+  }
+  .header {
+    background-color: var(--color-principal);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: white;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-container {
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .brand-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .header-right .home-icon-button {
+    color: white;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  
+  .header-right .home-icon-button:hover {
+    background-color: #34b5a5;
+  }
+  
+  .material-icons {
+    font-size: 24px;
+  }
+  .logo-container {
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .logo-container:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+  }
+  
