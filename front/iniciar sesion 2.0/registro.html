@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="view-transition" content="same-origin">
+  <title>Registrarse</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="page-transitions.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="auth-card" aria-label="Registro de cuenta">
+      <!-- Izquierda: panel azul -->
+      <aside class="panel--blue left" aria-label="Acceso existente">
+        <h2>¡Hola de nuevo!</h2>
+        <p>Ya tenés cuenta y querés utilizar todas las funciones de la web.</p>
+        <!-- data-dir='back' para que el login entre desde la izquierda -->
+        <a class="btn btn-outline btn-wide vt-link" data-dir="back" href="login.html">INICIAR SESIÓN</a>
+      </aside>
+
+      <!-- Derecha: formulario de registro -->
+      <div class="panel--form">
+        <h1>REGISTRARSE</h1>
+
+        <div class="stepper" aria-label="Progreso del registro">
+          <span class="step is-active" aria-hidden="true"></span>
+          <span class="step" aria-hidden="true"></span>
+          <span class="step" aria-hidden="true"></span>
+        </div>
+
+        <form class="form" action="#" method="post" autocomplete="on" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre y apellido" required>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" inputmode="email" placeholder="tu@email.com" required>
+          </div>
+
+          <div class="field">
+            <label for="clave">Contraseña</label>
+            <input id="clave" name="clave" type="password" placeholder="••••••••" minlength="6" required>
+          </div>
+
+          <button class="btn btn-primary btn-wide" type="submit" aria-label="Siguiente paso">
+            SIGUIENTE  ▸
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

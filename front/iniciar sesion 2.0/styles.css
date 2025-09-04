@@ -1,0 +1,194 @@
+:root{
+    --primary:#0a4f7d;      /* azul principal */
+    --primary-600:#0d5e93;  /* hover */
+    --accent:#27c4b8;       /* verde-agua del stepper */
+    --ring:#63b9ff;
+    --text:#0b0b0c;
+    --muted:#5e6a75;
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --curve:220px;          /* radio grande para el panel azul */
+    --radius:14px;
+  }
+  
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+    color:var(--text);
+    background:linear-gradient(180deg,#f7fbff,#eef5fb);
+  }
+  
+  .page{
+    min-height:100dvh;
+    display:grid;
+    place-items:center;
+    padding:22px;
+  }
+  
+  /* Tarjeta principal (proporciones similares a tu captura) */
+  .auth-card{
+    width:min(100%, 1050px);
+    min-height:520px;                    /* altura de referencia */
+    background:var(--card);
+    border:2.5px solid #7cc3ff;
+    border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(10,25,41,.08);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 0.44fr 0.56fr;/* left 44% / right 56% */
+  }
+  
+  /* Panel azul (lado variable) */
+  .panel--blue{
+    background:var(--primary);
+    color:#fff;
+    padding:42px 36px;
+    display:grid;
+    align-content:center;
+    justify-items:center;
+    gap:18px;
+  }
+  .panel--blue.left{
+    border-top-right-radius:var(--curve);
+    border-bottom-right-radius:var(--curve);
+  }
+  .panel--blue.right{
+    border-top-left-radius:var(--curve);
+    border-bottom-left-radius:var(--curve);
+  }
+  
+  .panel--blue h2{
+    margin:0;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:.3px;
+    text-align:center;
+  }
+  .panel--blue p{
+    margin:0;
+    max-width:30ch;
+    font-weight:600;
+    color:#e9f3fa;
+    text-align:center;
+  }
+  
+  /* Panel formulario */
+  .panel--form{
+    padding:40px 44px;
+    display:grid;
+    align-content:start;
+    gap:24px;
+    background:#fff;
+  }
+  .panel--form h1{
+    margin:0;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:.6px;
+    text-align:left;
+  }
+  
+  .form{
+    display:grid;
+    gap:18px;
+  }
+  .field{display:grid; gap:8px;}
+  label{font-size:.95rem; font-weight:600; color:#16212b}
+  
+  input{
+    width:100%;
+    height:46px;                       /* alto similar al mock */
+    padding:0 16px;
+    font-size:1rem;
+    border:1.8px solid #dbe3ee;
+    border-radius:12px;
+    background:#f9fbfe;
+    transition:border-color .18s, box-shadow .18s, background .18s;
+  }
+  input::placeholder{color:#9aa8b6}
+  input:focus{
+    outline:0;
+    border-color:var(--ring);
+    background:#fff;
+    box-shadow:0 0 0 3px color-mix(in oklab, var(--ring) 30%, transparent);
+  }
+  
+  /* Botones */
+  .btn{
+    --h:48px;
+    height:var(--h);
+    padding:0 22px;
+    border-radius:12px;
+    font-weight:800;
+    letter-spacing:.3px;
+    border:0;
+    cursor:pointer;
+    display:inline-grid;
+    place-items:center;
+    transition:transform .04s ease, background .18s ease, box-shadow .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  
+  .btn-primary{
+    background:var(--primary);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(10,79,125,.22);
+  }
+  .btn-primary:hover{background:var(--primary-600)}
+  .btn-primary:focus{outline:0; box-shadow:0 0 0 3px var(--ring)}
+  
+  .btn-outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid #e7f3ff;
+  }
+  .btn-outline:hover{background:#0f5f99; border-color:#fff}
+  .btn-outline:focus{outline:0; box-shadow:0 0 0 3px rgba(255,255,255,.45)}
+  
+  .btn-wide{min-width:230px}            /* ancho del botón del mock */
+  
+  /* Link pequeño */
+  .link{
+    color:var(--text);
+    font-weight:600;
+    text-underline-offset:3px;
+    width:max-content;
+  }
+  .link:hover{color:var(--primary)}
+  .link:focus{outline:3px solid var(--ring); border-radius:6px}
+  
+  /* Stepper del registro */
+  .stepper{
+    display:flex;
+    gap:16px;
+    margin-top:6px;
+  }
+  .step{
+    width:84px;                         /* similar al mock */
+    height:8px;
+    border-radius:999px;
+    background:#dfe6ee;
+  }
+  .step.is-active{background:var(--accent)}
+  .step.is-done{background:color-mix(in oklab, var(--accent) 65%, #cfe9e6)}
+  
+  /* Responsive */
+  @media (max-width: 980px){
+    .auth-card{grid-template-columns: 0.48fr 0.52fr}
+    .panel--blue h2{font-size:30px}
+  }
+  @media (max-width: 780px){
+    .page{padding:14px}
+    .auth-card{grid-template-columns:1fr; min-height:unset}
+    .panel--blue.left,
+    .panel--blue.right{
+      border-radius:0 0 var(--radius) var(--radius);
+      padding:28px 22px 32px;
+    }
+    .panel--form{padding:28px 22px}
+    .btn-wide{min-width:unset; width:100%}
+    .stepper{justify-content:center}
+  }
+  
