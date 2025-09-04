@@ -53,3 +53,11 @@ aside{
   justify-content: center;
   font-family: 'inter', sans-serif;
 }
+.ing{
+  width: 10rem;
+  height: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+}
