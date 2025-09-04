@@ -1,60 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="view-transition" content="same-origin">
-  <title>Registrarse</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="page-transitions.js"></script>
+    body {
+      height: 100vh;
+      display: flex;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+    }
+
+    .left-panel {
+      width: 50%;
+      background-color: #004A80;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+      padding: 2rem;
+    }
+
+    .left-panel h2 {
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+
+    .left-panel p {
+      font-size: 14px;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+
+    .left-panel button {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 7px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .right-panel {
+      width: 50%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .right-panel h2 {
+      font-size: 20px;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .progress-bar {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-bottom: 2rem;
+    }
+
+    .progress-step {
+      flex: 1;
+      height: 5px;
+      background-color: #ddd;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+
+    .progress-step.active {
+      background-color: #2AD1A0;
+    }
+
+    .form-group {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .right-panel button {
+      background-color: #0066A1;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 7px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column-reverse;
+      }
+
+      .left-panel, .right-panel {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .progress-bar {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="page">
-    <section class="auth-card" aria-label="Registro de cuenta">
-      <!-- Izquierda: panel azul -->
-      <aside class="panel--blue left" aria-label="Acceso existente">
-        <h2>¡Hola de nuevo!</h2>
-        <p>Ya tenés cuenta y querés utilizar todas las funciones de la web.</p>
-        <!-- data-dir='back' para que el login entre desde la izquierda -->
-        <a class="btn btn-outline btn-wide vt-link" data-dir="back" href="login.html">INICIAR SESIÓN</a>
-      </aside>
+  <div class="container">
+    <!-- Panel izquierdo -->
+    <div class="left-panel">
+      <h2>¡Hola de nuevo!</h2>
+      <p>Ya tienes cuenta y quieres utilizar todas las funciones de la web</p>
+      <button>INICIAR SESION</button>
+    </div>
 
-      <!-- Derecha: formulario de registro -->
-      <div class="panel--form">
-        <h1>REGISTRARSE</h1>
+    <!-- Panel derecho -->
+    <div class="right-panel">
+      <h2>REGISTRARSE</h2>
 
-        <div class="stepper" aria-label="Progreso del registro">
-          <span class="step is-active" aria-hidden="true"></span>
-          <span class="step" aria-hidden="true"></span>
-          <span class="step" aria-hidden="true"></span>
-        </div>
-
-        <form class="form" action="#" method="post" autocomplete="on" novalidate>
-          <div class="field">
-            <label for="nombre">Nombre completo</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre y apellido" required>
-          </div>
-
-          <div class="field">
-            <label for="correo">Correo electrónico</label>
-            <input id="correo" name="correo" type="email" inputmode="email" placeholder="tu@email.com" required>
-          </div>
-
-          <div class="field">
-            <label for="clave">Contraseña</label>
-            <input id="clave" name="clave" type="password" placeholder="••••••••" minlength="6" required>
-          </div>
-
-          <button class="btn btn-primary btn-wide" type="submit" aria-label="Siguiente paso">
-            SIGUIENTE  ▸
-          </button>
-        </form>
+      <div class="progress-bar">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
       </div>
-    </section>
-  </main>
+
+      <div class="form-group">
+        <input type="text" placeholder="Nombre completo">
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Correo electrónico">
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Contraseña">
+      </div>
+
+      <button>SIGUIENTE ➤</button>
+    </div>
+  </div>
 </body>
 </html>
