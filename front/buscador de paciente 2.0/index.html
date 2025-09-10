@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buscador de paciente</title>
+  <style>
+    /* =========
+       Variables
+       ========= */
+    :root{
+      --brand-800:#0a4b6a;
+      --brand-700:#0c5a7e;
+      --brand-600:#0e6b94;
+      --surface:#ffffff;
+      --surface-2:#f2f5f7;
+      --text:#1f2a32;
+      --muted:#6b7b85;
+      --accent:#1bc4a3; /* botón */
+      --accent-700:#11a78b;
+      --ring:#8bd3f7;   /* focus */
+      --shadow:0 4px 14px rgba(0,0,0,.08);
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --brand-800:#063546;
+        --brand-700:#08455a;
+        --brand-600:#0a5871;
+        --surface:#0f1418;
+        --surface-2:#151c21;
+        --text:#e9eef2;
+        --muted:#a8b3bb;
+        --accent:#24d1b0;
+        --accent-700:#17b196;
+        --ring:#56b9ef;
+        --shadow:0 8px 20px rgba(0,0,0,.35);
+      }
+    }
+
+    /* =====
+       Reset
+       ===== */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:var(--surface-2);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    .sr-only{
+      position:absolute!important;
+      width:1px;height:1px;
+      padding:0;margin:-1px;overflow:hidden;
+      clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+
+    /* =========
+       Layout
+       ========= */
+    .container{
+      max-width:1100px;
+      margin-inline:auto;
+      padding:0 16px;
+    }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      background:linear-gradient(0deg,var(--brand-700),var(--brand-800));
+      box-shadow:0 2px 10px rgba(0,0,0,.15);
+    }
+    .bar{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      align-items:center;
+      gap:14px;
+      padding:10px 16px;
+      min-height:56px;
+    }
+
+    /* Search */
+    .search{width:100%}
+    .search input[type="search"]{
+      width:100%;
+      height:42px;
+      padding:10px 14px 10px 40px; /* deja espacio a la lupa */
+      border-radius:12px;
+      border:2px solid rgba(15,23,42,.8);
+      background:#dfe5e8;
+      color:#101825;
+      outline:0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+      transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-size:22px;
+      background-position:10px 50%;
+    }
+    .search input::placeholder{color:#5a646c}
+    .search input:hover{filter:brightness(0.98)}
+    .search input:focus-visible{
+      border-color:transparent;
+      box-shadow:0 0 0 4px var(--ring);
+      background:#edf1f4;
+    }
+    @media (prefers-color-scheme: dark){
+      .search input[type="search"]{
+        background:#2a343b;
+        color:var(--text);
+        border-color:#0b1014;
+        box-shadow:none;
+        background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23cfd8dc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+      }
+      .search input::placeholder{color:#9fb0ba}
+      .search input:focus-visible{background:#323e46}
+    }
+
+    /* Button */
+    .btn{
+      justify-self:end;
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      height:42px;
+      padding:0 16px;
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(180deg,var(--accent),var(--accent-700));
+      text-decoration:none;
+      font-weight:600;
+      letter-spacing:.2px;
+      border:0;
+      box-shadow:0 6px 14px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.25);
+      transition:transform .06s ease, filter .2s ease, box-shadow .2s ease;
+    }
+    .btn::before{
+      content:"+";
+      font-weight:800;
+      font-size:20px;
+      line-height:1;
+    }
+    .btn:hover{filter:brightness(1.03)}
+    .btn:active{transform:translateY(1px)}
+    .btn:focus-visible{outline:4px solid var(--ring); outline-offset:2px}
+
+    /* Main */
+    main{
+      padding:40px 0 64px;
+    }
+    h1{
+      margin:40px 0 24px;
+      text-align:center;
+      font-size:clamp(22px, 2.5vw + 8px, 28px);
+      font-weight:700;
+    }
+    .panel{
+      background:var(--surface);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    .empty{
+      margin-top:18px;
+      display:grid;
+      place-items:center;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* Responsive: en pantallas estrechas el botón baja abajo del input */
+    @media (max-width: 560px){
+      .bar{
+        grid-template-columns: 1fr;
+      }
+      .btn{justify-self:stretch; text-align:center}
+      main{padding-top:28px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container bar">
+      <form class="search" role="search" aria-label="Buscar pacientes">
+        <label for="q" class="sr-only">Buscar paciente</label>
+        <input id="q" name="q" type="search" placeholder="Buscar paciente…" />
+      </form>
+      <a class="btn" href="#" role="button" aria-label="Agregar paciente">agregar paciente</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Buscador de paciente</h1>
+
+    <section class="panel">
+      <p class="empty">
+        Usá el campo de búsqueda superior para encontrar pacientes por nombre, DNI o historia clínica.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
