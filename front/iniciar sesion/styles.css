@@ -22,13 +22,21 @@ article{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   flex-direction: column;
 }
 
+.olv{
+  color: black;
+  font-size: x-large;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+
+
 input {
     
-    width: 22rem;
+    width: 30rem;
     height: 8rem;
     border-radius: 25px;
   }
@@ -46,18 +54,42 @@ input {
 aside{
   height: 100%;
   width: 50rem;
-  background-color: aquamarine;
+  background-color: #00487B;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 5rem;
   font-family: 'inter', sans-serif;
+  border-top-left-radius: 4rem;
+  border-bottom-left-radius: 4rem;
 }
 .ing{
-  width: 10rem;
-  height: 2rem;
+  width: 18rem;
+  height: 10rem;
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
   text-align: center;
   display: flex;
+  color: #FFFFFF;
+}
+.regis{
+  height: 9rem;
+  width: 24.5rem;
+  border-color: #FFFFFF;
+  border-width: 5px;
+  border-radius: 4rem;
+  color: #FFFFFF;
+  background-color: #00487B;
+  font-size: xx-large;
+   }
+   .bien{
+color: #FFFFFF;
+}
+
+.regis:hover{
+  background-color: #5578ec;
+}
+.enviar:hover{
+  background-color: #85a3ff;
 }
