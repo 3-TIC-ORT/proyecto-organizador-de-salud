@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TuVacuna</title>
   <link rel="stylesheet" href="styles.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <div class="container">
-    
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
         <img src="https://img.icons8.com/ios-filled/50/4CAF50/shield.png" alt="TuVacuna"/>
@@ -29,39 +27,52 @@
       </div>
     </aside>
 
-    <!-- Main content -->
     <main class="main">
       <h1>Hola, <strong>xxx</strong>!</h1>
       <h2>¿Qué servicios brindamos?</h2>
 
-      <!-- Botones -->
       <div class="buttons">
-        <div class="icon-card">
-          <img src="https://img.icons8.com/ios-filled/50/0cb5b5/document.png" alt="Historial">
+        <div class="icon-card" id="btn-historial">
+          <img src="https://img.icons8.com/ios-filled/50/0cb5b5/document.png" alt="Historial"/>
           <span>Historial<br>vacunatorio</span>
         </div>
-        <div class="icon-card">
-          <img src="https://img.icons8.com/ios-filled/50/0cb5b5/family.png" alt="Grupo familiar">
+        <div class="icon-card" id="btn-familiar">
+          <img src="https://img.icons8.com/ios-filled/50/0cb5b5/family.png" alt="Grupo familiar"/>
           <span>Grupo<br>familiar</span>
         </div>
-        <div class="icon-card">
-          <img src="https://img.icons8.com/ios-filled/50/0cb5b5/marker.png" alt="Mapa">
+        <div class="icon-card" id="btn-mapa">
+          <img src="https://img.icons8.com/ios-filled/50/0cb5b5/marker.png" alt="Mapa"/>
           <span>Mapa de<br>centros</span>
         </div>
       </div>
 
-      <!-- Fecha -->
       <div class="date-box">
-        <img src="https://img.icons8.com/ios-filled/20/4CAF50/calendar.png" alt="Calendario">
-        <span>septiembre 2025</span>
+        <img src="https://img.icons8.com/ios-filled/20/4CAF50/calendar.png" alt="Calendario"/>
+        <span id="display-month-year">septiembre 2025</span>
       </div>
 
-      <!-- Espacio para el calendario -->
-      <div class="calendar-placeholder">
-        <!-- Aquí se insertará el calendario -->
-      </div>
-    </main>
-
+      <div class="calendar-placeholder" id="calendar">
+        <!-- Fecha y calendario en franja horizontal -->
+<div class="calendar-strip-container">
+  <div class="calendar-strip-header">
+    <button id="prevMonthBtn">←</button>
+    <span id="calendarStripMonth">septiembre 2025</span>
+    <button id="nextMonthBtn">→</button>
   </div>
+
+  <div class="calendar-strip" id="calendarStripDays">
+    <!-- Días se generan por JS -->
+  </div>
+</div>
+
+<script src="calendar.js"></script>
+<!-- Aquí va el calendario dinámico -->
+      </div>
+
+    </main>
+  </div>
+
+  <script src="calendar.js"></script>
 </body>
 </html>
+
