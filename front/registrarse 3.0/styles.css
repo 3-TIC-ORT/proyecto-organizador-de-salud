@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+
+}
+article{
+    height: 100%;
+    width: 35rem;
+    background-color: #00487B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    border-bottom-right-radius: 10rem;
+    border-top-right-radius: 10rem;
+    color: white;
+}
+aside{
+    height: 100%;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.hola{
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.txt{
+    width: 20rem;
+    height: 3rem;
+}
+.ya{
+    font-family: 'Inter', sans-serif;
+    font-weight: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.bot-sesion{
+    width: 10rem;
+    height: 4rem;
+    
+}
+.ses{
+    width: 10rem;
+    height: 4rem;
+    border-radius: 2rem;
+}
