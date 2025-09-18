@@ -13,7 +13,7 @@ main{
 var{
   
   font-family: 'Inter', sans-serif;
-  font-weight: 400px;
+  font-weight: bold;
   font-size: 2rem;
 }
 article{
@@ -32,12 +32,18 @@ article{
   font-weight: bold;
   font-family: 'Inter', sans-serif;
 }
-
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
 input {
     
-    width: 30rem;
-    height: 8rem;
+    width: 40rem;
+    height: 6rem;
     border-radius: 25px;
   }
 
@@ -47,7 +53,7 @@ input {
   border-radius: 30px;
   background-color: #0964A1;
   color: #FFFFFF;
-  font-family: 'inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
 }
 
@@ -60,7 +66,7 @@ aside{
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  font-family: 'inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   border-top-left-radius: 10rem;
   border-bottom-left-radius: 10rem;
 }
