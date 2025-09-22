@@ -321,7 +321,7 @@ body {
   background-color: #f0f0f0;
   cursor: default;
 }
-/* === CALENDARIO EN TIRA === */
+
 
 .calendar-strip-container {
   background-color: #ffffff;
@@ -329,6 +329,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 12px;
   margin-top: 20px;
+  width: 50rem;
 }
 
 .calendar-strip-header {
@@ -400,4 +401,8 @@ body {
   background-color: #0cb5b5;
   color: white;
   font-weight: bold;
+}
+.nombre{
+  width: 3rem;
+  height: 3rem;
 }
