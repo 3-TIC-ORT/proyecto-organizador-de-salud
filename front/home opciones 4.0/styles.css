@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Inter', sans-serif;
+}
+main{
+    display: flex;
+}
+.logo{
+    width: 298px;
+    height: 74.3px;
+}
+.tit-logo{
+    width: 298px;
+    height: 74.3px;
+}
+.opcion{
+    display: flex;
+    align-items: center;
+}
+.l1{
+    width: 32px;
+    height: 31px;
+}
