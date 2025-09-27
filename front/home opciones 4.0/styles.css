@@ -16,6 +16,7 @@ body{
 }
 main{
     display: flex;
+    height: 100%;
 }
 .logo{
     width: 298px;
@@ -47,10 +48,13 @@ article{
     height: 100%;   
     align-items: center; 
     color: var(--gris);
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  background-color: #F7F7F7;
 }
 .a2{
     width: 282px;
-    height: 428px;
+    height: 24rem;
     display: flex;
     flex-direction: column;
    
@@ -58,34 +62,33 @@ article{
 aside{
     width: calc(100% - 344px);
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    
 }
 .bot{
     display: flex;
 }
-.preg{
-    display: flex;
-    align-items: center;
-}
+
 .elegir{
-    width: 257px;
-    height: 320px;
+    width: 16rem;
+    height: 20rem;
     background-color: var(--color2);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    
     align-items: center;
     border-radius: 50px;
     border-width: 10px;
     border-color: var(--turquesa);
     color: var(--turquesa);
+    border: solid;
 }
 .hola{
     font-weight: 800;
     color: var(--azul);
     font-style: bold;
     font-size: 58px;
+    margin-left: 3rem;
 }
 .preg{
     font-weight: 400;
@@ -95,4 +98,24 @@ aside{
     font-size: 2rem;
     display: flex;
     justify-content: center;
+}
+.bot{
+    
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+
+}
+.luna{
+    font-style: normal;
+    font-size: 58px;
+    font-weight: 400;
+}
+.txt{
+    font-weight: 700;
+    font-style: bold;
+    text-align: center;
+
 }
