@@ -13,8 +13,8 @@ main{
 .mati{
   
   font-family: 'Inter', sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
+  font-weight: 800;
+  font-size: 3rem;
 }
 article{
   height: 100%;
@@ -22,7 +22,7 @@ article{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
   flex-direction: column;
 }
 
@@ -42,8 +42,8 @@ form{
 
 input {
     
-    width: 30rem;
-    height: 5rem;
+    width: 33rem;
+    height: 4.5rem;
     border-radius: 25px;
   }
 
