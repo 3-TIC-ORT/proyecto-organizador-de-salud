@@ -42,9 +42,9 @@ aside{
     align-items: center;
 }
 .lin{
-    width: 6rem;
-    height: 1rem;
-    border-radius: 1rem;
+    width: 11.1rem;
+    height: 1.25rem;
+    border-radius: 3.125rem;
 }
 .si{
     background-color: #18AC9C;
@@ -67,25 +67,28 @@ aside{
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: xx-large;
+    width: 24.6rem;
+    height: 3.6rem;
 }
 .txt{
-    width: 20rem;
-    height: 3rem;
+    width: 33.8rem;
+    height: 4.6rem;
 }
 .ya{
     font-family: 'Inter', sans-serif;
     font-weight: 2rem;
     font-size: 1.5rem;
     text-align: center;
+   
 }
 .bot-sesion{
-    width: 14rem;
-    height: 4rem;
+    width: 21rem;
+    height: 6.75rem;
     
 }
 .ses{
-    width: 14rem;
-    height: 4rem;
+    width: 21rem;
+  height: 6.75rem;
     border-radius: 1rem;
     font-family: 'Inter', sans-serif;
     font-size: x-large;
@@ -101,6 +104,8 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 37.5rem;
+    height: 2.6rem;
 }
 .regis-tit{
     font-family: 'Inter', sans-serif;
@@ -109,14 +114,14 @@ aside{
 }
 
 input{
-    height: 3rem;
-    width: 28rem;
-    border-radius: 1rem;
+    height: 4.25rem;
+    width: 33rem;
+    border-radius: 1.5rem;
 }
 .sig{
-    width: 10rem;
-    height: 4rem;
-    border-radius: 1rem;
+    width: 21rem;
+    height: 6.75rem;
+    border-radius: 1.5rem;
     background-color: #0964A1;
     color: white;
     font-family: 'Inter', sans-serif;

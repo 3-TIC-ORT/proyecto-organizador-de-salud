@@ -15,7 +15,9 @@ main{
   font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 3rem;
+  font-style: bolder;
 }
+
 article{
   height: 100%;
   width: 50rem;
@@ -37,7 +39,7 @@ form{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 input {
@@ -48,8 +50,8 @@ input {
   }
 
 .enviar{
-  width: 285px;
-  height: 93px;
+  width: 21rem;
+  height: 6.75rem;
   border-radius: 30px;
   background-color: #0964A1;
   color: #FFFFFF;
@@ -59,7 +61,7 @@ input {
 
 aside{
   height: 100%;
-  width: 35rem;
+  width: 34.6rem;
   background-color: #00487B;
   display: flex;
   flex-direction: column;
@@ -85,8 +87,8 @@ aside{
   font-weight: medium;
 }
 .regis{
-  height: 6rem;
-  width: 20rem;
+  height: 6.75rem;
+  width: 21rem;
   border-color: #FFFFFF;
   border-width: 5px;
   border-radius: 2rem;
@@ -103,4 +105,11 @@ color: #FFFFFF;
 }
 .enviar:hover{
   background-color: #85a3ff;
+}
+.espacio{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
