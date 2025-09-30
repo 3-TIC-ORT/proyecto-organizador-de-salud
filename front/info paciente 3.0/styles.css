@@ -3,18 +3,84 @@
     margin: 0;
     box-sizing: center;
 }
-aside{
-    height: 100%;
-    width: 21.5rem;
+:root{
+    --gris: #747474;
+    --color2: #F6F4F8;
+    --turquesa: #18AC9C;
+    --azul: #00467B;
 }
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Inter', sans-serif;
+}
+main{
+    display: flex;
+    height: 100%;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 344px;
+    height: 100%;   
+    align-items: center; 
+    color: var(--gris);
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  background-color: #F7F7F7;
+
 .tit-logo{
     height: 2.75rem;
     width: 12.25rem;
 }
-.opcion{
-    justify-content: center;
-    display: flex;
 }
+.opcion{
+    display: flex;
+    align-items: center;
+    width: 282px;
+    height: 60px;
+    gap: 1rem;
+    border-radius: 1.5rem;
+}
+
 .l1{
   color: #747474;
 }
+.barra-medio{
+
+        width: 100%;
+        height: 18rem;
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    
+}
+input{
+    height: 6.25rem;
+    width: 46.75rem;
+    border-radius: 1.5rem;
+}
+.nombres{
+    height: 5.6rem;
+    width: 46.75rem;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.abajo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+
