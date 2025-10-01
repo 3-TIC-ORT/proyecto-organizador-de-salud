@@ -11,10 +11,18 @@ main{
 }
 
 .mati{
-  
+  width: 28rem;
+  height: 3.6rem;
   font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 3rem;
+  font-style: bolder;
+  display: flex;
+  justify-content: center;
+}
+.tit{
+  font-size: 3rem;
+  font-weight: 800;
   font-style: bolder;
 }
 
@@ -84,18 +92,19 @@ aside{
 }
 .txt{
   font-size: 1.8rem;
-  font-weight: medium;
+  font-weight: 700;
 }
 .regis{
   height: 6.75rem;
   width: 21rem;
   border-color: #FFFFFF;
-  border-width: 5px;
+  border-width: .25rem;
   border-radius: 2rem;
+  border: solid;
   color: #FFFFFF;
   background-color: #00487B;
   font-size: xx-large;
-   }
+  }
 .bien{
 color: #FFFFFF;
 }

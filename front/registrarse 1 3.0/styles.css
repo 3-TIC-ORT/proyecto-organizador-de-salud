@@ -65,10 +65,14 @@ aside{
 }
 .hola{
     font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: xx-large;
     width: 24.6rem;
     height: 3.6rem;
+    display: flex;
+    justify-content: center;
+}
+.hola-txt{
+    font-weight: 800;
+    font-size: 3rem;
 }
 .txt{
     width: 33.8rem;
@@ -76,9 +80,10 @@ aside{
 }
 .ya{
     font-family: 'Inter', sans-serif;
-    font-weight: 2rem;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.8rem;
     text-align: center;
+    font-style: bold;
    
 }
 .bot-sesion{
@@ -97,6 +102,8 @@ aside{
     color: white;
     border-width: .3rem;
     border-color: white;
+    border: solid;
+    border-radius: 1.5rem;
 }
 .regis{
     width: 100%;
@@ -127,10 +134,16 @@ input{
     font-family: 'Inter', sans-serif;
     font-size: x-large;
     font-weight: bold;
+
 }
 .sig:hover{
     background-color: #0772be;
 }
 .ses:hover{
     background-color: #0772be;
+}
+.boton{
+    font-weight: 700;
+    font-style: bold;
+    font-size: 2.5rem;
 }
