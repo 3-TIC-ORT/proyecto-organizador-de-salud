@@ -33,11 +33,12 @@ main{
     height: 60px;
     gap: 1rem;
     border-radius: 1.875rem;
+    padding-left: 1rem;
 }
 
 
 
-.opcion :hover{
+.opcion:hover{
     background-color: var(--turquesa);
 }
 .estoy{
@@ -72,9 +73,7 @@ aside{
     height: 100%;
     
 }
-.bot{
-    display: flex;
-}
+
 
 .elegir{
     width: 16rem;
