@@ -42,9 +42,9 @@ aside{
     align-items: center;
 }
 .lin{
-    width: 6rem;
-    height: 1rem;
-    border-radius: 1rem;
+    width: 11.1rem;
+    height: 1.25rem;
+    border-radius: 3.125rem;
 }
 .si{
     background-color: #18AC9C;
@@ -65,27 +65,35 @@ aside{
 }
 .hola{
     font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: xx-large;
+    width: 24.6rem;
+    height: 3.6rem;
+    display: flex;
+    justify-content: center;
+}
+.hola-txt{
+    font-weight: 800;
+    font-size: 3rem;
 }
 .txt{
-    width: 20rem;
-    height: 3rem;
+    width: 33.8rem;
+    height: 4.6rem;
 }
 .ya{
     font-family: 'Inter', sans-serif;
-    font-weight: 2rem;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.8rem;
     text-align: center;
+    font-style: bold;
+   
 }
 .bot-sesion{
-    width: 14rem;
-    height: 4rem;
+    width: 21rem;
+    height: 6.75rem;
     
 }
 .ses{
-    width: 14rem;
-    height: 4rem;
+    width: 21rem;
+  height: 6.75rem;
     border-radius: 1rem;
     font-family: 'Inter', sans-serif;
     font-size: x-large;
@@ -94,6 +102,8 @@ aside{
     color: white;
     border-width: .3rem;
     border-color: white;
+    border: solid;
+    border-radius: 1.5rem;
 }
 .regis{
     width: 100%;
@@ -101,6 +111,8 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 37.5rem;
+    height: 2.6rem;
 }
 .regis-tit{
     font-family: 'Inter', sans-serif;
@@ -109,23 +121,29 @@ aside{
 }
 
 input{
-    height: 3rem;
-    width: 28rem;
-    border-radius: 1rem;
+    height: 4.25rem;
+    width: 33rem;
+    border-radius: 1.5rem;
 }
 .sig{
-    width: 10rem;
-    height: 4rem;
-    border-radius: 1rem;
+    width: 21rem;
+    height: 6.75rem;
+    border-radius: 1.5rem;
     background-color: #0964A1;
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: x-large;
     font-weight: bold;
+
 }
 .sig:hover{
     background-color: #0772be;
 }
 .ses:hover{
     background-color: #0772be;
+}
+.boton{
+    font-weight: 700;
+    font-style: bold;
+    font-size: 2.5rem;
 }
