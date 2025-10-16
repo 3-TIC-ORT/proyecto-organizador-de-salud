@@ -1,6 +1,17 @@
 [
-  "Benja",
-  "Luna",
-  "Mati",
-  "Santi"
+  {
+    "nombre": "Luu",
+    "contra": "123",
+    "nacimiento": "02/04/97",
+    "perfil": "medico",
+    "credencial": "1235465"
+  },
+  {
+    "nombre": "Luu",
+    "contra": "123",
+    "mail": "luu",
+    "nacimiento": "02/04/97",
+    "perfil": "medico",
+    "credencial": "1235465"
+  }
 ]
