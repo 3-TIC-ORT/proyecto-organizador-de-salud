@@ -1,3 +1,5 @@
+connect2server();
+
 let boton = document.getElementById("boton");
 
 
@@ -13,3 +15,17 @@ const regis = document.getElementById("bot-registrarse");
 regis.addEventListener("click", () => {
     window.location.href = "../registrarse 1 3.0/index.html";
 } );
+
+let nombre = document.getElementById("nombre");
+let contraseña = document.getElementById("contraseña");
+let mail = document.getElementById("mail");
+let datos= [nombre, contraseña, mail];
+postEvent("iniciarsesion", datos, (respuesta) =>{
+    if(respuesta.error){
+        alert("Error");
+    }
+    else {
+    alert ("Bienvenido")
+        window.location.href = "../home opciones 4.0/index.html";
+    }
+  })
