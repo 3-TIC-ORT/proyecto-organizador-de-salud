@@ -16,10 +16,11 @@ regis.addEventListener("click", () => {
     window.location.href = "../registrarse 1 3.0/index.html";
 } );
 
-let nombre = document.getElementById("nombre");
-let contraseña = document.getElementById("contraseña");
-let mail = document.getElementById("mail");
+let nombre = document.getElementById("nombre").value;
+let contraseña = document.getElementById("contraseña").value;
+let mail = document.getElementById("mail").value;
 let datos= [nombre, contraseña, mail];
+
 postEvent("iniciarsesion", datos, (respuesta) =>{
     if(respuesta.error){
         alert("Error");
