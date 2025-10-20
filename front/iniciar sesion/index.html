@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+<script src="main.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="styles.css"> 
 </head>
@@ -15,7 +18,7 @@
         <form>
             <input type="text" id="nombre" name="nombre" placeholder="  Escribe tu nombre" required> <br>
             <input type="text" id="contraseña" name="contraseña" placeholder="  Escriba su contraseña" required><br>
-            <input type="text" required><br>
+            <input type="text" id="mail" placeholder="Mail" required><br>
             <div class="espacio">
             <a href="../recuperar contraseña/index.html"><p class="olv">Recuperar contraseña</p> </a>
             <button class="enviar" id="boton">INGRESAR</button>

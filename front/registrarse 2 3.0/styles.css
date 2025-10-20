@@ -10,22 +10,10 @@ main{
     display: flex;
 
 }
-article{
-    height: 100%;
-    width: 35rem;
-    background-color: #00487B;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    border-bottom-right-radius: 10rem;
-    border-top-right-radius: 10rem;
-    color: white;
-}
+
 aside{
     height: 100%;
-    width: 50rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,6 +109,11 @@ aside{
 }
 
 input{
+    height: 4.25rem;
+    width: 33rem;
+    border-radius: 1.5rem;
+}
+select{
     height: 4.25rem;
     width: 33rem;
     border-radius: 1.5rem;
