@@ -24,8 +24,8 @@ function iniciosesión (nombre, contraseña, mail){
         }
     }
 }
-
-subscribePOSTEvent("iniciaarsesion", iniciosesión)
+registrarse("Benja","Benja123","bbaredes@gmail.com","17/11/2009","Paciente","OSDE" )
+subscribePOSTEvent("iniciarsesion", iniciosesión)
 startServer()
 //nombre y apellido, mail, contraseña, fecha de nacimiento, médico/paciente, matricula/obra social }
 //iniciosesión nombre y apellido, mail, contraseña
