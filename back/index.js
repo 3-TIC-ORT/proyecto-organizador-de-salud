@@ -13,19 +13,19 @@ function registrarse(nombre, contraseña, mail, nacimiento, perfil, matricula){
     console.log("Nombre agregado con éxito!");
 }
 
-function iniciosesión (nombre, contraseña, mail){
+function iniciosesion (nombre, contraseña, mail){
 
     let correcto = false;
     let usuarios = JSON.parse(data)
 
     for (var i = 0; i < usuarios.length; i++) {
-        if (nombre == usuarios[i].nombre && contraseña == usuarios[i].contra && mail == usuarios[i].mail) {
+        if (nombre == usuarios[i].nombre && contraseña == usuarios[i].contraseña && mail == usuarios[i].mail) {
             correcto = true;
+            return correcto;
         }
     }
 }
-registrarse("Benja","Benja123","bbaredes@gmail.com","17/11/2009","Paciente","OSDE" )
-subscribePOSTEvent("iniciarsesion", iniciosesión)
+subscribePOSTEvent("iniciarsesion", iniciosesion)
 startServer()
 //nombre y apellido, mail, contraseña, fecha de nacimiento, médico/paciente, matricula/obra social }
 //iniciosesión nombre y apellido, mail, contraseña
