@@ -1,0 +1,44 @@
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calendario - HTML, CSS y JS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="calendar">
+<header class="header">
+<div class="title">Calendario</div>
+<div class="controls">
+<button id="prev">◀</button>
+<button id="today">Hoy</button>
+<button id="next">▶</button>
+</div>
+</header>
+
+
+<section class="month-info">
+<h2 id="monthYear"></h2>
+</section>
+
+
+<div class="calendar-grid" id="calendarGrid">
+<!-- cabezal de días de la semana -->
+<div class="weekday">Lun</div>
+<div class="weekday">Mar</div>
+<div class="weekday">Mié</div>
+<div class="weekday">Jue</div>
+<div class="weekday">Vie</div>
+<div class="weekday">Sáb</div>
+<div class="weekday">Dom</div>
+<!-- los días se insertan desde JS -->
+</div>
+
+
+<div id="selectedInfo" class="selected-info" aria-live="polite"></div>
+</main>
+
+
+<script src="main.js"></script>
+</body>
+</html>
