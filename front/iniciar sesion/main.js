@@ -22,6 +22,7 @@ let mail = document.getElementById("mail").value;
 let datos= [nombre, contraseña, mail];
 
 postEvent("iniciarsesion", datos, (respuesta) =>{
+    console.log(respuesta);
     if(respuesta.error){
         alert("Error");
     }
