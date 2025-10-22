@@ -5,9 +5,10 @@ import fs from "fs";
 let usuariosjson = fs.readFileSync("usuarios.json", "utf-8");
 
 
-function registrarse(nombre, contraseña, mail, nacimiento, perfil, matricula){
+function registrarse(datos){
     let usuarios = JSON.parse(usuariosjson);
-    usuarios.push({"nombre": nombre, "contraseña": contraseña,"mail": mail, "nacimiento": nacimiento, "perfil": perfil, "matricula": matricula});
+    console.log(usuarios)
+    usuarios.push(datos);
     let nuevoJson = JSON.stringify(usuarios, null, 2);
     fs.writeFileSync("usuarios.json", nuevoJson);
     console.log("Nombre agregado con éxito!");
@@ -28,7 +29,14 @@ function iniciosesion (data){
 
     return {"msg":correcto};
 }
+
+
+
+
 subscribePOSTEvent("iniciarsesion", iniciosesion)
+subscribePOSTEvent("registrar", registrarse)
+subscribePOSTEvent("actualizar", actualizarse)
+
 startServer()
 //nombre y apellido, mail, contraseña, fecha de nacimiento, médico/paciente, matricula/obra social }
 //iniciosesión nombre y apellido, mail, contraseña

@@ -16,6 +16,7 @@ regis.addEventListener("click", () => {
     window.location.href = "../registrarse 1 3.0/index.html";
 } );
 
+
 function iniciarsesion(){
 let nombre = document.getElementById("nombre").value;
 let contraseña = document.getElementById("contraseña").value;

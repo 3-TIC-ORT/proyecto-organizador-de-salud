@@ -17,5 +17,8 @@
     "url": "https://github.com/3-TIC-ORT/proyecto-organizador-de-salud/issues"
   },
   "homepage": "https://github.com/3-TIC-ORT/proyecto-organizador-de-salud#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "soquetic": "^1.4.2"
+  }
 }

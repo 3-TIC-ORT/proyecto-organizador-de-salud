@@ -14,5 +14,13 @@
     "nacimiento": "17/11/2009",
     "perfil": "Paciente",
     "matricula": "OSDE"
+  },
+  {
+    "nombre": "Luu",
+    "contraseña": "kjahsd",
+    "mail": "luu@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
   }
 ]

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+    <script defer src="main.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -32,9 +35,9 @@
                 
             </div>
             <div class="form">
-                <input type="text" placeholder="  Nombre y apellido">
-                <input type="text" placeholder="  Mail">
-                <input type="text" placeholder="  Crear contraseña">
+                <input type="text" placeholder="  Nombre y apellido" id="nombre">
+                <input type="text" placeholder="  Mail" id="mail">
+                <input type="text" placeholder="  Crear contraseña" id="contraseña">
             </div>
             <div class="bot-regis">
             
@@ -43,6 +46,6 @@
             </div>
         </aside>
     </main>
-    <script src="main.js"></script>
+    
 </body>
 </html>
