@@ -1,18 +1,11 @@
 [
   {
     "nombre": "Luu",
-    "contra": "123",
-    "nacimiento": "02/04/97",
-    "perfil": "medico",
-    "credencial": "1235465"
-  },
-  {
-    "nombre": "Luu",
-    "contra": "123",
+    "contraseña": "123",
     "mail": "luu",
     "nacimiento": "02/04/97",
     "perfil": "medico",
-    "credencial": "1235465"
+    "matricula": "1235465"
   },
   {
     "nombre": "Benja",

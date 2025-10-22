@@ -2,28 +2,31 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 
 
-let data = fs.readFileSync("usuarios.json", "utf-8");
+let usuariosjson = fs.readFileSync("usuarios.json", "utf-8");
 
 
 function registrarse(nombre, contraseña, mail, nacimiento, perfil, matricula){
-    let usuarios = JSON.parse(data);
+    let usuarios = JSON.parse(usuariosjson);
     usuarios.push({"nombre": nombre, "contraseña": contraseña,"mail": mail, "nacimiento": nacimiento, "perfil": perfil, "matricula": matricula});
     let nuevoJson = JSON.stringify(usuarios, null, 2);
     fs.writeFileSync("usuarios.json", nuevoJson);
     console.log("Nombre agregado con éxito!");
 }
 
-function iniciosesion (nombre, contraseña, mail){
+function iniciosesion (data){
+    console.log("HOLA");
+
 
     let correcto = false;
-    let usuarios = JSON.parse(data)
+    let usuarios = JSON.parse(usuariosjson)
 
     for (var i = 0; i < usuarios.length; i++) {
-        if (nombre == usuarios[i].nombre && contraseña == usuarios[i].contraseña && mail == usuarios[i].mail) {
+        if (data.nombre == usuarios[i].nombre && data.contraseña == usuarios[i].contraseña && data.mail == usuarios[i].mail) {
             correcto = true;
-            return correcto;
         }
     }
+
+    return {"msg":correcto};
 }
 subscribePOSTEvent("iniciarsesion", iniciosesion)
 startServer()

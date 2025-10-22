@@ -16,10 +16,11 @@ regis.addEventListener("click", () => {
     window.location.href = "../registrarse 1 3.0/index.html";
 } );
 
+function iniciarsesion(){
 let nombre = document.getElementById("nombre").value;
 let contraseña = document.getElementById("contraseña").value;
 let mail = document.getElementById("mail").value;
-let datos= [nombre, contraseña, mail];
+let datos= [{"nombre":nombre, "contraseña":contraseña, "mail":mail}];
 
 postEvent("iniciarsesion", datos, (respuesta) =>{
     console.log(respuesta);
@@ -27,7 +28,11 @@ postEvent("iniciarsesion", datos, (respuesta) =>{
         alert("Error");
     }
     else {
-    alert ("Bienvenido")
+    
         window.location.href = "../home opciones 4.0/index.html";
+        
     }
   })
+}
+let submit = document.getElementById("boton");
+submit.addEventListener('click', iniciarsesion);
