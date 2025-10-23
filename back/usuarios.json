@@ -22,5 +22,11 @@
     "nacimiento": "",
     "perfil": "",
     "matricula": ""
+  },
+  {
+    "nombre": "Mati Dobi",
+    "nacimiento": "27/02/2010",
+    "perfil": "Medico",
+    "matricula": "OSDE"
   }
 ]

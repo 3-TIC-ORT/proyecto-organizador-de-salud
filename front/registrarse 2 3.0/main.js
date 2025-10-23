@@ -6,11 +6,11 @@ function enviar(){
 
 let nombre = localStorage["nombre"]
 let nacimiento = document.getElementById("nacimiento").value;
-let rol = document.getElementById("rol").value;
+let perfil = document.getElementById("perfil").value;
 let matricula = document.getElementById("matricula").value;
-let datos = {"nombre":nombre, "nacimiento": nacimiento, "perfil": rol, "matricula": matricula};
+let datos2 = {"nombre":nombre, "nacimiento": nacimiento, "perfil": perfil, "matricula": matricula};
 
-postEvent("actualizazr", datos, (respuesta) =>{
+postEvent("actualizar", datos2, (respuesta) =>{
     console.log(respuesta);
     if(respuesta.error){
         alert("Error");
