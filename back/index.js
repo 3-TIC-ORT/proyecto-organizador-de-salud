@@ -7,20 +7,31 @@ let usuariosjson = fs.readFileSync("usuarios.json", "utf-8");
 
 function registrarse(datos){
     let usuarios = JSON.parse(usuariosjson);
-    console.log(usuarios)
     usuarios.push(datos);
-    let nuevoJson = JSON.stringify(usuarios, null, 2);
-    fs.writeFileSync("usuarios.json", nuevoJson);
+
+    console.log("\n " + JSON.stringify(usuarios, null, 2))
+
+ //   let nuevoJson = JSON.stringify(usuarios, null, 2);
+    fs.writeFileSync("usuarios.json", JSON.stringify(usuarios, null, 2));
     console.log("Nombre agregado con éxito!");
+    return {msg:  true}
 }
+
 function actualizarse (datos2) {
     let usuarios = JSON.parse(usuariosjson);
 
-    // recorrer usuarios buscando el elemento que tenga de nombre lo que te mandó luna, si encontrar el elemento le modificas el valor de nacimiento, perfil y matricula por los valores que te mando lunna
-    
+    for (var i = 0; i < usuarios.length; i++) {
+        if (datos2.nombre == usuarios[i].nombre){
+            usuarios[i].nacimiento = datos2.nacimiento
+            usuarios[i].perfil = datos2.perfil
+            usuarios[i].matricula = datos2.matricula
+        }
+    }
     let nuevoJson2 = JSON.stringify(usuarios, null, 2);
     fs.writeFileSync("usuarios.json", nuevoJson2);
     console.log("Nombre agregado con éxito!");
+    return {msg:true}
+
 }
 function iniciosesion (data){
     console.log("HOLA");
