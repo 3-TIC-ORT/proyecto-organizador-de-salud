@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+    <script defer src="main.js"></script>
   <title>Calendario con eventos</title>
   <link rel="stylesheet" href="../assets/barra-lateral-paciente.css">
   <link rel="stylesheet" href="styles.css">
@@ -48,8 +51,6 @@
         </div>
     </article>
     <div class="calendario">
-      <div class="costado">
-      <div class="centrar">
   <div class="calendar" id="calendar">
     <div class="header">
       <button id="prev">&lt;</button>
@@ -61,19 +62,17 @@
   </div>
 </div>
   <!-- Modal para agregar eventos -->
-  <div class="modal" id="eventModal">
+  <div id="eventModal" class="modal">
     <div class="modal-content">
+      <span id="closeModalX" class="close">&times;</span> <!-- ❌ cruz -->
       <h3 id="modalTitle"></h3>
-      <input type="text" id="eventText" placeholder="Escribe un evento...">
-      <div class="modal-buttons">
-        <button id="saveEvent">Guardar</button>
-        <button id="closeModal">Cancelar</button>
-      </div>
       <ul id="eventList"></ul>
+      <input id="eventText" placeholder="Nuevo evento">
+      <button id="saveEvent">Guardar</button>
+      <button id="closeModal">Cancelar</button>
     </div>
   </div>
-</div>
-</div>
-  <script src="main.js"></script>
+  </div>
+  
 </body>
 </html>

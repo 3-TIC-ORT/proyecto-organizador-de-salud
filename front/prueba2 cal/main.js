@@ -1,3 +1,5 @@
+connect2Server();
+
 const weekdaysShort = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
 const monthNames = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let viewDate = new Date();
@@ -37,6 +39,8 @@ function render() {
 }
 
 function openModal(e) {
+  document.getElementById('closeModalX').onclick = () => modal.style.display = 'none';
+
   const date = e.target.dataset.date;
   const modal = document.getElementById('eventModal');
   const title = document.getElementById('modalTitle');
@@ -45,9 +49,24 @@ function openModal(e) {
   list.innerHTML = '';
 
   if (events[date]) {
-    events[date].forEach(ev => {
+    events[date].forEach((ev, idx) => {
       const li = document.createElement('li');
-      li.textContent = ev;
+      li.textContent = ev + ' ';
+      const delBtn = document.createElement('button');
+      delBtn.textContent = '🗑️';
+      delBtn.style.marginLeft = '8px';
+      delBtn.onclick = () => {
+        // eliminar evento según su índice
+        events[date].splice(idx, 1);
+        // si no quedan más eventos, borra la fecha del objeto
+        if (events[date].length === 0) delete events[date];
+        // guardar cambios en localStorage
+        localStorage.setItem("eventos", JSON.stringify(events));
+        // volver a renderizar todo y actualizar modal
+        render();
+        openModal({ target: { dataset: { date } } });
+      };
+      li.appendChild(delBtn);
       list.appendChild(li);
     });
   }
@@ -62,11 +81,14 @@ function saveEvent(date) {
   if (text === '') return;
   if (!events[date]) events[date] = [];
   events[date].push(text);
-  localStorage.setItem("eventos", JSON.stringify(events));
+  localStorage["eventos"]= JSON.stringify(events);
+  postEvent("calendario", JSON.stringify(events));
   document.getElementById('eventText').value = '';
   render(); // refresca el calendario
   openModal({target: {dataset: {date}}});
 }
+
+
 
 document.getElementById('prev').addEventListener('click', () => {
   viewDate.setMonth(viewDate.getMonth() - 1);
