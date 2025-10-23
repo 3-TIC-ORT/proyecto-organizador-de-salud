@@ -3,8 +3,31 @@
     padding: 0;
     box-sizing: border-box;
 }
-header{
-    background-color: #00487b;
-    width: 1440px;
-    height: 161px;
+button{
+ width: 24.22rem;
+ height: 5.62rem;   
+ border-radius: 1.56rem;
+ display: flex;
+}
+.aplicado{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.azul{
+    color: #00487B;
+    font-size: 3rem;
+}
+.vector{
+    width: 33px;
+    height: 32px;
+}
+.vacuna{
+
+}
+.tipo{
+    width: 16.68rem;
+    height: 1.43rem;
+    display: flex;
+    gap: 5rem;
 }
