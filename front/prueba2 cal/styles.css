@@ -51,8 +51,10 @@ body {
   .header button {
     border: 0;
     background: transparent;
-    font-size: 48px;
+    font-size: 80px;
     cursor: pointer;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
   
   .month-year {
@@ -108,27 +110,43 @@ body {
     bottom: 4px;
     right: 6px;
   }
+  .day:hover{
+    color: #555;
+  }
   
   /* Modal */
   .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   
   .modal-content {
-    background: white;
+    background: #fff;
     padding: 20px;
     border-radius: 12px;
-    width: 280px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 30rem;
+    height: 25rem;
+    position: relative;
   }
   
-  .modal-content h3 {
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal-content h2 {
     margin-top: 0;
+    font-size: 2rem;
   }
   
   .modal-buttons {
@@ -150,8 +168,32 @@ body {
     background: #f4f4f4;
     border-radius: 6px;
   }
+  .input-agregar{
+    width: 85%;
+    height: 3rem;
+  }
+  .inputyboton{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .botonmodal{
+    width: 6rem;
+    height: 3rem;
+    background-color: #0B6FA4;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+  }
+  .botonmodal:hover{
+    background-color: #3da2d8;
+  }
+  .botonesdelmodal{
+    display: flex;
+    gap: 1rem;
+  }
 
-  .close {
+ /* .close {
     position: absolute;
     top: 10px;
     right: 15px;

@@ -39,7 +39,7 @@ function render() {
 }
 
 function openModal(e) {
-  document.getElementById('closeModalX').onclick = () => modal.style.display = 'none';
+  
 
   const date = e.target.dataset.date;
   const modal = document.getElementById('eventModal');
@@ -73,8 +73,15 @@ function openModal(e) {
 
   modal.style.display = 'flex';
   document.getElementById('saveEvent').onclick = () => saveEvent(date);
-  document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+  document.getElementById('closeModal').onclick = closeModal;
+  document.getElementById('closeModalX').onclick = closeModal;
 }
+function closeModal() {
+  const modal = document.getElementById('eventModal');
+  modal.style.display = 'none';
+  document.getElementById('eventText').value = ''; // limpia el campo de texto
+}
+
 
 function saveEvent(date) {
   const text = document.getElementById('eventText').value.trim();
@@ -102,3 +109,4 @@ document.getElementById('next').addEventListener('click', () => {
 
 buildWeekdays();
 render();
+

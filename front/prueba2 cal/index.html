@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="a2">
-            <div class="opcion estoy">
+            <div class="opcion">
                 <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
                 <h3>Home</h3>
             </div>
@@ -26,7 +26,7 @@
                 <img src="../assets/fotos/librogris.png" alt="libro" class="l1">
                 <h3>Historial vacunatorio</h3>
             </div>
-            <div class="opcion">
+            <div class="opcion estoy">
                 <img src="../assets/fotos/calendariogris.png" alt="calendario" class="l1">
                 <h3>Calendario</h3>
             </div>
@@ -65,11 +65,16 @@
   <div id="eventModal" class="modal">
     <div class="modal-content">
       <span id="closeModalX" class="close">&times;</span> <!-- ❌ cruz -->
-      <h3 id="modalTitle"></h3>
-      <ul id="eventList"></ul>
-      <input id="eventText" placeholder="Nuevo evento">
-      <button id="saveEvent">Guardar</button>
-      <button id="closeModal">Cancelar</button>
+      <h2 id="modalTitle"></h2>
+      
+      <div class="inputyboton">
+      <input id="eventText" class="input-agregar" placeholder="  Nuevo evento">
+      <div class="botonesdelmodal">
+      <button id="saveEvent" class="botonmodal guardar">Guardar</button>
+      <button id="closeModal" class="botonmodal cancelar">Cancelar</button>
+    </div>
+    </div>
+    <ul id="eventList"></ul>
     </div>
   </div>
   </div>
