@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+<script defer src="main.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -50,6 +53,7 @@
         <aside>
             <div class="tit">
                 <h1 class="hola">Hola XXX!</h1>
+                <h1 id="nombre"></h1>
             </div>
             <div class="b2">
                 <div class="preg">
@@ -61,7 +65,7 @@
                         <img src="./libro.png" alt="Libro">
                     </div>
                     <div class="txt">
-                        <h3>Hisorial <br> vacunatorio</h3>
+                        <h3>Historial <br> vacunatorio</h3>
                     </div>
                 </div>
                 <div class="elegir">
