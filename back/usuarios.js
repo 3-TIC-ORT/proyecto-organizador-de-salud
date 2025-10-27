@@ -2,13 +2,9 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 
 
-let usuariosjson = fs.readFileSync("usuarios.json", "utf-8");
-
-
 function registrarse(datos){
-    let usuarios = JSON.parse(usuariosjson);
+    let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
     usuarios.push(datos);
-
     console.log("\n " + JSON.stringify(usuarios, null, 2))
 
  //   let nuevoJson = JSON.stringify(usuarios, null, 2);
@@ -20,62 +16,69 @@ function registrarse(datos){
 
 
 function actualizarse (datos2) {
-    let usuariosjson2 = fs.readFileSync("usuarios.json", "utf-8");
-    let usuarios2 = JSON.parse(usuariosjson2);
+    let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
 
-    for (var i = 0; i < usuarios2.length; i++) {
-        if (datos2.nombre == usuarios2[i].nombre){
-            usuarios2[i].nacimiento = datos2.nacimiento
-            usuarios2[i].perfil = datos2.perfil
-            usuarios2[i].matricula = datos2.matricula
+    for (var i = 0; i < usuarios.length; i++) {
+        if (datos2.nombre == usuarios[i].nombre){
+            usuarios[i].nacimiento = datos2.nacimiento
+            usuarios[i].perfil = datos2.perfil
+            usuarios[i].matricula = datos2.matricula
         }
     }
-    let nuevoJson2 = JSON.stringify(usuarios2, null, 2);
-    fs.writeFileSync("usuarios.json", nuevoJson2);
+    let nuevoJson = JSON.stringify(usuarios, null, 2);
+    fs.writeFileSync("usuarios.json", nuevoJson);
     console.log("Nombre agregado con éxito!");
     return {msg:true}
 
 }
 function iniciosesion (data){
-    console.log("HOLA");
 
     let correcto = false;
-    let usuarios = JSON.parse(usuariosjson)
+    let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
+    let resultado = {"msg": false, "case": "5"};
 
     for (var i = 0; i < usuarios.length; i++) {
+
+        if (data.nombre == usuarios[i].nombre) {
+            console.log(nombre)
+        }
+        else if (data.contraseña == usuarios[i].contraseña) {
+            console.log(contraseña)
+        }
+        else if (data.mail == usuarios[i].mail) {
+            console.log(mail)
+        }
+
+
         if (data.nombre == usuarios[i].nombre && data.contraseña == usuarios[i].contraseña && data.mail == usuarios[i].mail) {
-            correcto = true;
-            return {"msg":correcto};
+            resultado = {"msg": true, "case": "1"};
+            break;
         }
         else if (data.nombre != usuarios[i].nombre && data.contraseña == usuarios[i].contraseña && data.mail == usuarios[i].mail) {
-            correcto = false;
-            return {"msg":correcto};
+            resultado = {"msg":correcto, "case": "2"};
         }
         else if (data.nombre != usuarios[i].nombre && data.contraseña != usuarios[i].contraseña && data.mail == usuarios[i].mail) {
-            correcto = false;
-            return {"msg":correcto};
+            resultado = {"msg":correcto, "case": "3"};
         }
         else if (data.nombre != usuarios[i].nombre && data.contraseña == usuarios[i].contraseña && data.mail != usuarios[i].mail) {
-            correcto = false;
-            return {"msg":correcto};
+            resultado = {"msg":correcto, "case": "4"};
         }
         else if (data.nombre != usuarios[i].nombre && data.contraseña != usuarios[i].contraseña && data.mail != usuarios[i].mail) {
-            correcto = false;
-            return {"msg":correcto};
+            resultado = {"msg":correcto, "case": "5", data};
         }
         else if (data.nombre == usuarios[i].nombre && data.contraseña != usuarios[i].contraseña && data.mail == usuarios[i].mail) {
             correcto = false;
-            return {"msg":correcto};
+            return {"msg":correcto, "case": "6"};
         }
         else if (data.nombre == usuarios[i].nombre && data.contraseña != usuarios[i].contraseña && data.mail != usuarios[i].mail) {
-            correcto = false;
-            return {"msg":correcto};
+            resultado = {"msg":correcto, "case": "7"};
         }
         else if (data.nombre == usuarios[i].nombre && data.contraseña == usuarios[i].contraseña && data.mail != usuarios[i].mail) {
-            correcto = false;
-            return {"msg":correcto};
+            resultado = {"msg":correcto, "case": "8"};
         }
-    }    
+    }
+    console.log("Resultado:", resultado);
+    return resultado;    
 }
 
 subscribePOSTEvent("iniciarsesion", iniciosesion)
