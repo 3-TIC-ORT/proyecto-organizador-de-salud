@@ -6,19 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="../assets/barra-lateral-paciente.css">
   <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <header class="header">
-        <div class="header-left">
-          <div class="logo-container">
-            <img src="LOGO COMPLETO.png" alt="Tu Vacuna" class="logo">
-          </div>
-          <span class="brand-name">TuVacuna</span>
+  <article>
+    <div class="a1">
+        <div class="logo">
+            <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
         </div>
-      </header>
+    </div>
+    <div class="a2">
+        <div class="opcion" id="home">
+            <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
+            <h3>Home</h3>
+        </div>
+        <div class="opcion" id="historial">
+            <img src="../assets/fotos/librogris.png" alt="libro" class="l1">
+            <h3>Historial vacunatorio</h3>
+        </div>
+        <div class="opcion estoy" id="calendario">
+            <img src="../assets/fotos/calendariogris.png" alt="calendario" class="l1">
+            <h3>Calendario</h3>
+        </div>
+        <div class="opcion" id="grupofam">
+            <img src="../assets/fotos/familiagris.png" alt="familia" class="l1">
+            <h3>Grupo familiar</h3>
+        </div>
+        <div class="opcion" id="mapa">
+            <img src="../assets/fotos/mapagris.png" alt="mapa" class="l1">
+            <h3>Mapa de centros</h3>
+        </div>
+    </div>
+    <div class="a3">
+        <div class="opcion">
+            <img src="../assets/fotos/usuario.png" alt="usuario" class="l1">
+            <h3>Pedro Gonzales</h3>
+        </div>
+        <div class="opcion">
+            <img src="../assets/fotos/cerrar.png" alt="cerrar sesion" class="l1">
+            <h3>Cerrar sesion</h3>
+        </div>
+    </div>
+</article>
       
-      
+     <aside> 
   <div class="map-container">
     <aside class="sidebar">
       <h3>Centros Vacunatorios</h3>
@@ -27,6 +60,8 @@
 
     <div id="map"></div>
   </div>
+</aside> 
+  <script src="../assets/paciente.js"></script>
 
   <script src="app.js"></script>
 </body>

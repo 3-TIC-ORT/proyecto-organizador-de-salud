@@ -7,31 +7,42 @@
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f4f7;
+    display: flex;
+   
   }
   
-  .header {
-    background-color: var(--color-principal);
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  }
+ 
   
   .logo {
     height: 50px;
   }
+  aside{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
+  }
   .map-container {
     display: flex;
-    height: calc(100vh - 80px);
+    height: 80%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    border: solid 9px #00467B;
   }
   
   .sidebar {
-    width: 300px;
+    
     background-color: #fff;
-    padding: 25px;
+    
     border-right: 3px solid var(--color-secundario);
     overflow-y: auto;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   .sidebar h3 {
@@ -67,73 +78,6 @@
   .leaflet-popup-content {
     font-size: 14px;
   }
-  .header {
-    background-color: var(--color-principal);
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    color: white;
-  }
+
   
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .logo-container {
-    background-color: white;
-    padding: 5px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo {
-    height: 40px;
-  }
-  
-  .brand-name {
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .header-right .home-icon-button {
-    color: white;
-    text-decoration: none;
-    padding: 6px;
-    border-radius: 50%;
-    background-color: var(--color-secundario);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-  }
-  
-  .header-right .home-icon-button:hover {
-    background-color: #34b5a5;
-  }
-  
-  .material-icons {
-    font-size: 24px;
-  }
-  .logo-container {
-    background-color: white;
-    padding: 5px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s, transform 0.2s;
-    cursor: pointer;
-  }
-  
-  .logo-container:hover {
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transform: scale(1.05);
-  }
   
