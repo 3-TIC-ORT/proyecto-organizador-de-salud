@@ -76,8 +76,8 @@ aside{
 
 
 .elegir{
-    width: 16rem;
-    height: 19rem;
+    width: 14rem;
+    height: 17rem;
     background-color: var(--color2);
     display: flex;
     flex-direction: column;
@@ -85,10 +85,11 @@ aside{
     
     align-items: center;
     border-radius: 50px;
-    border-width: 10px;
+    border-width: 10rem;
     border-color: var(--turquesa);
     color: var(--turquesa);
     border: solid;
+    border: .5rem solid;
 }
 .hola{
     font-weight: 800;
@@ -124,5 +125,5 @@ aside{
     font-weight: 700;
     font-style: bold;
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
 }
