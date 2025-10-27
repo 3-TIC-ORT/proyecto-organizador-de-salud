@@ -52,5 +52,13 @@
     "nacimiento": "",
     "perfil": "",
     "matricula": ""
+  },
+  {
+    "nombre": "Santiago Winnykamien",
+    "contraseña": "s8123qaz",
+    "mail": "santiwinny@gmail.com",
+    "nacimiento": "04/02/2010",
+    "perfil": "Paciente",
+    "matricula": "Osde"
   }
 ]
