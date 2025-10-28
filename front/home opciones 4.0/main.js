@@ -1,10 +1,10 @@
 connect2Server()
 
-let nombre = document.getElementById("nombre");
+let nombres = document.getElementById("nombre");
 
 getEvent("nombre", asignarNombre);
 
-function asignarNombre(usuario){
-    nombre.textContent = usuario
+function asignarNombre(nombre){
+    nombres.textContent = nombre
 }
 
