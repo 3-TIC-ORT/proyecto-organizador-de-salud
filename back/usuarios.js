@@ -53,32 +53,31 @@ function iniciosesion(data) {
             break;
         }
         else if (data[0].nombre != usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
-            resultado = { "msg": correcto, "case": "2" };
+            resultado = { "msg": false, "case": "2" };
         }
         else if (data[0].nombre != usuarios[i].nombre && data[0].contraseña != usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
-            resultado = { "msg": correcto, "case": "3" };
+            resultado = { "msg": false, "case": "3" };
         }
         else if (data[0].nombre != usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail != usuarios[i].mail) {
-            resultado = { "msg": correcto, "case": "4" };
+            resultado = { "msg": false, "case": "4" };
         }
         else if (data[0].nombre != usuarios[i].nombre && data[0].contraseña != usuarios[i].contraseña && data[0].mail != usuarios[i].mail) {
-            resultado = { "msg": correcto, "case": "5", data };
+            resultado = { "msg": false, "case": "5" };
         }
         else if (data[0].nombre == usuarios[i].nombre && data[0].contraseña != usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
             correcto = false;
-            return { "msg": correcto, "case": "6" };
+            return { "msg": false, "case": "6" };
         }
         else if (data[0].nombre == usuarios[i].nombre && data[0].contraseña != usuarios[i].contraseña && data[0].mail != usuarios[i].mail) {
-            resultado = { "msg": correcto, "case": "7" };
+            resultado = { "msg": false, "case": "7" };
         }
         else if (data[0].nombre == usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail != usuarios[i].mail) {
-            resultado = { "msg": correcto, "case": "8" };
+            resultado = { "msg": false, "case": "8" };
         }
     }
     console.log("Resultado:", resultado);
     return resultado;
 }
-
 
 subscribePOSTEvent("iniciarsesion", iniciosesion)
 subscribePOSTEvent("registrar", registrarse)
