@@ -49,7 +49,7 @@ function iniciosesion(data) {
         //console.log("=====================================");
 
         if (data[0].nombre == usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
-            resultado = { "msg": true, "case": "1" };
+            resultado = { "msg": true, "case": "1", "perfil": usuarios[i].perfil};
             break;
         }
         else if (data[0].nombre != usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
