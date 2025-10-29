@@ -29,9 +29,16 @@ postEvent("iniciarsesion", datos, (respuesta) =>{
         alert("Error");
     }
     else {
+
+        if(respuesta.perfi == "paciente"){
+
+        
     
         window.location.href = "../home opciones 4.0/index.html";
-        
+        }
+        else if(respuesta.perfi == "medico"){
+            window.location.href = "../buscador/index.html";
+        }
     }
   })
 }
