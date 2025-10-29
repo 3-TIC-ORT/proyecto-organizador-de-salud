@@ -60,5 +60,13 @@
     "nacimiento": "04/02/2010",
     "perfil": "Paciente",
     "matricula": "Osde"
+  },
+  {
+    "nombre": "Benja123",
+    "contraseña": "Benja123",
+    "mail": "bbaredes@gmail.com",
+    "nacimiento": "justo",
+    "perfil": "Paciente",
+    "matricula": "Osde"
   }
 ]

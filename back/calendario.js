@@ -2,5 +2,7 @@ import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } fro
 import fs from "fs";
 
 
-let usuariosjson = fs.readFileSync("calendario.json", "utf-8");
-
+function calendario(events){
+    let usuariosjson = JSON.parse(fs.readFileSync("calendario.json", "utf-8"));
+    
+}
