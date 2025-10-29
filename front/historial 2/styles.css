@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.aplicado{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.azul{
+    color: #00487B;
+    font-size: 3rem;
+}
+
+.abajo{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 15rem;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+h1{
+font-size: 3rem;
+}
+.arriba{
+text-align: center;
+}
+.formulario{
+    width: 49.5rem;
+    height: 9.5rem;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    border: 2px;
+}
