@@ -28,12 +28,10 @@ postEvent("iniciarsesion", datos, (respuesta) =>{
     if(respuesta.msg == false){
         alert("Error");
     }
-    else {
+    else if(respuesta.msg == true){
 
         if(respuesta.perfi == "paciente"){
 
-        
-    
         window.location.href = "../home opciones 4.0/index.html";
         }
         else if(respuesta.perfi == "medico"){

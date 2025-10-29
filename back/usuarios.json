@@ -68,5 +68,21 @@
     "nacimiento": "justo",
     "perfil": "Paciente",
     "matricula": "Osde"
+  },
+  {
+    "nombre": ".",
+    "contraseña": ".",
+    "mail": ".",
+    "nacimiento": ".",
+    "perfil": "Paciente",
+    "matricula": "."
+  },
+  {
+    "nombre": "luna",
+    "contraseña": ".",
+    "mail": ".",
+    "nacimiento": "22/05/10",
+    "perfil": "Paciente",
+    "matricula": "."
   }
 ]

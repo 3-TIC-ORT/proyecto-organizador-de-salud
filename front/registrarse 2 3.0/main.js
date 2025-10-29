@@ -12,15 +12,19 @@ let datos2 = {"nombre":nombre, "nacimiento": nacimiento, "perfil": perfil, "matr
 
 postEvent("actualizar", datos2, (respuesta) =>{
     console.log(respuesta);
-    if(respuesta.error){
+    if(respuesta.msg == false){
         alert("Error");
     }
     else {
+
+        
         alert("Su usuario ha sido creado con exito!");
         window.location.href = "../home opciones 4.0/index.html";
+        }
+        
     }
-  });
-}
+)};
+
 
 let boton = document.getElementById("bot-siguiente");
 boton.addEventListener("click", enviar);
