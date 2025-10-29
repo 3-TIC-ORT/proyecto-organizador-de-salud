@@ -40,6 +40,7 @@ main{
 
 .opcion:hover{
     background-color: var(--turquesa);
+    color: white;
 }
 .estoy{
     background-color: var(--turquesa);

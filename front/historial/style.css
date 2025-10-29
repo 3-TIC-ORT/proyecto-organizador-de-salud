@@ -35,6 +35,7 @@ button{
 .abajo{
     display: flex;
     gap: 2rem;
+    margin-bottom: 10rem;
 }
 
 aside{

@@ -19,7 +19,7 @@ main{
     height: 100%;
 }
 
-aside{
+article{
     width: calc(100% - 344px);
     height: 100%;
     display: flex;
@@ -90,4 +90,8 @@ aside{
 }
 .elegir:hover{
     padding-bottom: 1rem;
+}
+.fotito{
+    width: 100px;
+    height: 100px;
 }
