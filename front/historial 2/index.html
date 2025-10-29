@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
-<script defer src="main.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="barra-lateral-paciente.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../assets/barra-lateral-paciente.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
-         <article>
+        <article>
             <div class="a1">
                 <div class="logo">
                     <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
                 </div>
             </div>
             <div class="a2">
-                <div class="opcion" id="home">
+                <div class="opcion estoy" id="home">
                     <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
                     <h3>Home</h3>
                 </div>
-                <div class="opcion estoy" id="historial">
+                <div class="opcion" id="historial">
                     <img src="../assets/fotos/librogris.png" alt="libro" class="l1">
                     <h3>Historial vacunatorio</h3>
                 </div>
@@ -53,48 +49,24 @@
             </div>
         </article>
         <aside>
-        <div class="arriba">
-        <h1>Historial del paciente</h1> 
-        <h1>Juan Lopez</h1>
-    </div>
-    <div  class="abajo">
-        <div class="aplicada">
-        <h2 class="azul">Vacunas Aplicadas</h2> 
-       <div class="tipo">
-         <h3>vacuna</h3>
-        <h3>fecha</h3>
-    </div>
-    <div class="botones">
-        <button>
-            <h3>covid 19</h3>
-            <img src="VACUNA.png" alt="vacuna" class="vacuna">
-            <h3 class="fecha"> 15/03/2021</h3>
-            <img src="Vector.png" alt="fecha" class="vector">
-        </button>
-        <button>
-            <h3>covid 19</h3>
-            <img src="VACUNA.png" alt="vacuna" class="vacuna">
-            <h3 class="fecha"> 15/03/2021</h3>
-            <img src="Vector.png" alt="fecha" class="vector">
-        </button>
-    </div>
-    </div>
-    <div class="pendiente">
-        <h2 class="azul">Vacunas Pendientes</h2>
-      <div class="tipo"> 
-         <h3>vacuna</h3>
-        <h3>fecha</h3>
-    </div>
-        <button>
-            <h3>covid 19</h3>
-            <img src="VACUNA.png" alt="vacuna" class="vacuna">
-            <h3 class="fecha"> 15/03/2026</h3>
-            <img src="Vector.png" alt="fecha" class="vector">
-        </button>
-    </div>   
-</div> 
-</aside>
+            <div class="arriba">
+            <h1>Historial del paciente</h1> 
+            <h1>Juan Lopez</h1>
+        </div>
+        <div  class="abajo">
+            <div class="aplicada">
+            <h2 class="azul">Vacunas Aplicadas</h2> 
+        </div>
+        <div class="pendiente">
+            <h2 class="azul">Vacunas Pendientes</h2>
+        </div>
+        <div class="formulario">
+            <h2 class="prepara">Prepara tu historial, para contestar este formulario</h2>
+            <h2 class="linkform">https://forms.gle/99QYz9jF14Ys6Shx6</h2>
+        </div>   
+    </div> 
+    </aside>
     </main>
-    <script src="../assets/paciente.js"></script>    
-    </body>
+    <script src="../assets/paciente.js"></script>
+</body>
 </html>
