@@ -18,56 +18,7 @@ main{
     display: flex;
     height: 100%;
 }
-.logo{
-    width: 298px;
-    height: 74.3px;
-}
-.tit-logo{
-    width: 298px;
-    height: 74.3px;
-}
-.opcion{
-    display: flex;
-    align-items: center;
-    width: 282px;
-    height: 60px;
-    gap: 1rem;
-    border-radius: 1.875rem;
-    padding-left: 1rem;
-}
 
-
-
-.opcion:hover{
-    background-color: var(--turquesa);
-}
-.estoy{
-    background-color: var(--turquesa);
-    color: white;
-}
-.l1{
-    width: 32px;
-    height: 31px;
-}
-article{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 344px;
-    height: 100%;   
-    align-items: center; 
-    color: var(--gris);
-  padding: 20px;
-  border-right: 1px solid #ccc;
-  background-color: #F7F7F7;
-}
-.a2{
-    width: 282px;
-    height: 24rem;
-    display: flex;
-    flex-direction: column;
-   
-}
 aside{
     width: calc(100% - 344px);
     height: 100%;
@@ -139,7 +90,4 @@ aside{
 }
 .elegir:hover{
     padding-bottom: 1rem;
-}
-.fechaBoton:hover{
-    text-decoration: underline;
 }

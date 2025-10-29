@@ -25,8 +25,9 @@ mapa.addEventListener("click", () => {
 
 let nombre = document.getElementById("nombre-abajo");
 
-getEvent("nombre", asignarNombre);
+
 
 function asignarNombre(usuario){
-    nombre.textContent = usuario
+    nombre.textContent = localStorage["usuario"]
 }
+asignarNombre();

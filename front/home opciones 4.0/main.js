@@ -5,9 +5,10 @@ let nombreprincipal = document.getElementById("nombre");
 getEvent("nombreprincipal", asignarNombre);
 
 function asignarNombre(usuario){
-    nombreprincipal.textContent = usuario
+    nombreprincipal.textContent = localStorage["usuario"];
 }
 
+asignarNombre();
 
 // Mensaje para confirmar que el script se cargó
 console.log("fecha.js cargado");
@@ -38,5 +39,25 @@ if (el) {
 } else {
   console.error("No se encontró el elemento #fechaActual en el DOM");
 }
+
+let historialCentro = document.getElementById("historial-centro");
+historialCentro.addEventListener("click", () => {
+  window.location.href = "../historial/index.html"
+});
+
+let grupofamCentro = document.getElementById("grupofam-centro");
+grupofamCentro.addEventListener("click", () => {
+  window.location.href = "../grupo familiar 2.0/index.html"
+});
+
+let mapaCentro = document.getElementById("mapa-centro");
+mapaCentro.addEventListener("click", () => {
+  window.location.href = "../mapa 2.0/index.html"
+});
+
+let calendarioCentro = document.getElementById("calendario-centro");
+calendarioCentro.addEventListener("click", () => {
+  window.location.href = "../prueba2 cal/index.html"
+});
 
 

@@ -25,7 +25,7 @@ let datos= [{"nombre":nombre, "contraseña":contraseña, "mail":mail}];
 
 postEvent("iniciarsesion", datos, (respuesta) =>{
     console.log(respuesta);
-    if(respuesta.error){
+    if(respuesta.msg == false){
         alert("Error");
     }
     else {
