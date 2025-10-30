@@ -38,7 +38,7 @@ button{
     margin-bottom: 10rem;
 }
 
-aside{
+article{
     display: flex;
     flex-direction: column;
     height: 100%;

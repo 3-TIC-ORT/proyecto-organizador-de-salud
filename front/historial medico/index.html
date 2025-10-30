@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+<script defer src="main.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="../assets/barra-lateral-medico.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
-    <aside>
-        <div>
-            <div class="logo">
-                <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
+        <aside>
+            <div>
+                <div class="logo">
+                    <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
+                </div>
             </div>
-        </div>
-        <div class="barra-medio">
-            <div class="opcion">
-                <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
-                <h3>Home</h3>
+            <div class="barra-medio">
+                <div class="opcion" id="home">
+                    <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
+                    <h3>Home</h3>
+                </div>
+                <div class="opcion" id="buscador">
+                    <img src="../assets/fotos/lupagris.png" alt="Buscador" class="l1">
+                    <h3>Buscador de pacientes</h3>
+                </div>
+                <div class="opcion estoy" id="historial">
+                    <img src="../assets/fotos/personagris.png" alt="Historial" class="l1">
+                    <h3>Historial del pacientes</h3>
+                </div>
             </div>
-            <div class="opcion">
-                <img src="../assets/fotos/lupagris.png" alt="Buscador" class="l1">
-                <h3>Buscador de pacientes</h3>
-            </div>
-            <div class="opcion Historial">
-                <img src="../assets/fotos/personagris.png" alt="Historial" class="l1">
-                <h3>Historial del pacientes</h3>
-            </div>
-        </div>
-        <div class="barra-abajo">
-            <div class="opcion medio">
-                <img src="../assets/fotos/usuario.png" alt="medico" class="l1">
-                <h3 id="nombre-abajo"><span>usuario</span></h3>
-            </div>
-            <div class="opcion medio dos">
-                <img src="../assets/fotos/cerrar.png" alt="cerrar sesion" class="l1">
-                <h3>Cerrar sesion</h3>
-            </div>
-        </div>  
-    </aside>
-<aside>
+            <div class="barra-abajo">
+                <div class="opcion medio">
+                    <img src="../assets/fotos/usuario.png" alt="medico" class="l1">
+                    <h3 id="nombre-abajo"><span>usuario</span></h3>
+                </div>
+                <div class="opcion medio dos" id="cerrar-sesion">
+                    <img src="../assets/fotos/cerrar.png" alt="cerrar sesion" class="l1">
+                    <h3>Cerrar sesion</h3>
+                </div>
+            </div>  
+        </aside>
+<article>
     <div class="arriba">
     <h1>Historial del paciente</h1> 
-    <h1>Juan Lopez</h1>
+    <h1 id="nombre"><span>usuario</span></h1>
 </div>
 <div  class="abajo">
     <div class="aplicada">
@@ -81,8 +84,8 @@
     </button>
 </div>   
 </div> 
-</aside>
+</article>
 </main>
-<script src="../assets/paciente.js"></script>    
+<script src="../assets/medico.js"></script>    
 </body>
 </html>

@@ -1,3 +1,5 @@
+connect2Server();
+
 let nombre = document.getElementById("nombre-abajo");
 
 
