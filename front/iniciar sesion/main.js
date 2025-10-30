@@ -30,11 +30,11 @@ postEvent("iniciarsesion", datos, (respuesta) =>{
     }
     else if(respuesta.msg == true){
 
-        if(respuesta.perfi == "paciente"){
+        if(respuesta.perfil == "Paciente"){
 
         window.location.href = "../home opciones 4.0/index.html";
         }
-        else if(respuesta.perfi == "medico"){
+        else if(respuesta.perfil == "medico"){
             window.location.href = "../buscador/index.html";
         }
     }

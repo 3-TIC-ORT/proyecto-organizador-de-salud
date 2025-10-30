@@ -16,10 +16,15 @@ postEvent("actualizar", datos2, (respuesta) =>{
         alert("Error");
     }
     else {
-
-        
-        alert("Su usuario ha sido creado con exito!");
+        if(respuesta.msg == true && perfil == "Paciente"){
         window.location.href = "../home opciones 4.0/index.html";
+        alert("Su usuario ha sido creado con exito!");
+
+        }
+        else if (respuesta.msg == true && perfil == "Medico"){
+            window.location.href = "../buscador/index.html";
+            alert("Su usuario ha sido creado con exito!");
+        }
         }
         
     }

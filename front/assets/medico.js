@@ -14,3 +14,13 @@ cerrarSesion.addEventListener("click",() =>{
 } );
 
 
+let historial = document.getElementById("historial");
+historial.addEventListener("click", () => {
+    window.location.href = "../historial medico/index.html";
+})
+ let buscador = document.getElementById("buscador");
+ buscador.addEventListener("click", () => {
+    window.location.href = "../buscador";
+})
+
+home

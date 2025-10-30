@@ -81,8 +81,40 @@
     "nombre": "luna",
     "contraseña": ".",
     "mail": ".",
-    "nacimiento": "22/05/10",
-    "perfil": "Paciente",
-    "matricula": "."
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna123",
+    "mail": "luu",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna123",
+    "mail": "lu",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna123",
+    "mail": "lu",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "lulita",
+    "contraseña": "lulita",
+    "mail": "lulita@gmail.com",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
   }
 ]
