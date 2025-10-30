@@ -20,7 +20,10 @@ historial.addEventListener("click", () => {
 })
  let buscador = document.getElementById("buscador");
  buscador.addEventListener("click", () => {
-    window.location.href = "../buscador";
+    window.location.href = "../buscador de paciente/index.html";
 })
 
-home
+let home = document.getElementById("home");
+home.addEventListener("click", () => {
+    window.location.href = "../home medico/index.html";
+})
