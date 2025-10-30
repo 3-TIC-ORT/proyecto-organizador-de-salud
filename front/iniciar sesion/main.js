@@ -34,8 +34,8 @@ postEvent("iniciarsesion", datos, (respuesta) =>{
 
         window.location.href = "../home opciones 4.0/index.html";
         }
-        else if(respuesta.perfil == "medico"){
-            window.location.href = "../buscador/index.html";
+        else if(respuesta.perfil == "Medico"){
+            window.location.href = "../home medico/index.html";
         }
     }
   })

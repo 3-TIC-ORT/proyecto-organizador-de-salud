@@ -22,7 +22,7 @@ postEvent("actualizar", datos2, (respuesta) =>{
 
         }
         else if (respuesta.msg == true && perfil == "Medico"){
-            window.location.href = "../buscador/index.html";
+            window.location.href = "../home medico/index.html";
             alert("Su usuario ha sido creado con exito!");
         }
         }

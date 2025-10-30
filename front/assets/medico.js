@@ -8,7 +8,7 @@ function asignarNombre(usuario){
 asignarNombre();
 
 let cerrarSesion = document.getElementById("cerrar-sesion");
-cerrarSesion.addEventListener("click",() =>{
+cerrarSesion.addEventListener("click", () => {
     localStorage.clear();
     window.location.href = "../iniciar sesion/index.html"
 } );

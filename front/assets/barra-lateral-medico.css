@@ -8,6 +8,7 @@
     --color2: #F6F4F8;
     --turquesa: #18AC9C;
     --azul: #00467B;
+    --azulclarito: #0B6FA4;
 }
 body{
     height: 100vh;
@@ -80,11 +81,12 @@ aside{
   }
   .medio{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+
+    
+
 }
-.dos{
-    margin-left: -1rem;
-}
+
 .estoy{
     background-color: var(--turquesa);
     color: white;

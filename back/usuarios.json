@@ -116,5 +116,29 @@
     "nacimiento": "22/5/10",
     "perfil": "Medico",
     "matricula": "50392819"
+  },
+  {
+    "nombre": "santiago winnykamien",
+    "contraseña": "s8123qaz",
+    "mail": "santiwinny@gmail.com",
+    "nacimiento": "04/02/2010",
+    "perfil": "Paciente",
+    "matricula": "OSDE"
+  },
+  {
+    "nombre": "pirulo",
+    "contraseña": "2424",
+    "mail": "pirul@hola",
+    "nacimiento": "757",
+    "perfil": "Paciente",
+    "matricula": "sasa"
+  },
+  {
+    "nombre": "pablo",
+    "contraseña": "pablito",
+    "mail": "pablo@hola",
+    "nacimiento": "757",
+    "perfil": "Medico",
+    "matricula": "sasa"
   }
 ]

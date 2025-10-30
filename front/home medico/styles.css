@@ -41,21 +41,21 @@ article{
     align-items: center;
     border-radius: 50px;
     border-width: 10rem;
-    border-color: var(--turquesa);
-    color: var(--turquesa);
+    border-color: #0B6FA4;
+    color: #0B6FA4;
     border: solid;
     border: .5rem solid;
 }
 .hola{
     font-weight: 800;
-    color: var(--azul);
+    color: var(--turquesa);
     font-style: bold;
     font-size: 58px;
     margin-left: 3rem;
 }
 .preg{
     font-weight: 400;
-    color: var(--azul);
+    color: var(--turquesa);
     width: 891px;
     height: 70px;
     font-size: 2rem;
