@@ -89,7 +89,7 @@ function saveEvent(date) {
   if (!events[date]) events[date] = [];
   events[date].push(text);
   localStorage["eventos"]= JSON.stringify(events);
-  postEvent("calendario", JSON.stringify(events));
+  postEvent("calendario", events);
   document.getElementById('eventText').value = '';
   render(); // refresca el calendario
   openModal({target: {dataset: {date}}});
