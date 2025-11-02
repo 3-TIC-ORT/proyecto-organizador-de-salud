@@ -13,8 +13,8 @@ button{
  align-items: center;
 }
 .aplicado{
-    justify-content: center;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .azul{
@@ -35,8 +35,14 @@ button{
 .abajo{
     display: flex;
     gap: 2rem;
-    margin-bottom: 10rem;
+  
+    justify-content: center;
+    align-items: flex-start;
+   
+    height: 100%;
+    width: 100%;
 }
+
 
 aside{
     display: flex;
@@ -51,4 +57,7 @@ font-size: 3rem;
 }
 .arriba{
 text-align: center;
+height: 20%;
+
+width: 100%;
 }
