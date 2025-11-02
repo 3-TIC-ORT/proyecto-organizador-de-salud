@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
+<script defer src="main.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,33 +41,34 @@
             </div>
             <div class="a3">
                 <div class="opcion">
-                    <img src="./usuario.png" alt="usuario" class="l1">
-                    <h3>Pedro Gonzales</h3>
+                    <img src="../assets/fotos/usuario.png" alt="usuario" class="l1">
+                    <h3><span id="nombre-abajo"></span></h3>
                 </div>
                 <div class="opcion">
                     <img src="./cerrar.png" alt="cerrar sesion" class="l1">
-                    <h3>Cerrar sesion</h3>
+                    <h3 id="cerrar-sesion">Cerrar sesion</h3>
                 </div>
             </div>
         </article>
         <aside>
             <div class="tit">
-                <h1 class="hola">Hola XXX!</h1>
+                <h1 class="hola">Hola <span id="nombre">usuario</span>!</h1>
+                
             </div>
             <div class="b2">
                 <div class="preg">
                     <h2 class="luna">Que servicios brindamos?</h2>
                 </div>
                 <div class="bot">
-                <div class="elegir">
+                <div class="elegir" id="historial-centro">
                     <div class="foto">
                         <img src="./libro.png" alt="Libro">
                     </div>
                     <div class="txt">
-                        <h3>Hisorial <br> vacunatorio</h3>
+                        <h3>Historial <br> vacunatorio</h3>
                     </div>
                 </div>
-                <div class="elegir">
+                <div class="elegir" id="grupofam-centro">
                     <div class="foto">
                         <img src="./familia.png" alt="familia">
                     </div>
@@ -72,7 +76,7 @@
                         <h3>Grupo <br> familiar</h3>
                     </div>
                 </div>
-                <div class="elegir">
+                <div class="elegir" id="mapa-centro">
                     <div class="foto">
                         <img src="./mapa.png" alt="mapa">
                     </div>
@@ -83,9 +87,9 @@
             </div>
             </div>
             <div class="b3">
-                <div class="preg">
+                <div class="preg fechaBoton" id="calendario-centro">
                     <img src="./calendario.png" alt="calendario">
-                    <h2 class="luna">Septiembre 2025</h2>
+                    <h2 id="fechaActual"></h2>
                 </div>
                 <div class="espacio"></div>
             </div>

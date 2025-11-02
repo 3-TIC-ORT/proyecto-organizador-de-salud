@@ -3,15 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-button{
- width: 24.22rem;
- height: 5.62rem;   
- border-radius: 1.56rem;
- display: flex;
- justify-content: center;
- gap: .5rem;
- align-items: center;
-}
 .aplicado{
     justify-content: center;
     display: flex;
@@ -21,21 +12,11 @@ button{
     color: #00487B;
     font-size: 3rem;
 }
-.vector{
-    width: 33px;
-    height: 32px;
-}
-.tipo{
-    width: 16.68rem;
-    height: 1.43rem;
-    display: flex;
-    gap: 5rem;
-    margin-left: 3.5rem;
-}
+
 .abajo{
     display: flex;
     gap: 2rem;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
 }
 
 aside{
@@ -51,4 +32,11 @@ font-size: 3rem;
 }
 .arriba{
 text-align: center;
+}
+.formulario{
+    width: 49.5rem;
+    height: 9.5rem;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    border: 2px;
 }

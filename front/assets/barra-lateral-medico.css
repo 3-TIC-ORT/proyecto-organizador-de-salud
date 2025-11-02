@@ -8,6 +8,7 @@
     --color2: #F6F4F8;
     --turquesa: #18AC9C;
     --azul: #00467B;
+    --azulclarito: #0B6FA4;
 }
 body{
     height: 100vh;
@@ -28,7 +29,7 @@ aside{
     color: var(--gris);
   padding: 20px;
   border-right: 1px solid #ccc;
-  background-color: #F7F7F7;
+  background-color: #ffffff;
   
 }
 .tit-logo{
@@ -80,11 +81,13 @@ aside{
   }
   .medio{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+
+    
+
 }
-.dos{
-    margin-left: -1rem;
-}
-.Historial{
+
+.estoy{
     background-color: var(--turquesa);
+    color: white;
 }

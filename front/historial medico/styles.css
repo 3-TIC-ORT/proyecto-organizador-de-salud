@@ -18,7 +18,7 @@ button{
     align-items: center;
 }
 .azul{
-    color: #00487B;
+    color: #18AC9C;
     font-size: 3rem;
 }
 .vector{
@@ -38,7 +38,7 @@ button{
     margin-bottom: 10rem;
 }
 
-aside{
+article{
     display: flex;
     flex-direction: column;
     height: 100%;

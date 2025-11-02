@@ -52,5 +52,93 @@
     "nacimiento": "",
     "perfil": "",
     "matricula": ""
+  },
+  {
+    "nombre": "Santiago Winnykamien",
+    "contraseña": "s8123qaz",
+    "mail": "santiwinny@gmail.com",
+    "nacimiento": "04/02/2010",
+    "perfil": "Paciente",
+    "matricula": "Osde"
+  },
+  {
+    "nombre": "Benja123",
+    "contraseña": "Benja123",
+    "mail": "bbaredes@gmail.com",
+    "nacimiento": "justo",
+    "perfil": "Paciente",
+    "matricula": "Osde"
+  },
+  {
+    "nombre": ".",
+    "contraseña": ".",
+    "mail": ".",
+    "nacimiento": ".",
+    "perfil": "Paciente",
+    "matricula": "."
+  },
+  {
+    "nombre": "luna",
+    "contraseña": ".",
+    "mail": ".",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna123",
+    "mail": "luu",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna123",
+    "mail": "lu",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna123",
+    "mail": "lu",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "lulita",
+    "contraseña": "lulita",
+    "mail": "lulita@gmail.com",
+    "nacimiento": "22/5/10",
+    "perfil": "Medico",
+    "matricula": "50392819"
+  },
+  {
+    "nombre": "santiago winnykamien",
+    "contraseña": "s8123qaz",
+    "mail": "santiwinny@gmail.com",
+    "nacimiento": "04/02/2010",
+    "perfil": "Paciente",
+    "matricula": "OSDE"
+  },
+  {
+    "nombre": "pirulo",
+    "contraseña": "2424",
+    "mail": "pirul@hola",
+    "nacimiento": "757",
+    "perfil": "Paciente",
+    "matricula": "sasa"
+  },
+  {
+    "nombre": "pablo",
+    "contraseña": "pablito",
+    "mail": "pablo@hola",
+    "nacimiento": "757",
+    "perfil": "Medico",
+    "matricula": "sasa"
   }
 ]

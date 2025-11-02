@@ -1,24 +1,22 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
-    <script defer src="main.js"></script>
-  <title>Calendario con eventos</title>
-  <link rel="stylesheet" href="../assets/barra-lateral-paciente.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/barra-lateral-paciente.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-           <article>
+    <main>
+        <article>
             <div class="a1">
                 <div class="logo">
                     <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
                 </div>
             </div>
             <div class="a2">
-                <div class="opcion" id="home">
+                <div class="opcion estoy" id="home">
                     <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
                     <h3>Home</h3>
                 </div>
@@ -26,7 +24,7 @@
                     <img src="../assets/fotos/librogris.png" alt="libro" class="l1">
                     <h3>Historial vacunatorio</h3>
                 </div>
-                <div class="opcion estoy" id="calendario">
+                <div class="opcion" id="calendario">
                     <img src="../assets/fotos/calendariogris.png" alt="calendario" class="l1">
                     <h3>Calendario</h3>
                 </div>
@@ -50,34 +48,25 @@
                 </div>
             </div>
         </article>
-    <div class="calendario">
-  <div class="calendar" id="calendar">
-    <div class="header">
-      <button id="prev">&lt;</button>
-      <div class="month-year" id="monthYear"></div>
-      <button id="next">&gt;</button>
-    </div>
-    <div class="weekdays" id="weekdays"></div>
-    <div class="days" id="days"></div>
-  </div>
-</div>
-  <!-- Modal para agregar eventos -->
-  <div id="eventModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModalX" class="close">&times;</span> <!-- ❌ cruz -->
-      <h2 id="modalTitle"></h2>
-      
-      <div class="inputyboton">
-      <input id="eventText" class="input-agregar" placeholder="  Nuevo evento">
-      <div class="botonesdelmodal">
-      <button id="saveEvent" class="botonmodal guardar">Guardar</button>
-      <button id="closeModal" class="botonmodal cancelar">Cancelar</button>
-    </div>
-    </div>
-    <ul id="eventList"></ul>
-    </div>
-  </div>
-  </div>
-  <script src="../assets/paciente.js"></script>
+        <aside>
+            <div class="arriba">
+            <h1>Historial del paciente</h1> 
+            <h1>Juan Lopez</h1>
+        </div>
+        <div  class="abajo">
+            <div class="aplicada">
+            <h2 class="azul">Vacunas Aplicadas</h2> 
+        </div>
+        <div class="pendiente">
+            <h2 class="azul">Vacunas Pendientes</h2>
+        </div>
+        <div class="formulario">
+            <h2 class="prepara">Prepara tu historial, para contestar este formulario</h2>
+            <h2 class="linkform">https://forms.gle/99QYz9jF14Ys6Shx6</h2>
+        </div>   
+    </div> 
+    </aside>
+    </main>
+    <script src="../assets/paciente.js"></script>
 </body>
 </html>

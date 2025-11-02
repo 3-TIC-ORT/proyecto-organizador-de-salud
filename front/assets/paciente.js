@@ -1,3 +1,6 @@
+connect2Server()
+
+
 let home = document.getElementById("home");
 home.addEventListener("click", () => {
     window.location.href = "../home opciones 4.0/index.html";
@@ -18,3 +21,19 @@ let mapa = document.getElementById("mapa");
 mapa.addEventListener("click", () => {
     window.location.href = "../mapa 2.0/index.html"
 });
+
+
+let nombre = document.getElementById("nombre-abajo");
+
+
+
+function asignarNombre(usuario){
+    nombre.textContent = localStorage["usuario"]
+}
+asignarNombre();
+
+let cerrarSesion = document.getElementById("cerrar-sesion");
+cerrarSesion.addEventListener("click",() =>{
+    localStorage.clear();
+    window.location.href = "../iniciar sesion/index.html"
+} )

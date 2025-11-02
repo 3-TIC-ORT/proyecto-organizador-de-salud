@@ -12,15 +12,24 @@ let datos2 = {"nombre":nombre, "nacimiento": nacimiento, "perfil": perfil, "matr
 
 postEvent("actualizar", datos2, (respuesta) =>{
     console.log(respuesta);
-    if(respuesta.error){
+    if(respuesta.msg == false){
         alert("Error");
     }
     else {
-        alert("Su usuario ha sido creado con exito!");
+        if(respuesta.msg == true && perfil == "Paciente"){
         window.location.href = "../home opciones 4.0/index.html";
+        alert("Su usuario ha sido creado con exito!");
+
+        }
+        else if (respuesta.msg == true && perfil == "Medico"){
+            window.location.href = "../home medico/index.html";
+            alert("Su usuario ha sido creado con exito!");
+        }
+        }
+        
     }
-  });
-}
+)};
+
 
 let boton = document.getElementById("bot-siguiente");
 boton.addEventListener("click", enviar);

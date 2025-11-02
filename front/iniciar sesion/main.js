@@ -25,13 +25,18 @@ let datos= [{"nombre":nombre, "contraseña":contraseña, "mail":mail}];
 
 postEvent("iniciarsesion", datos, (respuesta) =>{
     console.log(respuesta);
-    if(respuesta.error){
+    if(respuesta.msg == false){
         alert("Error");
     }
-    else {
-    
+    else if(respuesta.msg == true){
+
+        if(respuesta.perfil == "Paciente"){
+
         window.location.href = "../home opciones 4.0/index.html";
-        
+        }
+        else if(respuesta.perfil == "Medico"){
+            window.location.href = "../home medico/index.html";
+        }
     }
   })
 }
