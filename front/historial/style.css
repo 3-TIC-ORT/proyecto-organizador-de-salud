@@ -19,7 +19,7 @@ button{
 }
 .azul{
     color: #00487B;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .vector{
     width: 33px;
@@ -34,7 +34,7 @@ button{
 }
 .abajo{
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
   
     justify-content: center;
     align-items: flex-start;

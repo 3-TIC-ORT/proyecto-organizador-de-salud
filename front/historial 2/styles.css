@@ -1,42 +1,108 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-.aplicado{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-.azul{
-    color: #00487B;
-    font-size: 3rem;
-}
 
-.abajo{
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 15rem;
-}
-
-aside{
+/* === ESTILOS GENERALES DEL ASIDE === */
+aside {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px 60px;
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    color: #333;
 }
-h1{
-font-size: 3rem;
+
+/* === SECCIÓN SUPERIOR === */
+aside .arriba {
+    text-align: center;
+    margin-bottom: 40px;
 }
-.arriba{
-text-align: center;
+
+aside .arriba h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin: 5px 0;
+    text-transform: lowercase;
+    color: #333;
 }
-.formulario{
-    width: 49.5rem;
-    height: 9.5rem;
-    border-radius: 30px;
-    background-color: whitesmoke;
-    border: 2px;
+
+/* === CONTENEDOR PRINCIPAL ABAJO === */
+.abajo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* === FILA DE VACUNAS === */
+.vacunas-linea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Espacio entre los dos títulos */
+    margin-bottom: 30px;
+}
+
+/* === ESTILO DE LOS ENLACES DE VACUNAS === */
+.vacunas-linea h2 {
+    color: #00487B;
+    font-size: 32px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+/* === FORMULARIO === */
+.formulario {
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #cfcfcf;
+    border-radius: 12px;
+    padding: 25px 30px;
+    width: 80%;
+    max-width: 520px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.formulario .prepara {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.formulario .linkform {
+    font-size: 15px;
+    color: #0B6FA4;
+    word-break: break-all;
+    cursor: pointer;
+}
+
+.formulario .linkform:hover {
+    text-decoration: underline;
+}
+
+/* === RESPONSIVIDAD === */
+@media (max-width: 768px) {
+    aside {
+        padding: 30px 20px;
+    }
+
+    aside .arriba h1 {
+        font-size: 22px;
+    }
+
+    .vacunas-linea {
+        gap: 25px;
+    }
+
+    .formulario {
+        width: 100%;
+    }
 }
