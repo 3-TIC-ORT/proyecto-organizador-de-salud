@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestor de Pacientes</title>
   <link rel="stylesheet" href="buscador.css">
-  <link rel="stylesheet" href="barra-lateral-medico.css">
+
 </head>
 <body>
     
 <article>
-  
+  <div class="article">
     <h1 class="tit-agregar"> Agregar pacientes</h1>
     <input type="text" id="searchBar"  class="input-filtro" placeholder="Buscar paciente por nombre...">
     <button id="btnMostrarForm" class="bot-agregar">Agregar paciente</button>
@@ -21,21 +21,24 @@
   </main>
 
   <section id="formSection" class="form-section oculto">
-    <form id="formPaciente">
+    <form id="formPaciente" class="form">
+      <div class="preg">
       <label>Nombre:</label>
-      <input type="text" id="nombrePaciente" required>
+      <input type="text" id="nombrePaciente" class="inputcosa" required>
+    </div>
+<div class="preg"> 
+      <label>DNI:</label>
+      <input type="text" id="dniPaciente" class="inputcosa" required>
+    </div>
+      <div class="botones-form">
 
-      <label>Mail</label>
-      <input type="text" id="mailPaciente" required>
-
-      <label>Contraseña</label>
-      <input type="password" id="contraseñaPaciente" required>
-
-      <button type="submit">Guardar paciente</button>
-      <button type="button" id="btnCancelar">Cancelar</button>
+      <button type="submit" class="boton-form">Guardar paciente</button>
+      <button type="button" id="btnCancelar" class="boton-form">Cancelar</button>
+    </div>
     </form>
   </section>
 </article>
+</div>
   <script src="buscador.js"></script>
   <script src="barra-lateral-medico.js"></script>
 </body>
