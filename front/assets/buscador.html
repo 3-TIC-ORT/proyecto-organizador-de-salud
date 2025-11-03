@@ -8,42 +8,13 @@
   <link rel="stylesheet" href="barra-lateral-medico.css">
 </head>
 <body>
-    <aside>
-        <div>
-            <div class="logo">
-                <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
-            </div>
-        </div>
-        <div class="barra-medio">
-            <div class="opcion" id="home">
-                <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
-                <h3>Home</h3>
-            </div>
-            <div class="opcion" id="buscador">
-                <img src="../assets/fotos/lupagris.png" alt="Buscador" class="l1">
-                <h3>Buscador de pacientes</h3>
-            </div>
-            <div class="opcion estoy" id="historial">
-                <img src="../assets/fotos/personagris.png" alt="Historial" class="l1">
-                <h3>Historial del pacientes</h3>
-            </div>
-        </div>
-        <div class="barra-abajo">
-            <div class="opcion medio">
-                <img src="../assets/fotos/usuario.png" alt="medico" class="l1">
-                <h3 id="nombre-abajo"><span>usuario</span></h3>
-            </div>
-            <div class="opcion medio dos" id="cerrar-sesion">
-                <img src="../assets/fotos/cerrar.png" alt="cerrar sesion" class="l1">
-                <h3>Cerrar sesion</h3>
-            </div>
-        </div>  
-    </aside>
+    
 <article>
-  <header>
-    <input type="text" id="searchBar" placeholder="Buscar paciente por nombre...">
-    <button id="btnMostrarForm">Agregar paciente</button>
-  </header>
+  
+    <h1 class="tit-agregar"> Agregar pacientes</h1>
+    <input type="text" id="searchBar"  class="input-filtro" placeholder="Buscar paciente por nombre...">
+    <button id="btnMostrarForm" class="bot-agregar">Agregar paciente</button>
+
 
   <main id="pacienteContainer" class="paciente-container">
     <!-- Acá se van a mostrar los pacientes -->
@@ -54,13 +25,14 @@
       <label>Nombre:</label>
       <input type="text" id="nombrePaciente" required>
 
-      <label>Edad:</label>
-      <input type="number" id="edadPaciente" required>
+      <label>Mail</label>
+      <input type="text" id="mailPaciente" required>
 
-      <label>Diagnóstico:</label>
-      <input type="text" id="diagnosticoPaciente" required>
+      <label>Contraseña</label>
+      <input type="password" id="contraseñaPaciente" required>
 
       <button type="submit">Guardar paciente</button>
+      <button type="button" id="btnCancelar">Cancelar</button>
     </form>
   </section>
 </article>

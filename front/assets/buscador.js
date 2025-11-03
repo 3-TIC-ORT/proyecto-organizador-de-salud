@@ -7,6 +7,7 @@ const searchBar = document.getElementById('searchBar');
 const formSection = document.getElementById('formSection');
 const btnMostrarForm = document.getElementById('btnMostrarForm');
 const formPaciente = document.getElementById('formPaciente');
+const btnCancelar = document.getElementById('btnCancelar');
 
 // --- Función para mostrar los pacientes ---
 function mostrarPacientes(lista = pacientes) {
@@ -21,8 +22,7 @@ function mostrarPacientes(lista = pacientes) {
     container.innerHTML += `
       <div class="paciente">
         <h4>${p.nombre}</h4>
-        <p>Edad: ${p.edad}</p>
-        <p>Diagnóstico: ${p.diagnostico}</p>
+        
       </div>
     `;
   });
@@ -47,15 +47,15 @@ formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombrePaciente').value.trim();
-  const edad = parseInt(document.getElementById('edadPaciente').value);
-  const diagnostico = document.getElementById('diagnosticoPaciente').value.trim();
+  const mail = document.getElementById('mailPaciente').value.trim();
+  const contraseña = document.getElementById('contraseñaPaciente').value.trim();
 
-  if (!nombre || !edad || !diagnostico) {
+  if (!nombre || !mail || !contraseña) {
     alert("Por favor, completa todos los campos.");
     return;
   }
 
-  const nuevoPaciente = { nombre, edad, diagnostico };
+  const nuevoPaciente = { nombre, mail, contraseña };
   pacientes.push(nuevoPaciente);
 
   formPaciente.reset();
@@ -63,4 +63,8 @@ formPaciente.addEventListener('submit', (e) => {
   mostrarPacientes(); // Actualiza la lista
 });
 
-  
+// --- Botón cancelar ---
+btnCancelar.addEventListener('click', () => {
+  formSection.classList.add('oculto'); // oculta el formulario
+  formPaciente.reset(); // limpia los inputs
+});
