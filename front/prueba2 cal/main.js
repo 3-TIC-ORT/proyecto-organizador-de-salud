@@ -109,4 +109,3 @@ document.getElementById('next').addEventListener('click', () => {
 
 buildWeekdays();
 render();
-
