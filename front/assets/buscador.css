@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+ 
+    background-color: #E5E4E2;
+    display: flex;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+  
+  #searchBar {
+    flex: 1;
+    width: 748px;
+    height: 1000px;
+  }
+  
+  button {
+    
+    cursor: pointer;
+  }
+  
+  .paciente {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .form-section {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 300px;
+  }
+  
+  .form-section.oculto {
+    display: none;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 8px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+  

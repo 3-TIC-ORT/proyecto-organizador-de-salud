@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Pacientes</title>
+  <link rel="stylesheet" href="buscador.css">
+  <link rel="stylesheet" href="barra-lateral-medico.css">
 </head>
 <body>
-    <article>
-        <input type="text">
-    </article>
+    <aside>
+        <div>
+            <div class="logo">
+                <img src="../assets/fotos/titulo.png" alt="titulo" class="tit-logo">
+            </div>
+        </div>
+        <div class="barra-medio">
+            <div class="opcion" id="home">
+                <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
+                <h3>Home</h3>
+            </div>
+            <div class="opcion" id="buscador">
+                <img src="../assets/fotos/lupagris.png" alt="Buscador" class="l1">
+                <h3>Buscador de pacientes</h3>
+            </div>
+            <div class="opcion estoy" id="historial">
+                <img src="../assets/fotos/personagris.png" alt="Historial" class="l1">
+                <h3>Historial del pacientes</h3>
+            </div>
+        </div>
+        <div class="barra-abajo">
+            <div class="opcion medio">
+                <img src="../assets/fotos/usuario.png" alt="medico" class="l1">
+                <h3 id="nombre-abajo"><span>usuario</span></h3>
+            </div>
+            <div class="opcion medio dos" id="cerrar-sesion">
+                <img src="../assets/fotos/cerrar.png" alt="cerrar sesion" class="l1">
+                <h3>Cerrar sesion</h3>
+            </div>
+        </div>  
+    </aside>
+<article>
+  <header>
+    <input type="text" id="searchBar" placeholder="Buscar paciente por nombre...">
+    <button id="btnMostrarForm">Agregar paciente</button>
+  </header>
+
+  <main id="pacienteContainer" class="paciente-container">
+    <!-- Acá se van a mostrar los pacientes -->
+  </main>
+
+  <section id="formSection" class="form-section oculto">
+    <form id="formPaciente">
+      <label>Nombre:</label>
+      <input type="text" id="nombrePaciente" required>
+
+      <label>Edad:</label>
+      <input type="number" id="edadPaciente" required>
+
+      <label>Diagnóstico:</label>
+      <input type="text" id="diagnosticoPaciente" required>
+
+      <button type="submit">Guardar paciente</button>
+    </form>
+  </section>
+</article>
+  <script src="buscador.js"></script>
+  <script src="barra-lateral-medico.js"></script>
 </body>
 </html>
