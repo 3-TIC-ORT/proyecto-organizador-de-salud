@@ -21,8 +21,9 @@ function mostrarPacientes(lista = pacientes) {
   lista.forEach(p => {
     container.innerHTML += `
       <div class="paciente">
-        <h4>${p.nombre}</h4>
+        <h4 class="nombreTarjeta">${p.nombre}</h4>
         
+        <button class="flechaTarjeta">&gt;</button>
       </div>
     `;
   });
@@ -47,15 +48,14 @@ formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombrePaciente').value.trim();
-  const mail = document.getElementById('mailPaciente').value.trim();
-  const contraseña = document.getElementById('contraseñaPaciente').value.trim();
+  const dni = document.getElementById('dniPaciente').value.trim();
 
-  if (!nombre || !mail || !contraseña) {
+  if (!nombre || !dni) {
     alert("Por favor, completa todos los campos.");
     return;
   }
 
-  const nuevoPaciente = { nombre, mail, contraseña };
+  const nuevoPaciente = { nombre, dni };
   pacientes.push(nuevoPaciente);
 
   formPaciente.reset();
