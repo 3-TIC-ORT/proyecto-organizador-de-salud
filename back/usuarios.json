@@ -148,5 +148,13 @@
     "nacimiento": "04/02/2010",
     "perfil": "Paciente",
     "matricula": "Osde"
+  },
+  {
+    "nombre": "Santiago Winnykamien",
+    "contraseña": "opopop",
+    "mail": "matidobisky@gmail.com",
+    "nacimiento": "04/02/2010",
+    "perfil": "Paciente",
+    "matricula": "Osde"
   }
 ]
