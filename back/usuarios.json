@@ -81,33 +81,33 @@
     "nombre": "luna",
     "contraseña": ".",
     "mail": ".",
-    "nacimiento": "22/5/10",
+    "nacimiento": "aa",
     "perfil": "Medico",
-    "matricula": "50392819"
+    "matricula": "aa"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "luu",
-    "nacimiento": "22/5/10",
+    "nacimiento": "aa",
     "perfil": "Medico",
-    "matricula": "50392819"
+    "matricula": "aa"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "lu",
-    "nacimiento": "22/5/10",
+    "nacimiento": "aa",
     "perfil": "Medico",
-    "matricula": "50392819"
+    "matricula": "aa"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "lu",
-    "nacimiento": "22/5/10",
+    "nacimiento": "aa",
     "perfil": "Medico",
-    "matricula": "50392819"
+    "matricula": "aa"
   },
   {
     "nombre": "lulita",
@@ -156,5 +156,45 @@
     "nacimiento": "04/02/2010",
     "perfil": "Paciente",
     "matricula": "Osde"
+  },
+  {
+    "nombre": "echu nuner",
+    "contraseña": "echu",
+    "mail": "echu",
+    "nacimiento": "7/8/09",
+    "perfil": "Paciente",
+    "matricula": "ijeoklasn"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "ss",
+    "mail": "ss",
+    "nacimiento": "aa",
+    "perfil": "Medico",
+    "matricula": "aa"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "ss",
+    "mail": "ss",
+    "nacimiento": "aa",
+    "perfil": "Medico",
+    "matricula": "aa"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "ss",
+    "mail": "ss",
+    "nacimiento": "aa",
+    "perfil": "Medico",
+    "matricula": "aa"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "ss",
+    "mail": "ss",
+    "nacimiento": "aa",
+    "perfil": "Medico",
+    "matricula": "aa"
   }
 ]
