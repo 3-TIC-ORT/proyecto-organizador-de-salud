@@ -1,8 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f3f3f3;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 20px;
   }
@@ -28,4 +34,33 @@ body {
 
   button:hover {
     background: #094f74;
+  }
+  .paciente {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 747px;
+    height: 90px;
+    border: solid 3px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .flechaTarjeta{
+    
+    background: transparent;   /* Sin fondo */
+    border: none;              /* Sin borde */
+    color: black;              /* Texto y flecha en negro */
+    font-size: 2.25rem;         /* Tamaño de la flecha y texto */
+    cursor: pointer;           /* Cursor de mano */
+    /* Sin padding si querés */
+    margin: 1rem;
+  }
+
+  
+  .nombreTarjeta{
+margin: 1rem;
+font-size: 2.25rem;
   }

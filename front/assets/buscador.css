@@ -143,3 +143,9 @@ font-size: 2.25rem;
   .botones-form{
     display: flex;
   }
+
+  .paciente-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

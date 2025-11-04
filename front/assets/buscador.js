@@ -1,5 +1,6 @@
 // Lista inicial vacía
-let pacientes = [];
+ let pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
+
 
 // Elementos del DOM
 const container = document.getElementById('pacienteContainer');
@@ -68,3 +69,5 @@ btnCancelar.addEventListener('click', () => {
   formSection.classList.add('oculto'); // oculta el formulario
   formPaciente.reset(); // limpia los inputs
 });
+
+mostrarPacientes();
