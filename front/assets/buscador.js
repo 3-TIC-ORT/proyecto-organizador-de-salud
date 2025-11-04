@@ -57,7 +57,7 @@ formPaciente.addEventListener('submit', (e) => {
 
   const nuevoPaciente = { nombre, dni };
   pacientes.push(nuevoPaciente);
-
+  localStorage.setItem('pacientes', JSON.stringify(pacientes));
   formPaciente.reset();
   formSection.classList.add('oculto'); // Oculta el formulario después de agregar
   mostrarPacientes(); // Actualiza la lista

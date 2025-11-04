@@ -18,7 +18,7 @@ cerrarSesion.addEventListener("click", () => {
 
 let historial = document.getElementById("historial");
 historial.addEventListener("click", () => {
-    window.location.href = "../historial medico/index.html";
+    window.location.href = "../lista de pacientes/index.html";
 })
  let buscador = document.getElementById("buscador");
  buscador.addEventListener("click", () => {
