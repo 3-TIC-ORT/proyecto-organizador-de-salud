@@ -1,17 +1,62 @@
 connect2Server();
 
-const weekdaysShort = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-const monthNames = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const weekdaysShort = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+const monthNames = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 let viewDate = new Date();
 let events = JSON.parse(localStorage.getItem("eventos")) || {}; // Guarda eventos en localStorage
 
+// -------------------------------
+// 🔧 Funciones de manejo de fechas
+// -------------------------------
+function pad(n) {
+  return String(n).padStart(2, '0');
+}
+function makeKeyFromParts(year, monthIndex, day) {
+  return `${year}-${pad(monthIndex + 1)}-${pad(day)}`;
+}
+function makeKeyFromDate(dateObj) {
+  return makeKeyFromParts(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+}
+function normalizeStoredEvents(raw) {
+  const normalized = {};
+  for (const key in raw) {
+    if (!raw.hasOwnProperty(key)) continue;
+    const parts = key.split('-').map(p => p.replace(/^0+/, ''));
+    if (parts.length === 3) {
+      const y = Number(parts[0]);
+      const m = Number(parts[1]) - 1;
+      const d = Number(parts[2]);
+      if (!Number.isNaN(y) && !Number.isNaN(m) && !Number.isNaN(d)) {
+        const newKey = makeKeyFromParts(y, m, d);
+        normalized[newKey] = Array.isArray(normalized[newKey])
+          ? normalized[newKey].concat(raw[key])
+          : (Array.isArray(raw[key]) ? raw[key].slice() : []);
+      } else {
+        normalized[key] = raw[key];
+      }
+    } else {
+      normalized[key] = raw[key];
+    }
+  }
+  return normalized;
+}
+// Normalizar al cargar
+(function loadAndNormalizeEvents() {
+  const raw = JSON.parse(localStorage.getItem("eventos") || "{}");
+  const normalized = normalizeStoredEvents(raw);
+  localStorage.setItem("eventos", JSON.stringify(normalized));
+  events = normalized;
+})();
+
+// -------------------------------
+// 🗓️ Construcción del calendario
+// -------------------------------
 function buildWeekdays() {
   const wk = document.getElementById('weekdays');
-  wk.innerHTML = weekdaysShort.map(d=>`<div>${d}</div>`).join('');
+  wk.innerHTML = weekdaysShort.map(d => `<div>${d}</div>`).join('');
 }
 
 function render() {
-  // 🔥 Recargar siempre los eventos más recientes
   events = JSON.parse(localStorage.getItem("eventos")) || {};
 
   const daysEl = document.getElementById('days');
@@ -33,29 +78,26 @@ function render() {
       new Date().getMonth() === month &&
       new Date().getDate() === d;
 
-    // 🔧 Usar el mismo formato de clave que en localStorage
-    const dateKey = `${year}-${month + 1}-${d}`; // sin ceros a la izquierda
-
+    const dateKey = makeKeyFromParts(year, month, d);
     const hasEvent = events[dateKey] && events[dateKey].length > 0;
+
     html += `
-      <div class="day number ${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}" 
+      <div class="day number ${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}"
            data-date="${dateKey}">
         ${d}
       </div>`;
   }
 
   daysEl.innerHTML = html;
-
   document.querySelectorAll('.day.number').forEach(day => {
     day.addEventListener('click', openModal);
   });
 }
 
-
-
+// -------------------------------
+// 🗒️ Modal de eventos
+// -------------------------------
 function openModal(e) {
-  
-
   const date = e.target.dataset.date;
   const modal = document.getElementById('eventModal');
   const title = document.getElementById('modalTitle');
@@ -71,24 +113,13 @@ function openModal(e) {
       delBtn.textContent = '🗑️';
       delBtn.style.marginLeft = '8px';
       delBtn.onclick = () => {
-        // eliminar evento según su índice
+        // eliminar evento
         events[date].splice(idx, 1);
-      
-        // si no quedan más eventos, borra la fecha del objeto
         if (events[date].length === 0) delete events[date];
-      
-        // guardar todo el objeto actualizado (manteniendo los demás eventos)
         localStorage.setItem("eventos", JSON.stringify(events));
-      
-        // refrescar vista
         render();
         openModal({ target: { dataset: { date } } });
-      
-        console.log(`Evento eliminado de ${date}`);
       };
-      
-      
-      
       li.appendChild(delBtn);
       list.appendChild(li);
     });
@@ -99,46 +130,45 @@ function openModal(e) {
   document.getElementById('closeModal').onclick = closeModal;
   document.getElementById('closeModalX').onclick = closeModal;
 }
+
 function closeModal() {
   const modal = document.getElementById('eventModal');
   modal.style.display = 'none';
-  document.getElementById('eventText').value = ''; // limpia el campo de texto
+  document.getElementById('eventText').value = '';
 }
 
-
+// -------------------------------
+// 💾 Guardar evento
+// -------------------------------
 function saveEvent(date) {
   const text = document.getElementById('eventText').value.trim();
   if (text === '') return;
 
-  // Cargar SIEMPRE los eventos más recientes desde localStorage
-  let eventosGuardados = JSON.parse(localStorage.getItem("eventos")) || {};
+  const eventosGuardados = JSON.parse(localStorage.getItem("eventos")) || {};
+  const normalizedKey = makeKeyFromParts(
+    ...date.split('-').map((v, i) => i === 1 ? Number(v) - 1 : Number(v))
+  );
 
-  // Si no hay eventos para esa fecha, crear el array
-  if (!eventosGuardados[date]) eventosGuardados[date] = [];
+  if (!eventosGuardados[normalizedKey]) eventosGuardados[normalizedKey] = [];
+  eventosGuardados[normalizedKey].push(text);
 
-  // Agregar el nuevo evento
-  eventosGuardados[date].push(text);
-
-  // Guardar de nuevo todo el objeto completo
   localStorage.setItem("eventos", JSON.stringify(eventosGuardados));
-
-  // Actualizar la variable global (para que el render use los datos nuevos)
   events = eventosGuardados;
 
-  // Refrescar la vista
   document.getElementById('eventText').value = '';
   render();
-  openModal({ target: { dataset: { date } } });
+  openModal({ target: { dataset: { date: normalizedKey } } });
 
-  console.log(`Evento guardado para ${date}: ${text}`);
+  if (typeof postEvent === "function") {
+    try { postEvent("calendario", { date: normalizedKey, text }); } catch (e) {
+      console.warn("postEvent falló", e);
+    }
+  }
 }
 
-
-
-
-
-
-
+// -------------------------------
+// 🔄 Navegación de meses
+// -------------------------------
 document.getElementById('prev').addEventListener('click', () => {
   viewDate.setMonth(viewDate.getMonth() - 1);
   render();
