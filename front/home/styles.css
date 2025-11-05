@@ -91,11 +91,13 @@ header{
     justify-content: center;
     align-items: center;
 
-    img{
-      height: 26rem;
-      width: 26rem;  
-    }
 }
+.titulo{
+    height: 9.93rem;
+    width: 53.06rem;  
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+  }
 .txt{
     font-family: 'Inter', sans-serif;
     font-weight: 400px;
@@ -106,14 +108,9 @@ header{
     
     
 }
-.foto{
-    width: 53rem;
-    height: 9.75rem;
-     
-    img{
-        width: 53rem;
-        height: 9.75rem;
-    }
+.logo{
+    width: 25.2rem;
+    height: 24.18rem;
 }
 .botones-abajo{
     height: 50%;
@@ -149,4 +146,9 @@ header{
 button{
     width: 21rem;
     height: 5.8rem;
+}
+.botones{
+    margin-right: 2rem;
+    gap: 2rem;
+    display: flex;
 }
