@@ -82,7 +82,7 @@
     "contraseña": ".",
     "mail": ".",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -90,7 +90,7 @@
     "contraseña": "luna123",
     "mail": "luu",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -98,7 +98,7 @@
     "contraseña": "luna123",
     "mail": "lu",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -106,7 +106,7 @@
     "contraseña": "luna123",
     "mail": "lu",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -170,7 +170,7 @@
     "contraseña": "ss",
     "mail": "ss",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -178,7 +178,7 @@
     "contraseña": "ss",
     "mail": "ss",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -186,7 +186,7 @@
     "contraseña": "ss",
     "mail": "ss",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
   },
   {
@@ -194,7 +194,23 @@
     "contraseña": "ss",
     "mail": "ss",
     "nacimiento": "aa",
-    "perfil": "Medico",
+    "perfil": "Paciente",
     "matricula": "aa"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "aa",
+    "mail": "aa",
+    "nacimiento": "aa",
+    "perfil": "Paciente",
+    "matricula": "aa"
+  },
+  {
+    "nombre": "santi",
+    "contraseña": ".",
+    "mail": ".",
+    "nacimiento": ".",
+    "perfil": "Paciente",
+    "matricula": "."
   }
 ]
