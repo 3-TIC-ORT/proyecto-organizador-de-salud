@@ -228,6 +228,21 @@
     "nacimiento": "m",
     "perfil": "Medico",
     "matricula": "m"
+  },
+  {
+    "nombre": "santi winny",
+    "contraseña": "s8123qaz",
+    "mail": "santiwinny@gmail.com",
+    "nacimiento": "2010-02-04",
+    "perfil": "Paciente",
+    "matricula": "50155553"
+  },
+  {
+    "nombre": "Santiago",
+    "contraseña": "s8123qaz",
+    "mail": "santiwinny@gmail.com",
+    "nacimiento": "2010-02-04",
+    "perfil": "Medico",
+    "matricula": "1234567890"
   }
-  
 ]
