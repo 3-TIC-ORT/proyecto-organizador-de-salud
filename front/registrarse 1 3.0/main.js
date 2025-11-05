@@ -10,6 +10,15 @@ function guardardata(){
 let nombre = document.getElementById("nombre").value;
 let contraseña = document.getElementById("contraseña").value;
 let mail = document.getElementById("mail").value;
+
+const emailInput = document.getElementById("mail");
+            if (!emailInput.validity.valid) {
+                alert("Por favor, ingrese un correo electrónico válido.");
+                return; // Evitar que el formulario se envíe si el correo no es válido
+            }
+
+
+
 let datos = {"nombre":nombre, "contraseña":contraseña, "mail":mail, "nacimiento": "", "perfil": "", "matricula": ""};
 localStorage["nombre"] = nombre;
 postEvent("registrar", datos);

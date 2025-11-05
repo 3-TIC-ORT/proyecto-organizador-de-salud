@@ -241,8 +241,48 @@
     "nombre": "tt",
     "contraseña": "tt",
     "mail": "tt",
-    "nacimiento": "tt",
-    "perfil": "Medico",
-    "matricula": "tt"
+    "nacimiento": "2010-02-04",
+    "perfil": "none",
+    "matricula": ""
+  },
+  {
+    "nombre": "dws",
+    "contraseña": "ds",
+    "mail": "ds",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "",
+    "contraseña": "",
+    "mail": "",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "asdcfw",
+    "mail": "kjsnkjkakd",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "edwwe",
+    "mail": "jajaja@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "qefqwe",
+    "mail": "jajaja@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
   }
 ]
