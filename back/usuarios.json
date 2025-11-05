@@ -228,21 +228,5 @@
     "nacimiento": "m",
     "perfil": "Medico",
     "matricula": "m"
-  },
-  {
-    "nombre": "Winny",
-    "contraseña": "p",
-    "mail": "p",
-    "nacimiento": "p",
-    "perfil": "Paciente",
-    "matricula": "p"
-  },
-  {
-    "nombre": "santi",
-    "contraseña": "m",
-    "mail": "m",
-    "nacimiento": "m",
-    "perfil": "Medico",
-    "matricula": "m"
   }
 ]

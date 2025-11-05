@@ -1,5 +1,8 @@
 connect2Server();
 
+
+
+
 const weekdaysShort = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 const monthNames = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 let viewDate = new Date();
@@ -145,26 +148,19 @@ function saveEvent(date) {
   if (text === '') return;
 
   const eventosGuardados = JSON.parse(localStorage.getItem("eventos")) || {};
-  const normalizedKey = makeKeyFromParts(
-    ...date.split('-').map((v, i) => i === 1 ? Number(v) - 1 : Number(v))
-  );
-
-  if (!eventosGuardados[normalizedKey]) eventosGuardados[normalizedKey] = [];
-  eventosGuardados[normalizedKey].push(text);
-
+  if (!eventosGuardados[date]) eventosGuardados[date] = [];
+  eventosGuardados[date].push(text);
   localStorage.setItem("eventos", JSON.stringify(eventosGuardados));
   events = eventosGuardados;
 
+  // Suponiendo que tenés el nombre del usuario en la variable "usuario"
+  postEvent("calendario", { usuario, date, text });
+
   document.getElementById('eventText').value = '';
   render();
-  openModal({ target: { dataset: { date: normalizedKey } } });
-
-  if (typeof postEvent === "function") {
-    try { postEvent("calendario", { date: normalizedKey, text }); } catch (e) {
-      console.warn("postEvent falló", e);
-    }
-  }
+  openModal({ target: { dataset: { date } } });
 }
+
 
 // -------------------------------
 // 🔄 Navegación de meses

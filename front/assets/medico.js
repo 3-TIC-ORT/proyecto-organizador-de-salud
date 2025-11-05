@@ -5,8 +5,9 @@ let nombre = document.getElementById("nombre-abajo");
 
 
 function asignarNombre(usuario){
-    nombre.textContent = localStorage["usuario"]
+    (nombre.textContent = localStorage["nombre"]) || (nombre.textContent = localStorage["usuario"]);
 }
+
 asignarNombre();
 
 let cerrarSesion = document.getElementById("cerrar-sesion");
