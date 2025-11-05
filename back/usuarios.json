@@ -81,33 +81,33 @@
     "nombre": "luna",
     "contraseña": ".",
     "mail": ".",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "luu",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "lu",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "lu",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "lulita",
@@ -169,32 +169,65 @@
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "aa",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "aa"
+    "matricula": "m"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "aa",
+    "mail": "aa",
+    "nacimiento": "m",
+    "perfil": "Medico",
+    "matricula": "m"
+  },
+  {
+    "nombre": "santi",
+    "contraseña": ".",
+    "mail": ".",
+    "nacimiento": "m",
+    "perfil": "Medico",
+    "matricula": "m"
+  },
+  {
+    "nombre": "santi",
+    "contraseña": "t",
+    "mail": "t",
+    "nacimiento": "m",
+    "perfil": "Medico",
+    "matricula": "m"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "m",
+    "mail": "m",
+    "nacimiento": "m",
+    "perfil": "Medico",
+    "matricula": "m"
   }
+  
 ]

@@ -140,3 +140,6 @@ select{
     font-style: bold;
     font-size: 2.5rem;
 }
+.point{
+    cursor: pointer;
+}

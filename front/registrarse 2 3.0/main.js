@@ -33,3 +33,8 @@ postEvent("actualizar", datos2, (respuesta) =>{
 
 let boton = document.getElementById("bot-siguiente");
 boton.addEventListener("click", enviar);
+
+let volver = document.getElementById("lineaVolver");
+volver.addEventListener("click", () => {
+    window.location.href = "../registrarse 1 3.0/index.html"
+})
