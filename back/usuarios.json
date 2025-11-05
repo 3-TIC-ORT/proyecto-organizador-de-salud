@@ -209,20 +209,36 @@
     "nombre": "santi",
     "contraseña": ".",
     "mail": ".",
-    "nacimiento": "t",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "t"
+    "matricula": "m"
   },
   {
     "nombre": "santi",
     "contraseña": "t",
     "mail": "t",
-    "nacimiento": "t",
+    "nacimiento": "m",
     "perfil": "Medico",
-    "matricula": "t"
+    "matricula": "m"
   },
   {
     "nombre": "luna",
+    "contraseña": "m",
+    "mail": "m",
+    "nacimiento": "m",
+    "perfil": "Medico",
+    "matricula": "m"
+  },
+  {
+    "nombre": "Winny",
+    "contraseña": "p",
+    "mail": "p",
+    "nacimiento": "p",
+    "perfil": "Paciente",
+    "matricula": "p"
+  },
+  {
+    "nombre": "santi",
     "contraseña": "m",
     "mail": "m",
     "nacimiento": "m",
