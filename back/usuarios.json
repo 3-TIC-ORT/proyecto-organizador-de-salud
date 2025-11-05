@@ -228,5 +228,21 @@
     "nacimiento": "m",
     "perfil": "Medico",
     "matricula": "m"
+  },
+  {
+    "nombre": "jua",
+    "contraseña": "aa",
+    "mail": "aa",
+    "nacimiento": "aa",
+    "perfil": "Medico",
+    "matricula": "aa"
+  },
+  {
+    "nombre": "tt",
+    "contraseña": "tt",
+    "mail": "tt",
+    "nacimiento": "tt",
+    "perfil": "Medico",
+    "matricula": "tt"
   }
 ]
