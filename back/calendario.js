@@ -15,8 +15,11 @@ function calendario(events){
         if (!calendario[fecha]) {
             calendario[fecha] = [];
         }
-        calendario[fecha].push(...events[fecha]);
+        events[fecha].forEach(evento => {
+            calendario[fecha].push(evento);
+        });
     }
+     
     if (typeof events !== "object" || Array.isArray(events)) {
         throw new Error("Formato inválido para calendario");
     }
