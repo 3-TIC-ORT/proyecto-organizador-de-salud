@@ -17,6 +17,11 @@ const emailInput = document.getElementById("mail");
                 return; // Evitar que el formulario se envíe si el correo no es válido
             }
 
+            if (!nombre || !contraseña || !mail) {
+                alert("Por favor, complete todos los campos.");
+                return; // Evitar que el formulario se envíe si algún campo está vacío
+            } 
+
 
 
 let datos = {"nombre":nombre, "contraseña":contraseña, "mail":mail, "nacimiento": "", "perfil": "", "matricula": ""};

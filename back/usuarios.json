@@ -284,5 +284,37 @@
     "nacimiento": "",
     "perfil": "",
     "matricula": ""
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "ascs",
+    "mail": "jajaja@uniongroup.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "",
+    "contraseña": "",
+    "mail": "",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "",
+    "contraseña": "",
+    "mail": "",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "",
+    "contraseña": "",
+    "mail": "",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
   }
 ]
