@@ -33,10 +33,11 @@ postEvent("registrar", datos, (res) => {
         return;
     }
     else{
+        localStorage["mail"] = mail,
 
+         window.location.href = "../registrarse 2 3.0/index.html";
     }
 
-    window.location.href = "../registrarse 2 3.0/index.html";
 
 });
 
