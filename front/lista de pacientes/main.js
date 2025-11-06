@@ -5,6 +5,7 @@ const searchBar = document.getElementById('searchBar');
 // --- Cargar pacientes desde localStorage ---
 const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
 
+
 // --- Función para mostrar los pacientes ---
 function mostrarPacientes(lista = pacientes) {
   container.innerHTML = '';

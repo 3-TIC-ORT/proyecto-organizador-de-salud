@@ -15,7 +15,7 @@ calendario.addEventListener("click", () => {
 });
 let grupofam = document.getElementById("grupofam");
 grupofam.addEventListener("click", () => {
-    window.location.href = "../grupo familiar/index.html"
+    window.location.href = "../grupo familiar final/index.html"
 });
 let mapa = document.getElementById("mapa");
 mapa.addEventListener("click", () => {

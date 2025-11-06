@@ -153,8 +153,9 @@ function saveEvent(date) {
   localStorage.setItem("eventos", JSON.stringify(eventosGuardados));
   events = eventosGuardados;
 
+  const idusuario = localStorage.getItem("idusuario");
   // Suponiendo que tenés el nombre del usuario en la variable "usuario"
-  postEvent("calendario", { usuario, date, text });
+  postEvent("calendario", { idusuario, date, text });
 
   document.getElementById('eventText').value = '';
   render();

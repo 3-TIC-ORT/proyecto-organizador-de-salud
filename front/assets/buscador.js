@@ -10,6 +10,8 @@ const btnMostrarForm = document.getElementById('btnMostrarForm');
 const formPaciente = document.getElementById('formPaciente');
 const btnCancelar = document.getElementById('btnCancelar');
 
+const listadeusuario = 
+
 // --- Función para mostrar los pacientes ---
 function mostrarPacientes(lista = pacientes) {
   container.innerHTML = '';

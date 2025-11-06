@@ -29,6 +29,7 @@ postEvent("iniciarsesion", datos, (respuesta) =>{
         alert("Error");
     }
     else if(respuesta.msg == true){
+        localStorage.setItem("idusuario", respuesta.id);
 
         if(respuesta.perfil == "Paciente"){
 
