@@ -244,13 +244,5 @@
     "nacimiento": "2010-02-04",
     "perfil": "Medico",
     "matricula": "1234567890"
-  },
-  {
-    "nombre": "lo",
-    "contraseña": ".",
-    "mail": "luna@gmail.com",
-    "nacimiento": "3445-03-22",
-    "perfil": "Paciente",
-    "matricula": "sdsaacs"
   }
 ]
