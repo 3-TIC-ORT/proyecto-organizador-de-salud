@@ -16,7 +16,7 @@ const sheets = google.sheets({
   auth: API_KEY,
 });
 
-async function leerYConvertir() {
+export async function leerYConvertir() {
     try {
       // Leer datos de Google Sheets
       const res = await sheets.spreadsheets.values.get({
@@ -47,7 +47,7 @@ async function leerYConvertir() {
       console.table(objetos);
   
       // Guardar el resultado en un archivo
-      fs.writeFileSync("datos_por_fila.json", JSON.stringify(objetos, null, 2));
+      fs.writeFileSync("historial.json", JSON.stringify(objetos, null, 2));
       console.log("💾 Archivo 'datos_por_fila.json' creado correctamente.");
     } catch (err) {
       console.error("❌ Error al leer o convertir la hoja:", err.message);
