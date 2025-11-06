@@ -26,8 +26,22 @@ const emailInput = document.getElementById("mail");
 
 let datos = {"nombre":nombre, "contraseña":contraseña, "mail":mail, "nacimiento": "", "perfil": "", "matricula": ""};
 localStorage["nombre"] = nombre;
-postEvent("registrar", datos);
-window.location.href = "../registrarse 2 3.0/index.html";
+postEvent("registrar", datos, (res) => {
+
+    if(res.repe == true) {
+        alert("porfavor ingrese otro mail porque este ya se encuentra registrado");
+        return;
+    }
+    else{
+
+    }
+
+    window.location.href = "../registrarse 2 3.0/index.html";
+
+});
+
+
+
 
 }
 
