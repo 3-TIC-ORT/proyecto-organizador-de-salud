@@ -81,33 +81,33 @@
     "nombre": "luna",
     "contraseña": ".",
     "mail": ".",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "luu",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "lu",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "luna123",
     "mail": "lu",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "lulita",
@@ -169,41 +169,41 @@
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "ss",
     "mail": "ss",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "luna",
     "contraseña": "aa",
     "mail": "aa",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "santi",
@@ -225,9 +225,9 @@
     "nombre": "luna",
     "contraseña": "m",
     "mail": "m",
-    "nacimiento": "m",
+    "nacimiento": "0034-03-22",
     "perfil": "Medico",
-    "matricula": "m"
+    "matricula": "24355433"
   },
   {
     "nombre": "santi winny",
@@ -252,5 +252,38 @@
     "nacimiento": "3456-03-22",
     "perfil": "Medico",
     "matricula": "3453655"
+  },
+  {
+    "nombre": "luna",
+    "contraseña": "luna",
+    "mail": "luna@gmail.com",
+    "nacimiento": "0034-03-22",
+    "perfil": "Medico",
+    "matricula": "24355433"
+  },
+  {
+    "nombre": "lu",
+    "contraseña": "luna",
+    "mail": "luna@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "lu",
+    "contraseña": "sddfsdfsd",
+    "mail": "luna@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": ""
+  },
+  {
+    "nombre": "luuuuuuu",
+    "contraseña": "12345678",
+    "mail": "lujuuuuuu@gmail.com",
+    "nacimiento": "2025-11-02",
+    "perfil": "Paciente",
+    "matricula": "24355433",
+    "id": 1
   }
 ]

@@ -60,7 +60,10 @@ function buildWeekdays() {
 }
 
 function render() {
-  events = JSON.parse(localStorage.getItem("eventos")) || {};
+  //events = JSON.parse(localStorage.getItem("eventos")) || {};
+  postEvent("cargarEventos",  {mail: localStorage.getItem("mail")}, (res) =>{
+      events = res || [];
+  })
 
   const daysEl = document.getElementById('days');
   const monthYearEl = document.getElementById('monthYear');
@@ -153,9 +156,9 @@ function saveEvent(date) {
   localStorage.setItem("eventos", JSON.stringify(eventosGuardados));
   events = eventosGuardados;
 
-  const idusuario = localStorage.getItem("idusuario");
+  const mail = localStorage.getItem("mail");
   // Suponiendo que tenés el nombre del usuario en la variable "usuario"
-  postEvent("calendario", { idusuario, date, text });
+  postEvent("calendario", { mail: mail, fecha: date, texto: text });
 
   document.getElementById('eventText').value = '';
   render();

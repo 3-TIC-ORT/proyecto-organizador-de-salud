@@ -19,7 +19,7 @@ export function registrarse(datos) {
     let id = ultimoId + 1;
     datos.id = id;
     usuarios.push(datos);
-    console.log("\n " + JSON.stringify(usuarios, null, 2))
+    //console.log("\n " + JSON.stringify(usuarios, null, 2))
 
     //   let nuevoJson = JSON.stringify(usuarios, null, 2);
     fs.writeFileSync("usuarios.json", JSON.stringify(usuarios, null, 2));

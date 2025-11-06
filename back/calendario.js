@@ -1,6 +1,7 @@
 import fs from "fs";
+import { datacatalog } from "googleapis/build/src/apis/datacatalog";
 
-export function calendario(events){
+export function calendario(data){
     let calendario = {};
 
     try {
@@ -10,6 +11,12 @@ export function calendario(events){
         calendario = {};
     }
 
+    for (let i = 0; i < calendario.length; i++){
+        if (calendario[i].mail == data.mail){
+            calendario[i].mail[data.fecha].push(data.texto);
+        }
+    }
+/*
     for (let fecha in events) {
         if (!calendario[fecha]) {
             calendario[fecha] = [];
@@ -18,7 +25,7 @@ export function calendario(events){
             calendario[fecha].push(evento);
         });
     }
-     
+     */
     if (typeof events !== "object" || Array.isArray(events)) {
         throw new Error("Formato inválido para calendario");
     }
@@ -27,5 +34,7 @@ export function calendario(events){
     fs.writeFileSync("calendario.json", JSON.stringify(calendario, null, 2));
     return { msg: true };
 }
+
+
 
 
