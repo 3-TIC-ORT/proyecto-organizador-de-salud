@@ -1,9 +1,18 @@
-import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic";
 import fs from "fs";
 
 
-function registrarse(datos) {
+export function registrarse(datos) {
     let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
+    let ultimoId = 0;
+    for (let index = 0; index < usuarios.length; index++) {
+        let usuario = usuarios[index];
+        let idUsuario = usuario.id;
+        if(idUsuario > ultimoId){
+            ultimoId = idUsuario;
+        }
+    }
+    let id = ultimoId + 1;
+    datos.id = id;
     usuarios.push(datos);
     console.log("\n " + JSON.stringify(usuarios, null, 2))
 
@@ -15,7 +24,7 @@ function registrarse(datos) {
 
 
 
-function actualizarse(datos2) {
+export function actualizarse(datos2) {
     let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
 
     for (var i = 0; i < usuarios.length; i++) {
@@ -31,7 +40,7 @@ function actualizarse(datos2) {
     return { msg: true }
 
 }
-function iniciosesion(data) {
+export function iniciosesion(data) {
 
     let correcto = false;
     let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
@@ -49,7 +58,7 @@ function iniciosesion(data) {
         //console.log("=====================================");
 
         if (data[0].nombre == usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
-            resultado = { "msg": true, "case": "1", "perfil": usuarios[i].perfil};
+            resultado = { "msg": true, "case": "1", "perfil": usuarios[i].perfil, "id": data.id};
             break;
         }
         else if (data[0].nombre != usuarios[i].nombre && data[0].contraseña == usuarios[i].contraseña && data[0].mail == usuarios[i].mail) {
@@ -79,10 +88,5 @@ function iniciosesion(data) {
     return resultado;
 }
 
-subscribePOSTEvent("iniciarsesion", iniciosesion)
-subscribePOSTEvent("registrar", registrarse)
-subscribePOSTEvent("actualizar", actualizarse)
-
-startServer()
 //nombre y apellido, mail, contraseña, fecha de nacimiento, médico/paciente, matricula/obra social }
 //iniciosesión nombre y apellido, mail, contraseña

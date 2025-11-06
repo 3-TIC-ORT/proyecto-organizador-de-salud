@@ -1,7 +1,6 @@
-import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic"; 
 import fs from "fs";
 
-function calendario(events){
+export function calendario(events){
     let calendario = {};
 
     try {
@@ -30,5 +29,3 @@ function calendario(events){
 }
 
 
-subscribePOSTEvent("calendario", calendario) 
-startServer()
