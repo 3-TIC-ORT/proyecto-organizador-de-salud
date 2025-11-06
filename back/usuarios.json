@@ -244,5 +244,13 @@
     "nacimiento": "2010-02-04",
     "perfil": "Medico",
     "matricula": "1234567890"
+  },
+  {
+    "nombre": "juana",
+    "contraseña": "juana",
+    "mail": "juana@gmail.com",
+    "nacimiento": "3456-03-22",
+    "perfil": "Medico",
+    "matricula": "3453655"
   }
 ]

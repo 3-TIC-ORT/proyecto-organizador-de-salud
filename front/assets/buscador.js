@@ -1,22 +1,13 @@
-connect2Server(); // asegurate de tener esto antes de usar postEvent/onEvent
+connect2Server();
 
-// Recuperar ID del usuario logueado
-const idusuario = localStorage.getItem('idusuario');
 
-if (!idusuario) {
-  alert("Tenés que iniciar sesión primero.");
-  window.location.href = "login.html";
+// Lista inicial vacía
+let pacientes = JSON.parse(localStorage.getItem('pacientes'));
+if (!Array.isArray(pacientes)) {
+  pacientes = [];
 }
 
-// Cargar pacientes guardados (de todos los usuarios)
-let todosLosPacientes = JSON.parse(localStorage.getItem('pacientes')) || {};
-// Si no hay lista para este usuario, crearla
-if (!todosLosPacientes[idusuario]) todosLosPacientes[idusuario] = [];
-
-// Lista actual del usuario
-let pacientes = todosLosPacientes[idusuario];
-
-// --- Elementos del DOM ---
+// Elementos del DOM
 const container = document.getElementById('pacienteContainer');
 const searchBar = document.getElementById('searchBar');
 const formSection = document.getElementById('formSection');
@@ -24,16 +15,21 @@ const btnMostrarForm = document.getElementById('btnMostrarForm');
 const formPaciente = document.getElementById('formPaciente');
 const btnCancelar = document.getElementById('btnCancelar');
 
-// --- Mostrar pacientes ---
-function mostrarPacientes(lista = pacientes) {
+
+
+// --- Función para mostrar los pacientes ---
+function mostrarPacientes() {
   container.innerHTML = '';
 
-  if (lista.length === 0) {
+  if (pacientes.length === 0) {
     container.innerHTML = '<p>No hay pacientes para mostrar.</p>';
     return;
   }
 
-  lista.forEach(p => {
+  //console.log(pacientes.Array)
+  //console.log(Array.isArray(pacientes))
+
+  pacientes.forEach(p => {
     container.innerHTML += `
       <div class="paciente">
         <h4 class="nombreTarjeta">${p.nombre}</h4>
@@ -43,7 +39,7 @@ function mostrarPacientes(lista = pacientes) {
   });
 }
 
-// --- Buscar paciente ---
+// --- Evento para buscar ---
 searchBar.addEventListener('input', () => {
   const searchTerm = searchBar.value.toLowerCase();
   const filtrados = pacientes.filter(p =>
@@ -57,7 +53,7 @@ btnMostrarForm.addEventListener('click', () => {
   formSection.classList.toggle('oculto');
 });
 
-// --- Guardar nuevo paciente ---
+// --- Agregar nuevo paciente ---
 formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -70,37 +66,17 @@ formPaciente.addEventListener('submit', (e) => {
   }
 
   const nuevoPaciente = { nombre, dni };
-
-  // Agregar al array del usuario actual
   pacientes.push(nuevoPaciente);
-
-  // Actualizar estructura general y guardar en localStorage
-  todosLosPacientes[idusuario] = pacientes;
-  localStorage.setItem('pacientes', JSON.stringify(todosLosPacientes));
-
-  // Enviar al backend (SoqueTIC)
-  postEvent("pacientes", { idusuario, paciente: nuevoPaciente });
-
+  localStorage.setItem('pacientes', JSON.stringify(pacientes));
   formPaciente.reset();
-  formSection.classList.add('oculto');
-  mostrarPacientes();
+  formSection.classList.add('oculto'); // Oculta el formulario después de agregar
+  mostrarPacientes(); // Actualiza la lista
 });
 
 // --- Botón cancelar ---
 btnCancelar.addEventListener('click', () => {
-  formSection.classList.add('oculto');
-  formPaciente.reset();
+  formSection.classList.add('oculto'); // oculta el formulario
+  formPaciente.reset(); // limpia los inputs
 });
 
-// --- Al iniciar, pedir pacientes del backend ---
-onEvent("pacientes", (data) => {
-  if (data && data[idusuario]) {
-    todosLosPacientes[idusuario] = data[idusuario];
-    pacientes = data[idusuario];
-    localStorage.setItem('pacientes', JSON.stringify(todosLosPacientes));
-    mostrarPacientes();
-  }
-});
-
-// Render inicial
 mostrarPacientes();
