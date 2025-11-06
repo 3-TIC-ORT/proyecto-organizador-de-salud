@@ -3,6 +3,11 @@ import fs from "fs";
 
 export function registrarse(datos) {
     let usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
+    for (var i = 0; i < usuarios.length; i++) {
+        if (datos.mail == usuarios[i].mail) {
+            return {repe: true}
+        }
+    }
     let ultimoId = 0;
     for (let index = 0; index < usuarios.length; index++) {
         let usuario = usuarios[index];

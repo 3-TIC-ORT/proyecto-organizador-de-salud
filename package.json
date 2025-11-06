@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "googleapis": "^164.1.0",
     "soquetic": "^1.4.2"
   }
 }
