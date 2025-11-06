@@ -2,7 +2,7 @@ connect2Server()
 
 let nombreprincipal = document.getElementById("nombre");
 
-getEvent("nombreprincipal", asignarNombre);
+
 
 function asignarNombre(usuario){
     (nombreprincipal.textContent = localStorage["nombre"]) || (nombreprincipal.textContent = localStorage["usuario"]);
