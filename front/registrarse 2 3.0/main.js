@@ -38,3 +38,8 @@ let volver = document.getElementById("lineaVolver");
 volver.addEventListener("click", () => {
     window.location.href = "../registrarse 1 3.0/index.html"
 })
+
+document.getElementById("matricula").addEventListener("input", function(e) {
+    // Reemplaza cualquier cosa que no sea dígito
+    this.value = this.value.replace(/[^0-9]/g, "");
+  });
