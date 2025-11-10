@@ -30,6 +30,7 @@ function mostrarPacientes(lista = pacientes) {
     container.innerHTML += `
       <div class="paciente">
         <h4 class="nombreTarjeta">${p.nombre}</h4>
+        
         <button class="flechaTarjeta">&gt;</button>
       </div>
     `;
@@ -46,7 +47,8 @@ searchBar.addEventListener('input', () => {
   }
 
   const filtrados = pacientes.filter(p =>
-    p.nombre.toLowerCase().includes(searchTerm)
+    p.nombre.toLowerCase().includes(searchTerm) ||
+    p.mail.toLowerCase().includes(searchTerm)
   );
 
   mostrarPacientes(filtrados);
@@ -62,14 +64,14 @@ formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombrePaciente').value.trim();
-  const dni = document.getElementById('dniPaciente').value.trim();
+  const mailPaciente = document.getElementById('mailPaciente').value.trim();
 
-  if (!nombre || !dni) {
+  if (!nombre || !mailPaciente) {
     alert("Por favor, completa todos los campos.");
     return;
   }
 
-  const nuevoPaciente = { nombre, dni };
+  const nuevoPaciente = { nombre, mail: mailPaciente };
 
   // Agregar al array y guardar localmente
   pacientes.push(nuevoPaciente);
