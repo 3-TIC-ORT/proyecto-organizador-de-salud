@@ -5,7 +5,7 @@ let nombreprincipal = document.getElementById("nombreprincipal");
 
 
 function asignarNombre(usuario){
-    nombreprincipal.textContent = localStorage["usuario"];
+    (nombreprincipal.textContent = localStorage["nombre"]) || (nombreprincipal.textContent = localStorage["usuario"]);
 }
 
 asignarNombre();

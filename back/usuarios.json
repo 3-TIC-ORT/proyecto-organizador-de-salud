@@ -303,5 +303,14 @@
     "perfil": "",
     "matricula": "",
     "id": 3
+  },
+  {
+    "nombre": "paciente",
+    "contraseña": "paciente",
+    "mail": "paciente@gmail.com",
+    "nacimiento": "2010-05-22",
+    "perfil": "Paciente",
+    "matricula": "50291642",
+    "id": 4
   }
 ]

@@ -42,7 +42,7 @@ if (el) {
 
 let historialCentro = document.getElementById("historial-centro");
 historialCentro.addEventListener("click", () => {
-  window.location.href = "../historial/index.html"
+  window.location.href = "../historial 2/index.html"
 });
 
 let grupofamCentro = document.getElementById("grupofam-centro");
