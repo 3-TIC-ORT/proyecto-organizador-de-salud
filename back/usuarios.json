@@ -285,5 +285,23 @@
     "perfil": "Paciente",
     "matricula": "24355433",
     "id": 1
+  },
+  {
+    "nombre": "nico winny",
+    "contraseña": "123qaz",
+    "mail": "nicolas@uniongroup.com.ar",
+    "nacimiento": "1979-09-08",
+    "perfil": "Paciente",
+    "matricula": "27283796",
+    "id": 2
+  },
+  {
+    "nombre": "nannan",
+    "contraseña": "sbhvasuvgguysv",
+    "mail": "hola@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": "",
+    "id": 3
   }
 ]
