@@ -7,7 +7,7 @@ home.addEventListener("click", () => {
 });
  let historial = document.getElementById("historial");
 historial.addEventListener("click", () => {
-    window.location.href = "../historial/index.html"
+    window.location.href = "../historial 2/index.html"
 });
 let calendario = document.getElementById("calendario");
 calendario.addEventListener("click", () => {
