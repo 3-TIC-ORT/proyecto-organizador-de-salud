@@ -1,13 +1,9 @@
 connect2Server();
 
+// --- Variables globales ---
+let pacientes = [];
 
-// Lista inicial vacía
-let pacientes = JSON.parse(localStorage.getItem('familia'));
-if (!Array.isArray(pacientes)) {
-  pacientes = [];
-}
-
-// Elementos del DOM
+// --- Elementos del DOM ---
 const container = document.getElementById('pacienteContainer');
 const searchBar = document.getElementById('searchBar');
 const formSection = document.getElementById('formSection');
@@ -15,21 +11,22 @@ const btnMostrarForm = document.getElementById('btnMostrarForm');
 const formPaciente = document.getElementById('formPaciente');
 const btnCancelar = document.getElementById('btnCancelar');
 
-
+// --- Cargar pacientes desde el servidor ---
+postEvent("cargarFamilia", { mail: localStorage.getItem("mail") }, (res) => {
+  pacientes = res || [];
+  mostrarPacientes();
+});
 
 // --- Función para mostrar los pacientes ---
-function mostrarPacientes() {
+function mostrarPacientes(lista = pacientes) {
   container.innerHTML = '';
 
-  if (pacientes.length === 0) {
-    container.innerHTML = '<p>No hay pacientes para mostrar.</p>';
+  if (!lista || lista.length === 0) {
+    container.innerHTML = '<p>No se encontraron pacientes.</p>';
     return;
   }
 
-  //console.log(pacientes.Array)
-  //console.log(Array.isArray(pacientes))
-
-  pacientes.forEach(p => {
+  lista.forEach(p => {
     container.innerHTML += `
       <div class="paciente">
         <h4 class="nombreTarjeta">${p.nombre}</h4>
@@ -39,12 +36,19 @@ function mostrarPacientes() {
   });
 }
 
-// --- Evento para buscar ---
+// --- Evento para buscar pacientes ---
 searchBar.addEventListener('input', () => {
-  const searchTerm = searchBar.value.toLowerCase();
+  const searchTerm = searchBar.value.toLowerCase().trim();
+
+  if (searchTerm === '') {
+    mostrarPacientes(); // Si está vacío, muestra todos
+    return;
+  }
+
   const filtrados = pacientes.filter(p =>
     p.nombre.toLowerCase().includes(searchTerm)
   );
+
   mostrarPacientes(filtrados);
 });
 
@@ -66,17 +70,23 @@ formPaciente.addEventListener('submit', (e) => {
   }
 
   const nuevoPaciente = { nombre, dni };
+
+  // Agregar al array y guardar localmente
   pacientes.push(nuevoPaciente);
   localStorage.setItem('familia', JSON.stringify(pacientes));
+
+  // Enviar al servidor
+  const mail = localStorage.getItem("mail");
+  postEvent("nuevaFamilia", { mail, nuevoPaciente });
+
+  // Resetear formulario y actualizar vista
   formPaciente.reset();
-  formSection.classList.add('oculto'); // Oculta el formulario después de agregar
-  mostrarPacientes(); // Actualiza la lista
+  formSection.classList.add('oculto');
+  mostrarPacientes();
 });
 
 // --- Botón cancelar ---
 btnCancelar.addEventListener('click', () => {
-  formSection.classList.add('oculto'); // oculta el formulario
-  formPaciente.reset(); // limpia los inputs
+  formSection.classList.add('oculto');
+  formPaciente.reset();
 });
-
-mostrarPacientes();
