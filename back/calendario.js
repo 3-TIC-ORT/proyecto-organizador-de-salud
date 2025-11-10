@@ -1,5 +1,5 @@
 import fs from "fs";
-import { datacatalog } from "googleapis/build/src/apis/datacatalog";
+import datacatalog from 'googleapis/build/src/apis/datacatalog/index.js';
 
 export function calendario(data){
     let calendario = {};
@@ -35,6 +35,14 @@ export function calendario(data){
     return { msg: true };
 }
 
+export function cargarEventos(events){
+     let calendario = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
+        for (var i = 0; i < calendario.length; i++) {
+            if (events.mail == calendario[i].mail) {
+          
+            }
+        }
+}
 
 
 
