@@ -312,5 +312,32 @@
     "perfil": "Paciente",
     "matricula": "50291642",
     "id": 4
+  },
+  {
+    "nombre": "dario",
+    "contraseña": "luna",
+    "mail": "dario.ezernitchi@gmail.com",
+    "nacimiento": "1976-12-16",
+    "perfil": "Paciente",
+    "matricula": "25705273",
+    "id": 5
+  },
+  {
+    "nombre": "dario",
+    "contraseña": "luna",
+    "mail": "dario@gmail.com",
+    "nacimiento": "1976-12-16",
+    "perfil": "Paciente",
+    "matricula": "25705273",
+    "id": 6
+  },
+  {
+    "nombre": "medico",
+    "contraseña": "medico",
+    "mail": "medico@gmail.com",
+    "nacimiento": "0342-03-22",
+    "perfil": "Medico",
+    "matricula": "239874839",
+    "id": 7
   }
 ]
