@@ -47,7 +47,7 @@ historialCentro.addEventListener("click", () => {
 
 let grupofamCentro = document.getElementById("grupofam-centro");
 grupofamCentro.addEventListener("click", () => {
-  window.location.href = "../grupo familiar 2.0/index.html"
+  window.location.href = "../grupo familiar final/index.html"
 });
 
 let mapaCentro = document.getElementById("mapa-centro");
