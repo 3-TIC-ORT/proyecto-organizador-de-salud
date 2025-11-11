@@ -1,3 +1,4 @@
+import datacatalog from 'googleapis/build/src/apis/datacatalog/index.js';
 import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic"; 
 import { leerYConvertir } from "./historial.js";
 import { calendario } from "./calendario.js";
