@@ -6,7 +6,7 @@ function redirigir() {
 
 
 
-function asignarNombre(usuario){
-    nombreTitulo.textContent = localStorage["usuario"];
+  function asignarNombre(usuario){
+    (nombreTitulo.textContent = localStorage["nombre"]) || (nombreTitulo.textContent = localStorage["usuario"]);
 }
 asignarNombre();

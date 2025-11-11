@@ -6,7 +6,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.2/soquetic-client.js"></script>
 <script defer src="../assets/paciente.js"></script>
-<script defer src="../assets/buscador.js"></script>
+
+<script defer src="main.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="../assets/barra-lateral-paciente.css">
     <link rel="stylesheet" href="../assets/buscador.css">
@@ -21,7 +22,7 @@
             </div>
         </div>
         <div class="a2">
-            <div class="opcion estoy" id="home">
+            <div class="opcion" id="home">
                 <img src="../assets/fotos/casagris.png" alt="casa" class="l1">
                 <h3>Home</h3>
             </div>
@@ -33,7 +34,7 @@
                 <img src="../assets/fotos/calendariogris.png" alt="calendario" class="l1">
                 <h3>Calendario</h3>
             </div>
-            <div class="opcion" id="grupofam">
+            <div class="opcion estoy" id="grupofam">
                 <img src="../assets/fotos/familiagris.png" alt="familia" class="l1">
                 <h3>Grupo familiar</h3>
             </div>
@@ -65,22 +66,22 @@
         </main>
       
         <section id="formSection" class="form-section oculto">
-          <form id="formPaciente" class="form">
-            <div class="preg">
-            <label>Nombre:</label>
-            <input type="text" id="nombrePaciente" class="inputcosa" required>
-          </div>
-      <div class="preg"> 
-            <label>DNI:</label>
-            <input type="text" id="dniPaciente" class="inputcosa" required>
-          </div>
-            <div class="botones-form">
-      
-            <button type="submit" class="boton-form">Guardar paciente</button>
-            <button type="button" id="btnCancelar" class="boton-form">Cancelar</button>
-          </div>
-          </form>
-        </section>
+            <form id="formPaciente" class="form">
+              <div class="preg">
+                <label>Nombre:</label>
+                <input type="text" id="nombrePaciente" class="inputcosa" required>
+              </div>
+              <div class="preg">
+                <label>Mail:</label>
+                <input type="email" id="mailPaciente" class="inputcosa" required>
+              </div>
+              <div class="botones-form">
+                <button type="submit" class="boton-form">Guardar paciente</button>
+                <button type="button" id="btnCancelar" class="boton-form">Cancelar</button>
+              </div>
+            </form>
+          </section>
+          
     </article>
 </body>
 </html>
