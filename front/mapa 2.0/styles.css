@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
+  background-color: #E5E4E2;
   }
   .map-container {
     display: flex;
