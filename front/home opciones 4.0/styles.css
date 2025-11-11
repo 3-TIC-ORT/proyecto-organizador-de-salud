@@ -60,14 +60,14 @@ article{
     color: var(--gris);
   padding: 20px;
   border-right: 1px solid #ccc;
-  background-color: #F7F7F7;
+  background-color: #ffffff;
 }
 .a2{
     width: 282px;
     height: 24rem;
     display: flex;
     flex-direction: column;
-   
+   justify-content: center;
 }
 aside{
     width: calc(100% - 344px);

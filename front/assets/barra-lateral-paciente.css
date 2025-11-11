@@ -54,7 +54,7 @@ main{
 aside{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 344px;
     height: 100%;   
     align-items: center; 
@@ -68,5 +68,5 @@ aside{
     height: 24rem;
     display: flex;
     flex-direction: column;
-   
+   justify-content: center;
 }
