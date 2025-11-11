@@ -1,5 +1,5 @@
 function redirigir() {
-    window.location.href = "https://forms.gle/99QYz9jF14Ys6Shx6";
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSf4iBSCSs2o_il4lrW12llMmNNVyks1zaYdi7JpRbjsUvfP1w/viewform";
   }
 
   let nombreTitulo = document.getElementById("nombre");
