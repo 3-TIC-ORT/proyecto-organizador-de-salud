@@ -1,36 +1,29 @@
 import fs from "fs";
-import { datacatalog } from "googleapis/build/src/apis/datacatalog";
 
 export function calendario(data){
-    let calendario = {};
-
-    try {
-        calendario = JSON.parse(fs.readFileSync("calendario.json", "utf-8"));
-    } catch (e) {
-        // Si el archivo está vacío o mal formado, arrancamos con un objeto vacío
-        calendario = {};
-    }
+    let calendario = JSON.parse(fs.readFileSync("calendario.json", "utf-8"));
 
     for (let i = 0; i < calendario.length; i++){
-        if (calendario[i].mail == data.mail){
-            calendario[i].mail[data.fecha].push(data.texto);
+        if (calendario[i].mail != data.mail) {
+           data.mail[data.fecha].push(data.texto);
+           return { "msg": true, "case": "1" };  
+        }
+        else if (calendario[i].mail == data.mail){
+        calendario[i].mail[data.fecha].push(data.texto);
+        return { "msg": true, "case": "2"};
         }
     }
-/*
-    for (let fecha in events) {
-        if (!calendario[fecha]) {
-            calendario[fecha] = [];
-        }
-        events[fecha].forEach(evento => {
-            calendario[fecha].push(evento);
-        });
-    }
-     */
-    if (typeof events !== "object" || Array.isArray(events)) {
-        throw new Error("Formato inválido para calendario");
-    }
-    
-
-    fs.writeFileSync("calendario.json", JSON.stringify(calendario, null, 2));
-    return { msg: true };
+    fs.writeFileSync("calendario.json", JSON.stringify(calendario, null, 2));    
 }
+
+export function cargarEventos(events){
+     let calendario = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
+        for (var i = 0; i < calendario.length; i++) {
+            if (events.mail == calendario[i].mail) {
+          
+            }
+        }
+}
+
+
+

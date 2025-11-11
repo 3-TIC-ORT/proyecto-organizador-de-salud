@@ -285,5 +285,59 @@
     "perfil": "Paciente",
     "matricula": "24355433",
     "id": 1
+  },
+  {
+    "nombre": "nico winny",
+    "contraseña": "123qaz",
+    "mail": "nicolas@uniongroup.com.ar",
+    "nacimiento": "1979-09-08",
+    "perfil": "Paciente",
+    "matricula": "27283796",
+    "id": 2
+  },
+  {
+    "nombre": "nannan",
+    "contraseña": "sbhvasuvgguysv",
+    "mail": "hola@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": "",
+    "id": 3
+  },
+  {
+    "nombre": "paciente",
+    "contraseña": "paciente",
+    "mail": "paciente@gmail.com",
+    "nacimiento": "2010-05-22",
+    "perfil": "Paciente",
+    "matricula": "50291642",
+    "id": 4
+  },
+  {
+    "nombre": "dario",
+    "contraseña": "luna",
+    "mail": "dario.ezernitchi@gmail.com",
+    "nacimiento": "1976-12-16",
+    "perfil": "Paciente",
+    "matricula": "25705273",
+    "id": 5
+  },
+  {
+    "nombre": "dario",
+    "contraseña": "luna",
+    "mail": "dario@gmail.com",
+    "nacimiento": "1976-12-16",
+    "perfil": "Paciente",
+    "matricula": "25705273",
+    "id": 6
+  },
+  {
+    "nombre": "medico",
+    "contraseña": "medico",
+    "mail": "medico@gmail.com",
+    "nacimiento": "0342-03-22",
+    "perfil": "Medico",
+    "matricula": "239874839",
+    "id": 7
   }
 ]
