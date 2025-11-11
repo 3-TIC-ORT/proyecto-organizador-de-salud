@@ -34,7 +34,3 @@ export function calendario(data){
     fs.writeFileSync("calendario.json", JSON.stringify(calendario, null, 2));
     return { msg: true };
 }
-
-
-
-
