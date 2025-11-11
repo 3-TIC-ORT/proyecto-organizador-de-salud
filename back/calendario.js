@@ -1,5 +1,4 @@
 import fs from "fs";
-import { datacatalog } from "googleapis/build/src/apis/datacatalog";
 
 export function calendario(data){
     let calendario = {};
