@@ -1,0 +1,20 @@
+[
+  {
+    "mail": "usuario@mail.com",
+    "miembros": [
+      {
+        "nombre": "Juan",
+        "mail": "juan@mail.com"
+      }
+    ]
+  },
+  {
+    "creadaPor": "bbaredes@gmail.com",
+    "miembros": [
+      {
+        "nombre": "luna",
+        "mail": "luna@gmail.com"
+      }
+    ]
+  }
+]
