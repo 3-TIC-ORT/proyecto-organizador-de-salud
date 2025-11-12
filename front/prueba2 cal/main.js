@@ -179,5 +179,19 @@ document.getElementById('next').addEventListener('click', () => {
   render();
 });
 
+
+function cargarEventosUsuario() {
+  const mail = localStorage.getItem("mail");
+  if (!mail) return;
+
+  postEvent("cargarEventos", { mail }, (res) => {
+    events = res || {};
+    console.log("✅ Eventos cargados del servidor:", events);
+    render(); // redibuja el calendario con los eventos
+  });
+}
+
+
 buildWeekdays();
-render();
+render(); // pinta el calendario vacío primero
+cargarEventosUsuario(); // después pide los eventos y lo actualiza
