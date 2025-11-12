@@ -7,8 +7,22 @@ home.addEventListener("click", () => {
 });
  let historial = document.getElementById("historial");
 historial.addEventListener("click", () => {
-    window.location.href = "../historial 2/index.html"
+
+    postEvent("datosHistorial", {"usuario": localStorage["mail"]}, cargarinfo);
+
 });
+
+
+function cargarinfo(data){
+
+    if (msg){
+        window.location.href = "../historial/index.html"
+    } 
+    else {
+        window.location.href = "../historial 2/index.html"
+    }
+
+}
 let calendario = document.getElementById("calendario");
 calendario.addEventListener("click", () => {
     window.location.href = "../prueba2 cal/index.html"
@@ -37,3 +51,4 @@ cerrarSesion.addEventListener("click",() =>{
     localStorage.clear();
     window.location.href = "../iniciar sesion/index.html"
 } )
+
