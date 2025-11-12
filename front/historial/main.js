@@ -9,3 +9,9 @@ function asignarNombre(usuario){
 }
 
 asignarNombre();
+
+let datosHistorial = postEvent("datosHistorial");
+
+function cargarinfo(){
+
+}
