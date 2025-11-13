@@ -47,6 +47,10 @@ export async function leerYConvertir() {
       console.table(objetos);
   
       // Guardar el resultado en un archivo
+
+
+      // BAREDES COMENTAMOS ESTA LINEA DE CODIGO PARA QUE LUNA PUDIERA PROBAR
+      // SUS COSAS, DESCOCMENTALA DESPUES!!!!
       fs.writeFileSync("historial.json", JSON.stringify(objetos, null, 2));
       console.log("💾 Archivo 'datos_por_fila.json' creado correctamente.");
     } catch (err) {
@@ -54,4 +58,25 @@ export async function leerYConvertir() {
     }
   }
   
-  leerYConvertir();
+  export async function cargardDatos(data) {
+
+    leerYConvertir();
+    let datos = JSON. parse(fs.readFileSync("historial.json", "utf-8"));
+    let encontrado = false;
+    let datosUuario = []
+
+    for (let i = 0; i < datos.length; i++){
+
+      if (datos[i].Mail == data.Mail){
+        encontrado = true;
+        datosUuario = datos[i];
+      }
+
+    }
+
+    return {"msg": encontrado, "datos": datosUuario };
+
+  }
+
+
+

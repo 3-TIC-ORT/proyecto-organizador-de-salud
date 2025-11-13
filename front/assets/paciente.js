@@ -8,21 +8,21 @@ home.addEventListener("click", () => {
  let historial = document.getElementById("historial");
 historial.addEventListener("click", () => {
 
-    postEvent("datosHistorial", {"usuario": localStorage["mail"]}, cargarinfo);
+    postEvent("datosHistorial", {"Mail": localStorage["mail"]}, cargarinfo);
 
 });
 
 
 function cargarinfo(data){
 
-    if (msg){
+    if (data.msg == true){
         window.location.href = "../historial/index.html"
     } 
     else {
         window.location.href = "../historial 2/index.html"
     }
-
 }
+
 let calendario = document.getElementById("calendario");
 calendario.addEventListener("click", () => {
     window.location.href = "../prueba2 cal/index.html"

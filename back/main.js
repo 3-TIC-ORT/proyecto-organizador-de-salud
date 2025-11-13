@@ -1,5 +1,5 @@
 import { subscribeGETEvent, subscribePOSTEvent, realTimeEvent, startServer } from "soquetic"; 
-import { leerYConvertir } from "./historial.js";
+import { leerYConvertir, cargardDatos } from "./historial.js";
 import { calendario } from "./calendario.js";
 import { iniciosesion } from "./usuarios.js";
 import { registrarse } from "./usuarios.js";
@@ -17,5 +17,7 @@ subscribePOSTEvent("cargarEventos", cargarEventos)
 subscribePOSTEvent("nuevaFamilia", nuevaFamilia)
 subscribePOSTEvent("cargarFamilia", cargarFamilia)
 subscribePOSTEvent("eliminarFamilia", eliminarFamilia)
+subscribePOSTEvent("datosHistorial", cargardDatos)
+
 
 startServer()
