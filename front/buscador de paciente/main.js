@@ -73,7 +73,10 @@ formPaciente.addEventListener('submit', (e) => {
   formPaciente.reset();
   formSection.classList.add('oculto'); // Oculta el formulario después de agregar
   mostrarPacientes(); // Actualiza la lista
-  postEvent("nuevoPaciente", { mail, nuevoPaciente });
+  postEvent("nuevoPaciente", { 
+    mail: localStorage.getItem("mail"), 
+    nuevoPaciente 
+});
 });
 
 // --- Botón cancelar ---

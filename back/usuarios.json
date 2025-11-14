@@ -11,9 +11,9 @@
     "nombre": "Benja",
     "contraseña": "Benja123",
     "mail": "bbaredes@gmail.com",
-    "nacimiento": "17/11/2009",
+    "nacimiento": "2009-11-17",
     "perfil": "Paciente",
-    "matricula": "OSDE"
+    "matricula": "49903870"
   },
   {
     "nombre": "Luu",
@@ -357,5 +357,14 @@
     "perfil": "Paciente",
     "matricula": "50030868",
     "id": 9
+  },
+  {
+    "nombre": "Benja",
+    "contraseña": "Benja123",
+    "mail": "bejaredes@gmail.com",
+    "nacimiento": "2009-11-17",
+    "perfil": "Medico",
+    "matricula": "110112",
+    "id": 10
   }
 ]

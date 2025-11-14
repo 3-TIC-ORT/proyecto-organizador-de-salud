@@ -1,0 +1,11 @@
+[
+  {
+    "mail": "bejaredes@gmail.com",
+    "pacientes": [
+      {
+        "nombre": "Benja",
+        "dni": "49903870"
+      }
+    ]
+  }
+]
