@@ -17,7 +17,8 @@ function cargarinfo(data) {
   // "data" es un array de objetos (como el JSON que mandaste)
  
 
-  const paciente = data[0]; // Tomamos el primer registro
+  const paciente = data[0];
+   // Tomamos el primer registro
 
   // Extraer los datos según tus campos del JSON
   const vacunaDoble = paciente["Vacuna doble adultos  DT (difteria y tetanos) o DTPa (vacunas difteria, tetanos y pertusis)"];
