@@ -2,5 +2,22 @@
   {
     "mail": "bejaredes@gmail.com",
     "pacientes": []
+  },
+  {
+    "mail": "luna@gmail.com",
+    "pacientes": [
+      {
+        "nombre": "luna",
+        "dni": "50291642"
+      },
+      {
+        "nombre": "gv",
+        "dni": "hf"
+      },
+      {
+        "nombre": "wew",
+        "dni": "dw"
+      }
+    ]
   }
 ]
