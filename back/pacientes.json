@@ -1,19 +1,6 @@
 [
   {
     "mail": "bejaredes@gmail.com",
-    "pacientes": [
-      {
-        "nombre": "Benja",
-        "dni": "49903870"
-      },
-      {
-        "nombre": "Benja",
-        "dni": "49903870"
-      },
-      {
-        "nombre": "tobi",
-        "dni": "49903870"
-      }
-    ]
+    "pacientes": []
   }
 ]

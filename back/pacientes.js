@@ -64,7 +64,7 @@ export function eliminarPaciente(data) {
 
     // Filtrar pacientes
     usuario.pacientes = usuario.pacientes.filter(
-        p => p.matricula !== data.matricula
+        p => p.dni !== data.dni
     );
 
     // Guardar cambios

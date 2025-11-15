@@ -23,42 +23,37 @@ postEvent("cargarPacientes", { mail: localStorage.getItem("mail") }, (res) => {
 
 //funcion para mostrar los pacientes
 function mostrarPacientes(lista = pacientes) {
-    container.innerHTML = '';
-  
-    if (!lista || lista.length === 0) {
-      container.innerHTML = '<p>No hay pacientes para mostrar.</p>';
-      return;
-    }
-  
-    lista.forEach(p => {
-      container.innerHTML += `
-        <div class="paciente">
-          <h4 class="nombreTarjeta">${p.nombre}</h4>
-          <button class="btnEliminar" data-matricula="${p.matricula}">🗑️</button>
-        </div>
-      `;
-    });
+  container.innerHTML = '';
 
-    // 🔥 A partir de acá, YA EXISTEN los botones
-    document.querySelectorAll(".btnEliminar").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const matricula = btn.dataset.matricula;
+  if (!lista || lista.length === 0) {
+    container.innerHTML = '<p>No hay pacientes para mostrar.</p>';
+    return;
+  }
 
-        if (!confirm("¿Seguro que querés eliminar este paciente?")) return;
+  lista.forEach(p => {
+    container.innerHTML += `
+      <div class="paciente">
+        <h4 class="nombreTarjeta">${p.nombre}</h4>
+        <button class="flechaTarjeta">&gt;</button>
+        <button class="btnEliminar" data-dni="${p.dni}">🗑️</button>
+      </div>
+    `;
+  });
 
-        postEvent("eliminarPaciente", { 
-            mail: localStorage.getItem("mail"), 
-            matricula
-        }, (res) => {
-            pacientes = res;
-            localStorage.setItem("pacientes", JSON.stringify(pacientes));
-            mostrarPacientes(); // 🔄 refresca la lista
-        });
+  document.querySelectorAll(".btnEliminar").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const dni = btn.dataset.dni;
+      const mail = localStorage.getItem("mail");
+
+      postEvent("eliminarPaciente", { mail, dni }, (actualizado) => {
+        pacientes = actualizado;            // Actualizo lista
+        localStorage.setItem("pacientes", JSON.stringify(pacientes));
+        mostrarPacientes();                 // Redibujo la lista
       });
     });
+  });
 }
 
-  
 
 // --- Evento para buscar ---
 searchBar.addEventListener('input', () => {
@@ -79,14 +74,14 @@ formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombrePaciente').value.trim();
-  const matricula = document.getElementById('dniPaciente').value.trim();
+  const dni = document.getElementById('dniPaciente').value.trim();
 
-  if (!nombre || !matricula) {
+  if (!nombre || !dni) {
     alert("Por favor, completa todos los campos.");
     return;
   }
 
-  const nuevoPaciente = { nombre, matricula };
+  const nuevoPaciente = { nombre, dni };
   pacientes.push(nuevoPaciente);
   localStorage.setItem('pacientes', JSON.stringify(pacientes));
   formPaciente.reset();
@@ -103,5 +98,6 @@ btnCancelar.addEventListener('click', () => {
   formSection.classList.add('oculto'); // oculta el formulario
   formPaciente.reset(); // limpia los inputs
 });
+
 
 mostrarPacientes();
