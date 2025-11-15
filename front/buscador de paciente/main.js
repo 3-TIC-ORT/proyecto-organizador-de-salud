@@ -34,11 +34,30 @@ function mostrarPacientes(lista = pacientes) {
       container.innerHTML += `
         <div class="paciente">
           <h4 class="nombreTarjeta">${p.nombre}</h4>
-          <button class="flechaTarjeta">&gt;</button>
+          <button class="btnEliminar" data-matricula="${p.matricula}">🗑️</button>
         </div>
       `;
     });
-  }
+
+    // 🔥 A partir de acá, YA EXISTEN los botones
+    document.querySelectorAll(".btnEliminar").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const matricula = btn.dataset.matricula;
+
+        if (!confirm("¿Seguro que querés eliminar este paciente?")) return;
+
+        postEvent("eliminarPaciente", { 
+            mail: localStorage.getItem("mail"), 
+            matricula
+        }, (res) => {
+            pacientes = res;
+            localStorage.setItem("pacientes", JSON.stringify(pacientes));
+            mostrarPacientes(); // 🔄 refresca la lista
+        });
+      });
+    });
+}
+
   
 
 // --- Evento para buscar ---
@@ -60,14 +79,14 @@ formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombrePaciente').value.trim();
-  const dni = document.getElementById('dniPaciente').value.trim();
+  const matricula = document.getElementById('dniPaciente').value.trim();
 
-  if (!nombre || !dni) {
+  if (!nombre || !matricula) {
     alert("Por favor, completa todos los campos.");
     return;
   }
 
-  const nuevoPaciente = { nombre, dni };
+  const nuevoPaciente = { nombre, matricula };
   pacientes.push(nuevoPaciente);
   localStorage.setItem('pacientes', JSON.stringify(pacientes));
   formPaciente.reset();

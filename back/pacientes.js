@@ -49,4 +49,28 @@ export function cargarPacientes(data) {
     return usuario.pacientes;
 }
 
+export function eliminarPaciente(data) {
+    let usuarios = [];
+
+    try {
+        usuarios = JSON.parse(fs.readFileSync("pacientes.json", "utf8"));
+    } catch (e) {
+        usuarios = [];
+    }
+
+    // Buscar usuario
+    let usuario = usuarios.find(u => u.mail === data.mail);
+    if (!usuario) return [];
+
+    // Filtrar pacientes
+    usuario.pacientes = usuario.pacientes.filter(
+        p => p.matricula !== data.matricula
+    );
+
+    // Guardar cambios
+    fs.writeFileSync("pacientes.json", JSON.stringify(usuarios, null, 2));
+
+    // Devolver lista actualizada
+    return usuario.pacientes;
+}
 
