@@ -12,6 +12,7 @@ import { leerYConvertir } from "./historial.js";
 import { cargarPacientes } from "./pacientes.js";
 import { nuevoPaciente } from "./pacientes.js";
 import { eliminarPaciente } from "./pacientes.js";
+import { cargarPacientesLista } from "./pacientes.js";
 
 subscribePOSTEvent("calendario", calendario) 
 subscribePOSTEvent("iniciarsesion", iniciosesion)
@@ -25,6 +26,6 @@ subscribePOSTEvent("datosHistorial", cargardDatos)
 subscribePOSTEvent("cargarPacientes", cargarPacientes)
 subscribePOSTEvent("nuevoPaciente", nuevoPaciente)
 subscribePOSTEvent("eliminarPaciente", eliminarPaciente)
-
+subscribePOSTEvent("cargarPacientesLista", cargarPacientesLista);
 
 startServer()

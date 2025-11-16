@@ -74,3 +74,23 @@ export function eliminarPaciente(data) {
     return usuario.pacientes;
 }
 
+export function cargarPacientesLista(data) {
+    let usuarios = [];
+
+    try {
+        usuarios = JSON.parse(fs.readFileSync("pacientes.json", "utf8"));
+    } catch (e) {
+        usuarios = [];
+    }
+
+    // Buscar usuario por mail
+    let usuario = usuarios.find(u => u.mail === data.mail);
+
+    if (!usuario) {
+        return []; // usuario sin pacientes cargados
+    }
+
+    return usuario.pacientes;
+}
+
+
