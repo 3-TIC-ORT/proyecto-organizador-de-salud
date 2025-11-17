@@ -11,7 +11,7 @@ asignarNombre();
 
 const mailPaciente = localStorage.getItem("mailPacienteHistorial");
 
-postEvent("datosHistorial", { mail: mailPaciente }, cargarinfo());
+postEvent("datosHistorial", { mail: mailPaciente }, cargarinfo);
 
 
 

@@ -27,13 +27,12 @@ function mostrarPacientes(lista = pacientes) {
   }
 
   lista.forEach(p => {
-    // cada tarjeta incluye un botón eliminar con data-mail para identificar
     container.innerHTML += `
       <div class="paciente" data-mail="${p.mail}">
         <div class="info-paciente">
           <h4 class="nombreTarjeta">${p.nombre}</h4>
-          
         </div>
+
         <div class="acciones-tarjeta">
           <button class="flechaTarjeta" aria-label="Ver">&#62;</button>
           <button class="btn-eliminar" aria-label="Eliminar" title="Eliminar paciente">🗑️</button>
@@ -48,7 +47,7 @@ searchBar.addEventListener('input', () => {
   const searchTerm = searchBar.value.toLowerCase().trim();
 
   if (searchTerm === '') {
-    mostrarPacientes(); // Si está vacío, muestra todos
+    mostrarPacientes();
     return;
   }
 
@@ -79,39 +78,32 @@ formPaciente.addEventListener('submit', (e) => {
     return;
   }
 
-  // 1) Verificar que NO exista ya en el front
   const existe = pacientes.some(p => p.mail === mailPaciente);
   if (existe) {
     alert("Ya existe un paciente con ese mail.");
     return;
   }
 
-  // 2) CONSULTAR AL BACK SI EXISTE UN USUARIO CON ESE MAIL
   postEvent("checkUsuarioPorMail", { mail: mailPaciente }, (res) => {
 
-    // --- Según cómo responda el back ---
     if (!res || res.msg !== true) {
       alert("No existe un usuario registrado con ese mail.");
       return;
     }
 
-    // 3) Si el usuario existe → crear familiar
     const nuevoPaciente = { nombre, mail: mailPaciente };
 
     pacientes.push(nuevoPaciente);
     localStorage.setItem('familia', JSON.stringify(pacientes));
 
-    // 4) Mandar al servidor que se agregó un familiar
     const mail = localStorage.getItem("mail");
     postEvent("nuevaFamilia", { mail, nuevoPaciente });
 
-    // 5) Limpiar formularios y actualizar vista
     formPaciente.reset();
     formSection.classList.add('oculto');
     mostrarPacientes();
   });
 });
-
 
 // --- Botón cancelar ---
 btnCancelar.addEventListener('click', () => {
@@ -119,10 +111,9 @@ btnCancelar.addEventListener('click', () => {
   formPaciente.reset();
 });
 
-
 const mailUsuario = localStorage.getItem("mail");
 
-// --- Delegación de eventos en container para manejar eliminar (y otras acciones) ---
+// --- Delegación de eventos en container ---
 container.addEventListener('click', (e) => {
   const eliminarBtn = e.target.closest('.btn-eliminar');
   if (eliminarBtn) {
@@ -134,36 +125,33 @@ container.addEventListener('click', (e) => {
     return;
   }
 
-  // Click en flecha → abrir historial
+  // 🔵 --- CAMBIO: entrar al historial del familiar ---
   const verBtn = e.target.closest('.flechaTarjeta');
   if (verBtn) {
     const tarjeta = verBtn.closest('.paciente');
     const mailPaciente = tarjeta?.getAttribute('data-mail');
 
-    const mailUsuario = localStorage.getItem("mail");
-
+    /* 🔵 CAMBIO: envío datos al back */
     postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
       if (res.msg == "true") {
-        // guardo el mail del paciente para la otra página
+
+        /* 🔵 CAMBIO: guardo el mail del paciente que quiero ver */
         localStorage.setItem("mailPacienteHistorial", mailPaciente);
 
+        /* 🔵 CAMBIO: redirección */
         window.location.href = "../historial familiar/index.html";
       }
     });
   }
 });
 
-
 // --- Función para eliminar paciente ---
 function eliminarPaciente(mailPaciente) {
-  // confirmación
-  const confirmar = confirm(`¿Eliminar al paciente con mail "${mailPaciente}"? Esta acción no se puede deshacer.`);
+  const confirmar = confirm(`¿Eliminar al paciente con mail "${mailPaciente}"?`);
   if (!confirmar) return;
 
-  // Filtrar el array
   const nuevos = pacientes.filter(p => p.mail !== mailPaciente);
 
-  // Si no cambió nada, salir
   if (nuevos.length === pacientes.length) {
     alert('No se encontró el paciente.');
     return;
@@ -171,13 +159,10 @@ function eliminarPaciente(mailPaciente) {
 
   pacientes = nuevos;
 
-  // Guardar en localStorage
   localStorage.setItem('familia', JSON.stringify(pacientes));
 
-  // Enviar evento al servidor (identificando al paciente por su mail)
   const mail = localStorage.getItem("mail");
   postEvent("eliminarFamilia", { mail, mailPaciente });
 
-  // Actualizar vista
   mostrarPacientes();
 }
