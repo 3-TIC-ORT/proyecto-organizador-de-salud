@@ -77,28 +77,39 @@ formPaciente.addEventListener('submit', (e) => {
     return;
   }
 
-  // opción: impedir mails duplicados (simple)
+  // 1) Verificar que NO exista ya en el front
   const existe = pacientes.some(p => p.mail === mailPaciente);
   if (existe) {
     alert("Ya existe un paciente con ese mail.");
     return;
   }
 
-  const nuevoPaciente = { nombre, mail: mailPaciente };
+  // 2) CONSULTAR AL BACK SI EXISTE UN USUARIO CON ESE MAIL
+  postEvent("checkUsuarioPorMail", { mail: mailPaciente }, (res) => {
 
-  // Agregar al array y guardar localmente
-  pacientes.push(nuevoPaciente);
-  localStorage.setItem('familia', JSON.stringify(pacientes));
+    // --- Según cómo responda el back ---
+    if (!res || res.existe !== true) {
+      alert("No existe un usuario registrado con ese mail.");
+      return;
+    }
 
-  // Enviar al servidor
-  const mail = localStorage.getItem("mail");
-  postEvent("nuevaFamilia", { mail, nuevoPaciente });
+    // 3) Si el usuario existe → crear familiar
+    const nuevoPaciente = { nombre, mail: mailPaciente };
 
-  // Resetear formulario y actualizar vista
-  formPaciente.reset();
-  formSection.classList.add('oculto');
-  mostrarPacientes();
+    pacientes.push(nuevoPaciente);
+    localStorage.setItem('familia', JSON.stringify(pacientes));
+
+    // 4) Mandar al servidor que se agregó un familiar
+    const mail = localStorage.getItem("mail");
+    postEvent("nuevaFamilia", { mail, nuevoPaciente });
+
+    // 5) Limpiar formularios y actualizar vista
+    formPaciente.reset();
+    formSection.classList.add('oculto');
+    mostrarPacientes();
+  });
 });
+
 
 // --- Botón cancelar ---
 btnCancelar.addEventListener('click', () => {
