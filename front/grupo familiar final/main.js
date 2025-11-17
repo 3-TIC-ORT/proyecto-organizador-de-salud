@@ -72,6 +72,8 @@ formPaciente.addEventListener('submit', (e) => {
   const nombre = document.getElementById('nombrePaciente').value.trim();
   const mailPaciente = document.getElementById('mailPaciente').value.trim().toLowerCase();
 
+  localStorage.setItem("mailFamilia", mailPaciente);
+
   if (!nombre || !mailPaciente) {
     alert("Por favor, completa todos los campos.");
     return;
@@ -136,6 +138,11 @@ container.addEventListener('click', (e) => {
     const mailPaciente = tarjeta?.getAttribute('data-mail');
     // ejemplo: abrir detalle -> implementar según lo que necesites
     console.log('Ver paciente:', mailPaciente);
+    postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
+      if(res.msg == "true"){
+        window.location.href = "../historial familiar/index.html"
+      }
+    })
   }
 });
 
