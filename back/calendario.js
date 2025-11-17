@@ -69,5 +69,50 @@ export function cargarEventos(data) {
   return eventosUsuario;
 }
 
+export function eliminarEvento(data) {
+  const filePath = "calendario.json";
 
+  // Asegurar que el archivo exista
+  if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, "{}", "utf-8");
+
+  let calendario = {};
+  try {
+    calendario = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  } catch (err) {
+    console.error("Error leyendo calendario.json:", err);
+    return { msg: false, error: "Error leyendo archivo" };
+  }
+
+  const { mail, fecha, texto } = data;
+
+  if (!mail || !fecha || typeof texto === "undefined") {
+    return { msg: false, error: "Faltan parámetros (mail, fecha o texto)" };
+  }
+
+  // Validar usuario y fecha
+  if (!calendario[mail]) {
+    return { msg: false, error: "Usuario no encontrado" };
+  }
+  if (!calendario[mail][fecha]) {
+    return { msg: false, error: "No hay eventos para esa fecha" };
+  }
+
+  // Eliminar solo los textos que coincidan exactamente
+  calendario[mail][fecha] = calendario[mail][fecha].filter(t => t !== texto);
+
+  // Si la fecha quedó vacía, eliminarla
+  if (calendario[mail][fecha].length === 0) {
+    delete calendario[mail][fecha];
+  }
+
+  // Guardar cambios
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(calendario, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Error guardando calendario.json:", err);
+    return { msg: false, error: "Error guardando archivo" };
+  }
+
+  return { msg: true, calendario: calendario[mail] || {} };
+}
 
