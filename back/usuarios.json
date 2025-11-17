@@ -366,5 +366,23 @@
     "perfil": "Medico",
     "matricula": "110112",
     "id": 10
+  },
+  {
+    "nombre": "mati sicor",
+    "contraseña": "matisicor",
+    "mail": "matisicor@gmail.com",
+    "nacimiento": "2010-09-06",
+    "perfil": "Paciente",
+    "matricula": "11",
+    "id": 11
+  },
+  {
+    "nombre": "jesi",
+    "contraseña": "123",
+    "mail": "jesi.hirsch@gmail.com",
+    "nacimiento": "",
+    "perfil": "Paciente",
+    "matricula": "28033254",
+    "id": 12
   }
 ]
