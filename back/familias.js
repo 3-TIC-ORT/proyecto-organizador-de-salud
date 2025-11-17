@@ -80,3 +80,40 @@ export function eliminarFamilia(data) {
     return { msg: false, error: "Error interno del servidor." };
   }
 }
+
+export function checkUsuarioPorMail(data) {
+  try {
+    if (!data.mail) {
+      return { msg: false, error: "No se envió el mail." };
+    }
+
+    const mailBuscado = data.mail;
+
+    if (fs.existsSync("usuarios.json")) {
+      const usuarios = JSON.parse(fs.readFileSync("usuarios.json", "utf-8"));
+
+      // usuarios.json es un ARRAY de usuarios? (Lo usual)
+      const existeEnUsuarios = usuarios.find(u => u.mail === mailBuscado);
+
+      if (existeEnUsuarios) {
+        return { msg: true };
+      }
+    }
+
+    if (fs.existsSync("familias.json")) {
+      const familias = JSON.parse(fs.readFileSync("familias.json", "utf-8"));
+
+      const existeEnFamilias = familias.find(f => f.creadaPor === mailBuscado);
+
+      if (existeEnFamilias) {
+        return { msg: true };
+      }
+    }
+
+    return { msg: false };
+
+  } catch (err) {
+    console.error("Error en checkUsuarioPorMail:", err);
+    return { msg: false, error: "Error interno del servidor." };
+  }
+}
