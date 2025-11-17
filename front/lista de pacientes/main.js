@@ -1,9 +1,11 @@
+connect2Server();
+
 // --- Obtener elementos del DOM ---
 const container = document.getElementById('pacienteContainer');
 const searchBar = document.getElementById('searchBar');
 
 // --- Cargar pacientes desde localStorage ---
-const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
+let pacientes = [];
 
 postEvent("cargarPacientesLista", { mail: localStorage.getItem("mail") }, (res) => {
     pacientes = res || [] || JSON.parse(localStorage.getItem('pacientes'));

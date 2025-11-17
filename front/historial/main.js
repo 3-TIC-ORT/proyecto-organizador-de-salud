@@ -14,11 +14,12 @@ postEvent("datosHistorial", { Mail: localStorage["mail"] }, cargarinfo);
 
 // Función para procesar la info del back
 function cargarinfo(data) {
-  // "data" es un array de objetos (como el JSON que mandaste)
- 
+  if (!data.msg) {
+    console.error("Usuario no encontrado");
+    return;
+  }
 
-  const paciente = data[0];
-   // Tomamos el primer registro
+  const paciente = data.datos; // ✅ ESTA es la corrección
 
   // Extraer los datos según tus campos del JSON
   const vacunaDoble = paciente["Vacuna doble adultos  DT (difteria y tetanos) o DTPa (vacunas difteria, tetanos y pertusis)"];
@@ -29,8 +30,8 @@ function cargarinfo(data) {
   const fechaCovid = paciente["Cuando fue la última dosis"];
 
   // Seleccionamos los contenedores donde se mostrarán
-  const aplicadasContainer = document.querySelector(".aplicada .botones");
-  const pendientesContainer = document.querySelector(".pendiente");
+const aplicadasContainer = document.querySelector(".aplicada .botones");
+  const pendientesContainer = document.querySelector(".botonesPendientes");
 
   // Limpia lo que había antes
   aplicadasContainer.innerHTML = "";
@@ -40,10 +41,10 @@ function cargarinfo(data) {
   function crearBoton(vacuna, fecha) {
     const btn = document.createElement("button");
     btn.innerHTML = `
-        <h3><span>${vacuna}</span></h3>
-        <img src="VACUNA.png" alt="vacuna" class="vacuna">
-        <h3 class="fecha"><span>${fecha}</span></h3>
-        <img src="Vector.png" alt="fecha" class="vector">
+      <h3><span>${vacuna}</span></h3>
+      <img src="VACUNA.png" alt="vacuna" class="vacuna">
+      <h3 class="fecha"><span>${fecha}</span></h3>
+      <img src="Vector.png" alt="fecha" class="vector">
     `;
     return btn;
   }
@@ -67,3 +68,4 @@ function cargarinfo(data) {
     pendientesContainer.appendChild(crearBoton("Covid-19", "Pendiente"));
   }
 }
+
