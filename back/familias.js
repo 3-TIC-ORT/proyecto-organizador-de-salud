@@ -117,3 +117,31 @@ export function checkUsuarioPorMail(data) {
     return { msg: false, error: "Error interno del servidor." };
   }
 }
+
+export function historialFamiliar(data) {
+    let usuarios = [];
+
+    try {
+        usuarios = JSON.parse(fs.readFileSync("pacientes.json", "utf8"));
+    } catch (e) {
+        usuarios = [];
+    }
+
+    const { mailUsuario, mailPaciente } = data;
+
+    // Buscar usuario
+    let usuario = usuarios.find(u => u.mail === mailUsuario);
+    if (!usuario) {
+        return { msg: "false" }; // no existe el usuario
+    }
+
+    // Buscar paciente dentro del usuario
+    let paciente = usuario.pacientes.find(p => p.mail === mailPaciente);
+
+    if (paciente) {
+        return { msg: "true" };
+    } else {
+        return { msg: "false" };
+    }
+}
+

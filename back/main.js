@@ -15,6 +15,7 @@ import { eliminarPaciente } from "./pacientes.js";
 import { cargarPacientesLista } from "./pacientes.js";
 import { eliminarEvento } from './calendario.js';
 import { checkUsuarioPorMail } from "./familias.js";
+import { historialFamiliar } from "./familias.js";
 
 subscribePOSTEvent("calendario", calendario) 
 subscribePOSTEvent("iniciarsesion", iniciosesion)
@@ -31,5 +32,6 @@ subscribePOSTEvent("eliminarPaciente", eliminarPaciente)
 subscribePOSTEvent("cargarPacientesLista", cargarPacientesLista);
 subscribePOSTEvent("eliminarEvento", eliminarEvento)
 subscribePOSTEvent("checkUsuarioPorMail", checkUsuarioPorMail)
+subscribePOSTEvent("historialFamiliar", historialFamiliar)
 
 startServer()
