@@ -53,5 +53,27 @@
     "Vacuna Covid-19": "Si",
     "Cuando fue la última dosis": "3/4/2021",
     "Mail": "paciente@gmail.com"
+  },
+  {
+    "Marca temporal": "16/11/2025 22:27:18",
+    "Nombre y apellido": "dario ezernitchi",
+    "Vacuna doble adultos  DT (difteria y tetanos) o DTPa (vacunas difteria, tetanos y pertusis)": "Si",
+    "Si se dio alguna en los ultimos 10 años, Anote cuando se dio la ultima dosis": "12/4/2020",
+    "Vacuna Hepatitis B": "No",
+    "Recibió las 3 dosis": "Si",
+    "Vacuna Covid-19": "No",
+    "Cuando fue la última dosis": "20/2/2010",
+    "Mail": "dario.ezernitch@gmail.com"
+  },
+  {
+    "Marca temporal": "16/11/2025 22:30:13",
+    "Nombre y apellido": "dario ezernitchi",
+    "Vacuna doble adultos  DT (difteria y tetanos) o DTPa (vacunas difteria, tetanos y pertusis)": "No",
+    "Si se dio alguna en los ultimos 10 años, Anote cuando se dio la ultima dosis": "",
+    "Vacuna Hepatitis B": "Si",
+    "Recibió las 3 dosis": "Si",
+    "Vacuna Covid-19": "Si",
+    "Cuando fue la última dosis": "15/5/2021",
+    "Mail": "dario.ezernitchi@gmail.com"
   }
 ]

@@ -104,12 +104,13 @@ body {
   }
   
   .day.has-event::after {
-    content: "•";
+    content: "----";
     color: #ff5252;
     font-size: 20px;
     position: absolute;
     bottom: 4px;
     right: 6px;
+    
   }
   .day:hover{
     color: #555;
