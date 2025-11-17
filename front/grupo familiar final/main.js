@@ -141,9 +141,15 @@ container.addEventListener('click', (e) => {
         /* 🔵 CAMBIO: redirección */
         window.location.href = "../historial familiar/index.html";
       }
+      else{
+         window.location.href = "../historial 2/index.html"
+      }
     });
   }
 });
+
+
+
 
 // --- Función para eliminar paciente ---
 function eliminarPaciente(mailPaciente) {
