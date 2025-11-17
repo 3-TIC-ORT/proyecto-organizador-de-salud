@@ -9,8 +9,12 @@ function asignarNombre() {
 }
 asignarNombre();
 
-// Pedir datos al back por mail
-postEvent("datosHistorial", { Mail: localStorage["mailFamilia"] }, cargarinfo);
+const mailPaciente = localStorage.getItem("mailPacienteHistorial");
+
+postEvent("datosHistorial", { mail: mailPaciente }, cargarinfo());
+
+
+
 
 // Función para procesar la info del back
 function cargarinfo(data) {

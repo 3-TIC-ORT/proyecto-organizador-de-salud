@@ -19,6 +19,11 @@
   },
   {
     "creadaPor": "paciente@gmail.com",
-    "miembros": []
+    "miembros": [
+      {
+        "nombre": "luna",
+        "mail": "luna@gmail.com"
+      }
+    ]
   }
 ]

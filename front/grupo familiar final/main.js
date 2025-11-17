@@ -119,6 +119,9 @@ btnCancelar.addEventListener('click', () => {
   formPaciente.reset();
 });
 
+
+const mailUsuario = localStorage.getItem("mail");
+
 // --- Delegación de eventos en container para manejar eliminar (y otras acciones) ---
 container.addEventListener('click', (e) => {
   const eliminarBtn = e.target.closest('.btn-eliminar');
@@ -131,20 +134,25 @@ container.addEventListener('click', (e) => {
     return;
   }
 
-  // aquí podrías manejar click en la flecha para "ver" detalles, etc.
+  // Click en flecha → abrir historial
   const verBtn = e.target.closest('.flechaTarjeta');
   if (verBtn) {
     const tarjeta = verBtn.closest('.paciente');
     const mailPaciente = tarjeta?.getAttribute('data-mail');
-    // ejemplo: abrir detalle -> implementar según lo que necesites
-    console.log('Ver paciente:', mailPaciente);
+
+    const mailUsuario = localStorage.getItem("mail");
+
     postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
-      if(res.msg == "true"){
-        window.location.href = "../historial familiar/index.html"
+      if (res.msg == "true") {
+        // guardo el mail del paciente para la otra página
+        localStorage.setItem("mailPacienteHistorial", mailPaciente);
+
+        window.location.href = "../historial familiar/index.html";
       }
-    })
+    });
   }
 });
+
 
 // --- Función para eliminar paciente ---
 function eliminarPaciente(mailPaciente) {
