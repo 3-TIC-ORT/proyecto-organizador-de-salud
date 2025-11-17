@@ -119,13 +119,26 @@ function openModal(e) {
       delBtn.textContent = '🗑️';
       delBtn.style.marginLeft = '8px';
       delBtn.onclick = () => {
-        // eliminar evento
+        const mail = localStorage.getItem("mail");
+        const textoEliminado = ev;
+      
+        // 1) Eliminar en memoria/localStorage
         events[date].splice(idx, 1);
         if (events[date].length === 0) delete events[date];
         localStorage.setItem("eventos", JSON.stringify(events));
+      
+        // 2) Avisar al backend (SoqueTIC)
+        postEvent("eliminarEvento", {
+          mail: mail,
+          fecha: date,
+          texto: textoEliminado
+        });
+      
+        // 3) Refrescar vista
         render();
         openModal({ target: { dataset: { date } } });
       };
+      
       li.appendChild(delBtn);
       list.appendChild(li);
     });
