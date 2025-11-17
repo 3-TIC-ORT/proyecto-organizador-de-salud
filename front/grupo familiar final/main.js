@@ -88,7 +88,7 @@ formPaciente.addEventListener('submit', (e) => {
   postEvent("checkUsuarioPorMail", { mail: mailPaciente }, (res) => {
 
     // --- Según cómo responda el back ---
-    if (!res || res.existe !== true) {
+    if (!res || res.msg !== true) {
       alert("No existe un usuario registrado con ese mail.");
       return;
     }
