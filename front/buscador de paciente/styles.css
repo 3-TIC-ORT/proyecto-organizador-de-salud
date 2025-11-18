@@ -8,3 +8,30 @@ main{
     height: 100%;
     width: 100%;
 }
+
+/* 💡 Cada tarjeta de paciente */
+.paciente{
+    display: flex;
+    justify-content: space-between;   /* nombre a la izq, flecha+tacho a la derecha */
+    align-items: center;              /* 🔥 Alinea verticalmente todo */
+    padding: 10px 0;
+}
+
+/* 💡 Contenedor de flecha y tacho */
+.flechatacho{
+    display: flex;
+    align-items: center;
+    gap: 10px;                        /* 🔥 separa flecha y tacho */
+}
+
+.flechaTarjeta{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btnEliminar{
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+}

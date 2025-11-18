@@ -1,12 +1,14 @@
+/* RESETEO */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* ÁREA GENERAL */
 article {
     flex: 1;
-    background-color: #E5E4E2;;
+    background-color: #E5E4E2;
     padding: 40px 60px;
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -16,25 +18,50 @@ article {
     color: #333;
 }
 
+/* ----------------------------- */
+/* --------  ARRIBA  ----------- */
+/* ----------------------------- */
 
-article .arriba {
-    text-align: center;
+.arriba{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* Centra los títulos */
+    position: relative;        /* Para ubicar la flecha */
     margin-bottom: 40px;
 }
 
-article .arriba h1 {
+/* Flecha alineada a la izquierda sin mover los títulos */
+#flecha{
+    position: absolute;
+    left: 0;
     font-size: 48px;
-    font-weight: 600;
-    margin: 5px 0;
-    text-transform: lowercase;
-    color: #333;
+    cursor: pointer;
 }
 
-.article {
+/* Contenedor de los títulos */
+.arriba div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+}
+
+/* Estilo de los títulos */
+.arriba h1{
+    font-size: 48px;
+    font-weight: 600;
+    margin: 5px 0;
+    color: #333;
+}
+
+/* ----------------------------- */
+/* --------  ABAJO  ------------ */
+/* ----------------------------- */
+
+.abajo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .vacunas-linea {
@@ -49,10 +76,7 @@ article .arriba h1 {
     color: #00487B;
     font-size: 32px;
     font-weight: 600;
-    cursor: pointer;
-    transition: color 0.3s ease;
 }
-
 
 .formulario {
     text-align: center;
@@ -75,42 +99,11 @@ article .arriba h1 {
 a{
     font-size: 15px;
     color: #0B6FA4;
-    word-break: break-all;
     cursor: pointer;
-}
-
-.formulario .linkform:hover {
-    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-    article {
-        padding: 30px 20px;
+    .arriba h1{
+        font-size: 32px;
     }
-
-    article .arriba h1 {
-        font-size: 22px;
-    }
-
-    .vacunas-linea {
-        gap: 25px;
-    }
-
-    .formulario {
-        width: 100%;
-    }
-}
-.abajo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.arriba{
-    display: flex;
-   
-    align-items: center;
-    gap: 2rem;
-}
-#flecha{
-    cursor: pointer;
 }

@@ -32,8 +32,10 @@ function mostrarPacientes(lista = pacientes) {
     container.innerHTML += `
       <div class="paciente" data-mail="${p.mail}">
         <h4 class="nombreTarjeta">${p.nombre}</h4>
+        <div class="flechatacho">
         <button class="flechaTarjeta">&gt;</button>
         <button class="btnEliminar" data-mail="${p.mail}">🗑️</button>
+        </div>
       </div>
     `;
   });
