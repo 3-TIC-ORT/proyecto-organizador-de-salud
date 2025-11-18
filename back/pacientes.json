@@ -1,7 +1,12 @@
 [
   {
     "mail": "bejaredes@gmail.com",
-    "pacientes": []
+    "pacientes": [
+      {
+        "nombre": "Benja",
+        "mail": "bbaredes@gmail.com"
+      }
+    ]
   },
   {
     "mail": "luna@gmail.com",
