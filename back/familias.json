@@ -21,16 +21,8 @@
     "creadaPor": "paciente@gmail.com",
     "miembros": [
       {
-        "nombre": "luna",
-        "mail": "luna@gmail.com"
-      },
-      {
         "nombre": "dario",
         "mail": "dario.ezernitchi@gmail.com"
-      },
-      {
-        "nombre": "medico",
-        "mail": "medico@gmail.com"
       }
     ]
   }

@@ -9,7 +9,8 @@ function redirigir() {
 
 
   function asignarNombre(usuario){
-    (nombreTitulo.textContent = localStorage["mailPacienteHistorial"]);
+    nombreTitulo.textContent = localStorage.getItem("mailPacienteHistorial");
+
     
 }
 asignarNombre();

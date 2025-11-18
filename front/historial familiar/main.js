@@ -4,14 +4,16 @@ connect2Server();
 let nombreprincipal = document.getElementById("nombreprincipal");
 
 function asignarNombre(usuario){
-    (nombreprincipal.textContent = localStorage["mailFamilia"]);
+    nombreprincipal.textContent = localStorage.getItem("mailPacienteHistorial");
+
     
 }
 asignarNombre();
 
 const mailPaciente = localStorage.getItem("mailPacienteHistorial");
+const mailUsuario = localStorage.getItem("mail");
 
-postEvent("datosHistorial", { mail: mailPaciente }, cargarinfo);
+postEvent("historialFamiliar", { mailPaciente: mailPaciente, mailUsuario: mailUsuario}, cargarinfo);
 
 
 

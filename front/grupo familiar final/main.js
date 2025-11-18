@@ -142,6 +142,7 @@ container.addEventListener('click', (e) => {
         window.location.href = "../historial familiar/index.html";
       }
       else{
+        localStorage.setItem("mailPacienteHistorial", mailPaciente);
          window.location.href = "../historial 2 copy/index.html"
       }
     });
