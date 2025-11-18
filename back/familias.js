@@ -119,29 +119,28 @@ export function checkUsuarioPorMail(data) {
 }
 
 export function historialFamiliar(data) {
-    let usuarios = [];
+    let historial;
 
     try {
-        usuarios = JSON.parse(fs.readFileSync("pacientes.json", "utf8"));
+        historial = JSON.parse(fs.readFileSync("historial.json", "utf8"));
     } catch (e) {
-        usuarios = [];
+        return { msg: "false" }; 
     }
 
-    const { mailUsuario, mailPaciente } = data;
+    const { mailPaciente } = data;
 
-    // Buscar usuario
-    let usuario = usuarios.find(u => u.mail === mailUsuario);
-    if (!usuario) {
-        return { msg: "false" }; // no existe el usuario
+    // Si el JSON NO es un array, lo convierto en uno
+    if (!Array.isArray(historial)) {
+        historial = [historial];
     }
 
-    // Buscar paciente dentro del usuario
-    let paciente = usuario.pacientes.find(p => p.mail === mailPaciente);
-
-    if (paciente) {
-        return { msg: "true" };
-    } else {
-        return { msg: "false" };
+    // Buscar historial usando un FOR
+    for (let i = 0; i < historial.length; i++) {
+        if (historial[i].Mail === mailPaciente) {
+            return { msg: "true", historial: historial[i] };
+        }
     }
+
+    // Si no lo encontró
+    return { msg: "false" };
 }
-
