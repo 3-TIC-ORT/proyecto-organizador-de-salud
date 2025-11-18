@@ -22,6 +22,11 @@
   },
   {
     "mail": "medico@gmail.com",
-    "pacientes": []
+    "pacientes": [
+      {
+        "nombre": "luna",
+        "mail": "luna@gmail.com"
+      }
+    ]
   }
 ]
