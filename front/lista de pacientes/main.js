@@ -4,38 +4,69 @@ connect2Server();
 const container = document.getElementById('pacienteContainer');
 const searchBar = document.getElementById('searchBar');
 
-// --- Cargar pacientes desde localStorage ---
+// --- Lista inicial ---
 let pacientes = [];
 
+// --- Cargar pacientes desde servidor ---
 postEvent("cargarPacientesLista", { mail: localStorage.getItem("mail") }, (res) => {
     pacientes = res || [] || JSON.parse(localStorage.getItem('pacientes'));
     mostrarPacientes();
-  });
+});
 
-// --- Función para mostrar los pacientes ---
+// -----------------------------------------------------------
+// FUNCION PARA MOSTRAR PACIENTES
+// -----------------------------------------------------------
 function mostrarPacientes(lista = pacientes) {
   container.innerHTML = '';
 
-  if (lista.length === 0) {
+  if (!lista || lista.length === 0) {
     container.innerHTML = '<p>No hay pacientes guardados.</p>';
     return;
   }
 
   lista.forEach(p => {
-    const div = document.createElement('div');
-    div.classList.add('paciente');
-    div.innerHTML = `
-      <strong>${p.nombre}</strong><br>
-      <button class="flechaTarjeta">&gt;</button>
+    container.innerHTML += `
+      <div class="paciente" data-mail="${p.mail}">
+        <strong>${p.nombre}</strong>
+        <button class="flechaTarjeta">&gt;</button>
+      </div>
     `;
-    container.appendChild(div);
   });
 }
 
-// --- Mostrar pacientes al cargar la página ---
+// Mostrar lista al inicio
 mostrarPacientes();
 
-// --- Filtro por nombre ---
+// -----------------------------------------------------------
+// CLICK EN PACIENTE → PEDIR HISTORIAL
+// -----------------------------------------------------------
+container.addEventListener("click", (e) => {
+
+  const verBtn = e.target.closest(".flechaTarjeta");
+  if (!verBtn) return;
+
+  const tarjeta = verBtn.closest(".paciente");
+  const mailPaciente = tarjeta?.dataset.mail;
+  const mailUsuario = localStorage.getItem("mail");
+
+  // Guardamos el mail del paciente para usar en la siguiente página
+  localStorage.setItem("mailPacienteHistorial", mailPaciente);
+
+  // Llamamos a tu función REAL que ya funciona
+  postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
+
+    if (res.msg === "true") {
+      window.location.href = "../historial pacientes desde medico info/index.html";
+    } else {
+      window.location.href = "../historial 2 copy medico/index.html";
+    }
+
+  });
+});
+
+// -----------------------------------------------------------
+// BUSCADOR
+// -----------------------------------------------------------
 searchBar.addEventListener('input', () => {
   const searchTerm = searchBar.value.toLowerCase().trim();
 

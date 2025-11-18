@@ -29,5 +29,14 @@
         "mail": "santiwinny@gmail.com"
       }
     ]
+  },
+  {
+    "creadaPor": "medico@gmail.com",
+    "miembros": [
+      {
+        "nombre": "paciente",
+        "mail": "paciente@gmail.com"
+      }
+    ]
   }
 ]
