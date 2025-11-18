@@ -74,14 +74,20 @@ formPaciente.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombrePaciente').value.trim();
-  const dni = document.getElementById('dniPaciente').value.trim();
+  const mailPaciente = document.getElementById('dniPaciente').value.trim();
 
-  if (!nombre || !dni) {
+  if (!nombre || !mailPaciente) {
     alert("Por favor, completa todos los campos.");
     return;
   }
+  postEvent("checkUsuarioPorMail", { mail: mailPaciente }, (res) => {
 
-  const nuevoPaciente = { nombre, dni };
+    if (!res || res.msg !== true) {
+      alert("No existe un usuario registrado con ese mail.");
+      return;
+    }
+
+    const nuevoPaciente = { nombre, mail: mailPaciente };
   pacientes.push(nuevoPaciente);
   localStorage.setItem('pacientes', JSON.stringify(pacientes));
   formPaciente.reset();
@@ -99,5 +105,6 @@ btnCancelar.addEventListener('click', () => {
   formPaciente.reset(); // limpia los inputs
 });
 
-
+});
 mostrarPacientes();
+

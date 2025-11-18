@@ -25,7 +25,7 @@ function cargarinfo(data) {
     return;
   }
 
-  const paciente = data.datos; // ✅ ESTA es la corrección
+  const paciente = data.historial; // ✅ ESTA es la corrección
 
   // Extraer los datos según tus campos del JSON
   const vacunaDoble = paciente["Vacuna doble adultos  DT (difteria y tetanos) o DTPa (vacunas difteria, tetanos y pertusis)"];
@@ -48,9 +48,9 @@ const aplicadasContainer = document.querySelector(".aplicada .botones");
     const btn = document.createElement("button");
     btn.innerHTML = `
       <h3><span>${vacuna}</span></h3>
-      <img src="VACUNA.png" alt="vacuna" class="vacuna">
+      <img src="../assets/fotos/VACUNA.png" alt="vacuna" class="vacuna">
       <h3 class="fecha"><span>${fecha}</span></h3>
-      <img src="Vector.png" alt="fecha" class="vector">
+      <img src="../assets/fotos/Vector.png" alt="fecha" class="vector">
     `;
     return btn;
   }

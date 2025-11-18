@@ -49,9 +49,10 @@ article{
     flex-direction: column;
     height: 100%;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     background-color: #E5E4E2;
+    gap: 3rem;
 }
 h1{
 font-size: 3rem;
