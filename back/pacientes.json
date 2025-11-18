@@ -22,15 +22,6 @@
   },
   {
     "mail": "medico@gmail.com",
-    "pacientes": [
-      {
-        "nombre": "wew",
-        "dni": "wdq"
-      },
-      {
-        "nombre": "kjdbwq",
-        "dni": "aJBH SAW"
-      }
-    ]
+    "pacientes": []
   }
 ]

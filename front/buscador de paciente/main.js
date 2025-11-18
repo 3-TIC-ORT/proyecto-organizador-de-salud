@@ -107,4 +107,3 @@ btnCancelar.addEventListener('click', () => {
 
 });
 mostrarPacientes();
-
