@@ -27,6 +27,10 @@
       {
         "nombre": "dario",
         "mail": "dario.ezernitchi@gmail.com"
+      },
+      {
+        "nombre": "medico",
+        "mail": "medico@gmail.com"
       }
     ]
   }

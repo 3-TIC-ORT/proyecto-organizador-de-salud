@@ -71,7 +71,7 @@ formPaciente.addEventListener('submit', (e) => {
   const nombre = document.getElementById('nombrePaciente').value.trim();
   const mailPaciente = document.getElementById('mailPaciente').value.trim().toLowerCase();
 
-  localStorage.setItem("mailFamilia", mailPaciente);
+
 
   if (!nombre || !mailPaciente) {
     alert("Por favor, completa todos los campos.");
@@ -142,7 +142,7 @@ container.addEventListener('click', (e) => {
         window.location.href = "../historial familiar/index.html";
       }
       else{
-         window.location.href = "../historial 2/index.html"
+         window.location.href = "../historial 2 copy/index.html"
       }
     });
   }

@@ -3,9 +3,9 @@ connect2Server();
 // Mostrar nombre del usuario
 let nombreprincipal = document.getElementById("nombreprincipal");
 
-function asignarNombre() {
-  nombreprincipal.textContent =
-    localStorage["nombre"] || localStorage["usuario"] || "Usuario";
+function asignarNombre(usuario){
+    (nombreprincipal.textContent = localStorage["mailFamilia"]);
+    
 }
 asignarNombre();
 
@@ -73,3 +73,8 @@ const aplicadasContainer = document.querySelector(".aplicada .botones");
   }
 }
 
+let flecha = document.getElementById("flecha");
+flecha.addEventListener('click', () => {
+window.location.href = "../grupo familiar final/index.html"
+
+});
