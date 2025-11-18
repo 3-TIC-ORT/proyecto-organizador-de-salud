@@ -24,8 +24,8 @@
     "mail": "medico@gmail.com",
     "pacientes": [
       {
-        "nombre": "luna",
-        "mail": "luna@gmail.com"
+        "nombre": "paciente",
+        "mail": "paciente@gmail.com"
       }
     ]
   }
