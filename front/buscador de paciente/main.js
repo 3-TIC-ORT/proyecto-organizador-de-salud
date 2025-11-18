@@ -1,11 +1,9 @@
 connect2Server();
 
-
 // Lista inicial vacía
 let pacientes = [];
 
 // --- Variables globales ---
-
 
 // Elementos del DOM
 const container = document.getElementById('pacienteContainer');
@@ -19,7 +17,7 @@ const btnCancelar = document.getElementById('btnCancelar');
 postEvent("cargarPacientes", { mail: localStorage.getItem("mail") }, (res) => {
     pacientes = res || [] || JSON.parse(localStorage.getItem('pacientes'));
     mostrarPacientes();
-  });
+});
 
 //funcion para mostrar los pacientes
 function mostrarPacientes(lista = pacientes) {
@@ -35,17 +33,17 @@ function mostrarPacientes(lista = pacientes) {
       <div class="paciente">
         <h4 class="nombreTarjeta">${p.nombre}</h4>
         <button class="flechaTarjeta">&gt;</button>
-        <button class="btnEliminar" data-dni="${p.dni}">🗑️</button>
+        <button class="btnEliminar" data-mail="${p.mail}">🗑️</button>
       </div>
     `;
   });
 
   document.querySelectorAll(".btnEliminar").forEach(btn => {
     btn.addEventListener("click", () => {
-      const dni = btn.dataset.dni;
-      const mail = localStorage.getItem("mail");
+      const mailPaciente = btn.dataset.mail;
+      const mailUsuario = localStorage.getItem("mail");
 
-      postEvent("eliminarPaciente", { mail, dni }, (actualizado) => {
+      postEvent("eliminarPaciente", { mail: mailUsuario, mailPaciente }, (actualizado) => {
         pacientes = actualizado;            // Actualizo lista
         localStorage.setItem("pacientes", JSON.stringify(pacientes));
         mostrarPacientes();                 // Redibujo la lista
@@ -53,7 +51,6 @@ function mostrarPacientes(lista = pacientes) {
     });
   });
 }
-
 
 // --- Evento para buscar ---
 searchBar.addEventListener('input', () => {
@@ -80,6 +77,7 @@ formPaciente.addEventListener('submit', (e) => {
     alert("Por favor, completa todos los campos.");
     return;
   }
+
   postEvent("checkUsuarioPorMail", { mail: mailPaciente }, (res) => {
 
     if (!res || res.msg !== true) {
@@ -88,22 +86,22 @@ formPaciente.addEventListener('submit', (e) => {
     }
 
     const nuevoPaciente = { nombre, mail: mailPaciente };
-  pacientes.push(nuevoPaciente);
-  localStorage.setItem('pacientes', JSON.stringify(pacientes));
-  formPaciente.reset();
-  formSection.classList.add('oculto'); // Oculta el formulario después de agregar
-  mostrarPacientes(); // Actualiza la lista
-  postEvent("nuevoPaciente", { 
-    mail: localStorage.getItem("mail"), 
-    nuevoPaciente 
-});
+    pacientes.push(nuevoPaciente);
+    localStorage.setItem('pacientes', JSON.stringify(pacientes));
+    formPaciente.reset();
+    formSection.classList.add('oculto'); 
+    mostrarPacientes(); 
+    postEvent("nuevoPaciente", { 
+      mail: localStorage.getItem("mail"), 
+      nuevoPaciente 
+    });
+  });
 });
 
 // --- Botón cancelar ---
 btnCancelar.addEventListener('click', () => {
-  formSection.classList.add('oculto'); // oculta el formulario
-  formPaciente.reset(); // limpia los inputs
+  formSection.classList.add('oculto');
+  formPaciente.reset();
 });
 
-});
 mostrarPacientes();
