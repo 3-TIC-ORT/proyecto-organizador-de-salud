@@ -42,5 +42,23 @@
         "mail": "paciente@gmail.com"
       }
     ]
+  },
+  {
+    "creadaPor": "dario.ezernitchi@gmail.com",
+    "miembros": [
+      {
+        "nombre": "paciente",
+        "mail": "paciente@gmail.com"
+      }
+    ]
+  },
+  {
+    "creadaPor": "yael.lichtmann@gmail.com",
+    "miembros": [
+      {
+        "nombre": "dario",
+        "mail": "dario.ezernitchi@gmail.com"
+      }
+    ]
   }
 ]

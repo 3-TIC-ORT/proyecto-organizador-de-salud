@@ -93,15 +93,18 @@ header{
 
 }
 .titulo{
-    height: 9.93rem;
-    width: 53.06rem;  
-    margin-left: 1.5rem;
-    margin-top: 1rem;
+    height: 100%;
+    width: 100%;  
+   
+  }
+  .foto{
+     height: 8rem;
+    width: 50.06rem;  
   }
 .txt{
     font-family: 'Inter', sans-serif;
     font-weight: 400px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: regular;
     width: 51.18rem;
     height: 6.12rem;
@@ -109,11 +112,12 @@ header{
     
 }
 .logo{
-    width: 25.2rem;
-    height: 24.18rem;
+    width: 22rem;
+    height: 20rem;
+  
 }
 .botones-abajo{
-    height: 50%;
+    height: 30%;
     width: 100%;
     display: flex;
     
@@ -139,9 +143,12 @@ header{
 .grupo1{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin-left: 3rem;
+    text-align: left;
+
+margin-left: 10rem;
 }
 button{
     width: 21rem;
@@ -151,4 +158,15 @@ button{
     margin-right: 2rem;
     gap: 2rem;
     display: flex;
+}
+
+.boton:hover{
+    background-color: #67aadb;
+}
+.registrarse:hover{
+    background-color: #43d1c3;
+
+}
+.vermas:hover{
+    background-color: rgba(240, 248, 255, 0.606);
 }

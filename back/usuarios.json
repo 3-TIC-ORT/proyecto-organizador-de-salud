@@ -384,5 +384,23 @@
     "perfil": "Paciente",
     "matricula": "28033254",
     "id": 12
+  },
+  {
+    "nombre": "soyluna",
+    "contraseña": "soyluna",
+    "mail": "soyluna@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": "",
+    "id": 13
+  },
+  {
+    "nombre": "yael",
+    "contraseña": "yael2025",
+    "mail": "yael.lichtmann@gmail.com",
+    "nacimiento": "1981-03-24",
+    "perfil": "Paciente",
+    "matricula": "28752655",
+    "id": 14
   }
 ]
