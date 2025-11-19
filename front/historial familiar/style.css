@@ -97,7 +97,7 @@ h1{
 .botonesPendientes {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;   /* GAP ENTRE TARJETAS */
+    gap: .5rem;   /* GAP ENTRE TARJETAS */
 }
 
 .tituloCentrado{
