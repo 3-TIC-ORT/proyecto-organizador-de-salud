@@ -4,7 +4,7 @@ connect2Server();
 let nombreprincipal = document.getElementById("nombreprincipal");
 
 function asignarNombre(usuario){
-    nombreprincipal.textContent = localStorage.getItem("mailPacienteHistorial");
+    nombreprincipal.textContent = localStorage.getItem("nombrePacienteHistorial");
 
     
 }

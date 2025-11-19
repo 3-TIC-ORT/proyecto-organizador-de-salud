@@ -3,66 +3,108 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ---- TARJETAS DE VACUNAS ---- */
 button{
- width: 24.22rem;
- height: 5.62rem;   
- border-radius: 1.56rem;
- display: flex;
- justify-content: center;
- gap: .5rem;
- align-items: center;
-}
-.aplicado{
+    width: 24.22rem;
+    height: 5.62rem;   
+    border-radius: 1.56rem;
     display: flex;
     justify-content: center;
+    gap: 1rem;          /* GAP ENTRE ELEMENTOS DE LA TARJETA */
     align-items: center;
 }
+
+/* ---- COLORES Y TEXTO ---- */
 .azul{
     color: #00487B;
     font-size: 2rem;
 }
+
 .vector{
     width: 33px;
     height: 32px;
 }
+
+/* ---- CONTENEDOR DE TÍTULOS DE COLUMNA ---- */
 .tipo{
-    width: 16.68rem;
+    width: 22.68rem;
     height: 1.43rem;
     display: flex;
-    gap: 5rem;
-    margin-left: 3.5rem;
+    justify-content: flex-start;
+    gap: 12rem;
 }
+
+/* ---- CONTENEDOR PRINCIPAL DE VACUNAS ---- */
 .abajo{
     display: flex;
     gap: 5rem;
-  
     justify-content: center;
     align-items: flex-start;
-   
-    height: 100%;
     width: 100%;
 }
 
-
+/* ---- ESTÉTICA GENERAL ---- */
 article{
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     background-color: #E5E4E2;
+    gap: 3rem;
 }
-h1{
-font-size: 3rem;
-}
-.arriba{
-text-align: center;
-height: 20%;
 
-width: 100%;
+/* ---- TÍTULOS ---- */
+h1{
+    font-size: 3rem;
 }
+
+/* ---- SECCIÓN ARRIBA ---- */
+.arriba{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* CENTRA EL TITULO */
+    position: relative;        /* PERMITE POSICIONAR LA FLECHA */
+}
+
+/* ---- FLECHA ---- */
+#flecha{
+    position: absolute;
+    left: 2rem;                /* FLECHA A LA IZQUIERDA */
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* ---- COLUMNA DERECHA (VACUNAS PENDIENTES) ---- */
 .pendiente{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.aplicada{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ---- BOTONES CONTENEDORES ---- */
+.botones,
+.botonesPendientes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;   /* GAP ENTRE TARJETAS */
+}
+
+.tituloCentrado{
+    text-align: center;
+}
+.dosgrupos{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }

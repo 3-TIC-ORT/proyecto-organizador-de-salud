@@ -40,10 +40,26 @@ if (el) {
   console.error("No se encontró el elemento #fechaActual en el DOM");
 }
 
+
+
+
 let historialCentro = document.getElementById("historial-centro");
 historialCentro.addEventListener("click", () => {
-  window.location.href = "../historial 2/index.html"
+
+    postEvent("datosHistorial", {"Mail": localStorage["mail"]}, cargarinfo);
+
 });
+
+
+function cargarinfo(data){
+
+    if (data.msg == true){
+        window.location.href = "../historial/index.html"
+    } 
+    else {
+        window.location.href = "../historial 2/index.html"
+    }
+}
 
 let grupofamCentro = document.getElementById("grupofam-centro");
 grupofamCentro.addEventListener("click", () => {

@@ -30,11 +30,11 @@ function mostrarPacientes(lista = pacientes) {
 
   lista.forEach(p => {
     container.innerHTML += `
-      <div class="paciente" data-mail="${p.mail}">
+      <div class="paciente" data-mail="${p.mail}" data-nombre="${p.nombre}">
         <h4 class="nombreTarjeta">${p.nombre}</h4>
         <div class="flechatacho">
-        <button class="flechaTarjeta">&gt;</button>
-        <button class="btnEliminar" data-mail="${p.mail}">🗑️</button>
+          <button class="flechaTarjeta">&gt;</button>
+          <button class="btnEliminar" data-mail="${p.mail}">🗑️</button>
         </div>
       </div>
     `;
@@ -65,13 +65,16 @@ container.addEventListener("click", (e) => {
   if (verBtn) {
     const tarjeta = verBtn.closest(".paciente");
     const mailPaciente = tarjeta?.getAttribute("data-mail");
+    const nombrePaciente = tarjeta?.getAttribute("data-nombre");
     const mailUsuario = localStorage.getItem("mail");
+
+    // 🔵 GUARDAR MAIL Y NOMBRE DEL PACIENTE EN LOCALSTORAGE
+    localStorage.setItem("mailPacienteHistorial", mailPaciente);
+    localStorage.setItem("nombrePacienteHistorial", nombrePaciente);
 
     // Enviar al back
     postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
-      // Guardar mail del paciente para usar en la página de historial
-      localStorage.setItem("mailPacienteHistorial", mailPaciente);
-
+      
       if (res.msg == "true") {
         window.location.href = "../historial pacientes desde medico info/index.html";
       } else {

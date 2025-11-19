@@ -26,7 +26,7 @@ function mostrarPacientes(lista = pacientes) {
 
   lista.forEach(p => {
     container.innerHTML += `
-      <div class="paciente" data-mail="${p.mail}">
+      <div class="paciente" data-mail="${p.mail}" data-nombre="${p.nombre}">
         <strong>${p.nombre}</strong>
         <button class="flechaTarjeta">&gt;</button>
       </div>
@@ -46,13 +46,17 @@ container.addEventListener("click", (e) => {
   if (!verBtn) return;
 
   const tarjeta = verBtn.closest(".paciente");
+
   const mailPaciente = tarjeta?.dataset.mail;
+  const nombrePaciente = tarjeta?.dataset.nombre;
+
   const mailUsuario = localStorage.getItem("mail");
 
-  // Guardamos el mail del paciente para usar en la siguiente página
+  // Guardamos el mail Y nombre del paciente para usar en la siguiente página
   localStorage.setItem("mailPacienteHistorial", mailPaciente);
+  localStorage.setItem("nombrePacienteHistorial", nombrePaciente);
 
-  // Llamamos a tu función REAL que ya funciona
+  // Usamos tu función real que ya funciona
   postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
 
     if (res.msg === "true") {

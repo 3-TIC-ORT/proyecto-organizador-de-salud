@@ -83,11 +83,13 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 .aplicada{
      display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
 /* ---- BOTONES CONTENEDORES ---- */
@@ -100,4 +102,9 @@ h1{
 
 .tituloCentrado{
     text-align: center;
+}
+.dosgrupos{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }

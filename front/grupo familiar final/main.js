@@ -114,6 +114,7 @@ btnCancelar.addEventListener('click', () => {
 const mailUsuario = localStorage.getItem("mail");
 
 // --- Delegación de eventos en container ---
+// --- Delegación de eventos en container ---
 container.addEventListener('click', (e) => {
   const eliminarBtn = e.target.closest('.btn-eliminar');
   if (eliminarBtn) {
@@ -125,29 +126,29 @@ container.addEventListener('click', (e) => {
     return;
   }
 
-  // 🔵 --- CAMBIO: entrar al historial del familiar ---
+  // 🔵 --- ENTRAR AL HISTORIAL ---
   const verBtn = e.target.closest('.flechaTarjeta');
   if (verBtn) {
     const tarjeta = verBtn.closest('.paciente');
     const mailPaciente = tarjeta?.getAttribute('data-mail');
 
-    /* 🔵 CAMBIO: envío datos al back */
+    // ⬅️ 🔵 NUEVO: obtener nombre
+    const nombrePaciente = tarjeta.querySelector('.nombreTarjeta')?.textContent;
+
     postEvent("historialFamiliar", { mailUsuario, mailPaciente }, (res) => {
-      if (res.msg == "true") {
+      // ⬅️ 🔵 NUEVO: guardar nombre también
+      localStorage.setItem("mailPacienteHistorial", mailPaciente);
+      localStorage.setItem("nombrePacienteHistorial", nombrePaciente);
 
-        /* 🔵 CAMBIO: guardo el mail del paciente que quiero ver */
-        localStorage.setItem("mailPacienteHistorial", mailPaciente);
-
-        /* 🔵 CAMBIO: redirección */
+      if (res.msg == "true") {       
         window.location.href = "../historial familiar/index.html";
-      }
-      else{
-        localStorage.setItem("mailPacienteHistorial", mailPaciente);
-         window.location.href = "../historial 2 copy/index.html"
+      } else {
+        window.location.href = "../historial 2 copy/index.html";
       }
     });
   }
 });
+
 
 
 
