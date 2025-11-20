@@ -1,8 +1,5 @@
 connect2Server();
 
-
-
-
 const weekdaysShort = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 const monthNames = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 let viewDate = new Date();
@@ -60,10 +57,10 @@ function buildWeekdays() {
 }
 
 function render() {
-  //events = JSON.parse(localStorage.getItem("eventos")) || {};
+  // Actualizar eventos desde el servidor
   postEvent("cargarEventos",  {mail: localStorage.getItem("mail")}, (res) =>{
       events = res || [];
-  })
+  });
 
   const daysEl = document.getElementById('days');
   const monthYearEl = document.getElementById('monthYear');
@@ -76,19 +73,26 @@ function render() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   let html = '';
 
+  // Fecha de "hoy" normalizada a medianoche
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const todayTime = today.getTime();
+
   for (let i = 0; i < shift; i++) html += `<div class="day empty"></div>`;
 
   for (let d = 1; d <= daysInMonth; d++) {
-    const isToday =
-      new Date().getFullYear() === year &&
-      new Date().getMonth() === month &&
-      new Date().getDate() === d;
+    const cellDate = new Date(year, month, d);
+    cellDate.setHours(0, 0, 0, 0);
+    const cellTime = cellDate.getTime();
+
+    const isToday = cellTime === todayTime;
+    const isPast = cellTime < todayTime;
 
     const dateKey = makeKeyFromParts(year, month, d);
     const hasEvent = events[dateKey] && events[dateKey].length > 0;
 
     html += `
-      <div class="day number ${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}"
+      <div class="day number ${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''} ${isPast ? 'past-day' : ''}"
            data-date="${dateKey}">
         ${d}
       </div>`;
@@ -178,7 +182,6 @@ function saveEvent(date) {
   openModal({ target: { dataset: { date } } });
 }
 
-
 // -------------------------------
 // 🔄 Navegación de meses
 // -------------------------------
@@ -192,7 +195,6 @@ document.getElementById('next').addEventListener('click', () => {
   render();
 });
 
-
 function cargarEventosUsuario() {
   const mail = localStorage.getItem("mail");
   if (!mail) return;
@@ -203,7 +205,6 @@ function cargarEventosUsuario() {
     render(); // redibuja el calendario con los eventos
   });
 }
-
 
 buildWeekdays();
 render(); // pinta el calendario vacío primero

@@ -102,6 +102,12 @@ body {
     font-weight: 700;
     color: white;
   }
+
+  /* 🔵 Días pasados: fondo celeste suave relacionado con la paleta */
+  .day.past-day {
+    background-color: #cfdff1; /* celeste suave */
+    color: #7a8fa6;           /* texto azul grisáceo */
+  }
   
   .day.has-event::after {
     content: ".";
@@ -208,4 +214,5 @@ body {
   .close:hover {
     color: red;
   }
+
   
