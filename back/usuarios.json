@@ -402,5 +402,32 @@
     "perfil": "Paciente",
     "matricula": "28752655",
     "id": 14
+  },
+  {
+    "nombre": "Nicolas",
+    "contraseña": "123qaz",
+    "mail": "nicolas@calzarte.com.ar",
+    "nacimiento": "1979-08-09",
+    "perfil": "Paciente",
+    "matricula": "27283796",
+    "id": 15
+  },
+  {
+    "nombre": "snjnskjal",
+    "contraseña": "dm,jcbcn",
+    "mail": "hola@gmail.com.ar",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": "",
+    "id": 16
+  },
+  {
+    "nombre": "lhuirgfnwkf",
+    "contraseña": "donoqxnx",
+    "mail": "mail@gmail.com",
+    "nacimiento": "",
+    "perfil": "",
+    "matricula": "",
+    "id": 17
   }
 ]
