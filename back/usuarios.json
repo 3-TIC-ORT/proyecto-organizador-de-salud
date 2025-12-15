@@ -319,9 +319,9 @@
     "nombre": "medico",
     "contraseña": "medico",
     "mail": "medico@gmail.com",
-    "nacimiento": "0342-03-22",
+    "nacimiento": "3123-03-22",
     "perfil": "Medico",
-    "matricula": "239874839",
+    "matricula": "742309382",
     "id": 7
   },
   {
@@ -422,5 +422,14 @@
     "perfil": "Paciente",
     "matricula": "49903870",
     "id": 18
+  },
+  {
+    "nombre": "medico",
+    "contraseña": "medico",
+    "mail": "medico1@gmail.com",
+    "nacimiento": "3123-03-22",
+    "perfil": "Medico",
+    "matricula": "742309382",
+    "id": 19
   }
 ]
