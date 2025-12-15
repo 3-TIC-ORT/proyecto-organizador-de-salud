@@ -8,14 +8,6 @@
     "matricula": "1235465"
   },
   {
-    "nombre": "Benja",
-    "contraseña": "Benja123",
-    "mail": "bbaredes@gmail.com",
-    "nacimiento": "2009-11-17",
-    "perfil": "Paciente",
-    "matricula": "49903870"
-  },
-  {
     "nombre": "Luu",
     "contraseña": "kjahsd",
     "mail": "luu@gmail.com",
@@ -58,14 +50,6 @@
     "contraseña": "s8123qaz",
     "mail": "santiwinny@gmail.com",
     "nacimiento": "04/02/2010",
-    "perfil": "Paciente",
-    "matricula": "Osde"
-  },
-  {
-    "nombre": "Benja123",
-    "contraseña": "Benja123",
-    "mail": "bbaredes@gmail.com",
-    "nacimiento": "justo",
     "perfil": "Paciente",
     "matricula": "Osde"
   },
@@ -429,5 +413,14 @@
     "perfil": "",
     "matricula": "",
     "id": 17
+  },
+  {
+    "nombre": "Benjamín Baredes",
+    "contraseña": "Benja123",
+    "mail": "bbaredes@gmail.com",
+    "nacimiento": "2009-11-17",
+    "perfil": "Paciente",
+    "matricula": "49903870",
+    "id": 18
   }
 ]
