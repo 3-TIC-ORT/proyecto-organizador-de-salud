@@ -292,9 +292,9 @@
     "nombre": "paciente",
     "contraseña": "paciente",
     "mail": "paciente@gmail.com",
-    "nacimiento": "2010-05-22",
+    "nacimiento": "2009-11-17",
     "perfil": "Paciente",
-    "matricula": "50291642",
+    "matricula": "49903870",
     "id": 4
   },
   {
@@ -422,5 +422,14 @@
     "perfil": "Paciente",
     "matricula": "49903870",
     "id": 18
+  },
+  {
+    "nombre": "paciente",
+    "contraseña": "paciente",
+    "mail": "paciente1@gmail.com",
+    "nacimiento": "2009-11-17",
+    "perfil": "Paciente",
+    "matricula": "49903870",
+    "id": 19
   }
 ]
