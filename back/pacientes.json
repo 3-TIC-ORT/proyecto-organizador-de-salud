@@ -63,5 +63,14 @@
         "mail": "paciente12@gmail.com"
       }
     ]
+  },
+  {
+    "mail": "medico12@gmail.com",
+    "pacientes": [
+      {
+        "nombre": "paciente 1",
+        "mail": "paciente12@gmail.com"
+      }
+    ]
   }
 ]

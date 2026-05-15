@@ -467,5 +467,14 @@
     "perfil": "Medico",
     "matricula": "50155553",
     "id": 23
+  },
+  {
+    "nombre": "Paciente 2",
+    "contraseña": "paciente2",
+    "mail": "paciente22@gmail.com",
+    "nacimiento": "2010-02-04",
+    "perfil": "Paciente",
+    "matricula": "50155553",
+    "id": 24
   }
 ]
