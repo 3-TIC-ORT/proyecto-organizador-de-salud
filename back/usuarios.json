@@ -449,5 +449,23 @@
     "perfil": "Paciente",
     "matricula": "49903870",
     "id": 21
+  },
+  {
+    "nombre": "Paciente 1",
+    "contraseña": "paciente1",
+    "mail": "paciente12@gmail.com",
+    "nacimiento": "2010-02-04",
+    "perfil": "Paciente",
+    "matricula": "50155553",
+    "id": 22
+  },
+  {
+    "nombre": "medico1",
+    "contraseña": "medico1",
+    "mail": "medico12@gmail.com",
+    "nacimiento": "2010-02-04",
+    "perfil": "Medico",
+    "matricula": "50155553",
+    "id": 23
   }
 ]

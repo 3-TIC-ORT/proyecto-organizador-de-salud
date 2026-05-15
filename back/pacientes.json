@@ -54,5 +54,14 @@
         "mail": "nicolas@calzarte.com.ar"
       }
     ]
+  },
+  {
+    "mail": "paciente12@gmail.com",
+    "pacientes": [
+      {
+        "nombre": "paciente1",
+        "mail": "paciente12@gmail.com"
+      }
+    ]
   }
 ]
